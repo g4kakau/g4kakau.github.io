@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 我ê第一篇教學筆記
+lang: nan-TW
+categories: [math]
 ---
 
 Che是我用 Jekyll 寫ê第一篇教學筆記。
