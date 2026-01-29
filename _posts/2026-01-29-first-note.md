@@ -1,8 +1,10 @@
 ---
 layout: post
 title: 我 ê 第一篇教學筆記
+date: 2026-01-29
 lang: nan-TW
 categories: [math]
+tags: [general]
 ---
 
 Che 是我用 Jekyll 寫 ê 第一篇教學筆記。
