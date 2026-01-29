@@ -6,3 +6,11 @@ title: 頭頁
 <h1>𠢕早，我是 Kakau</h1>
 <p>這是我的家教網站，當咧起 🚧</p>
 
+<h2>教學筆記</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
