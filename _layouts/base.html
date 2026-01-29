@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'zh-Hant-TW' }}">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} | {{ site.title }}</title>
-</head>
+<header>
+  <nav>
+    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    &nbsp;|&nbsp;
+    <a href="{{ '/notes/math.html' | relative_url }}">數學</a>
+    &nbsp;|&nbsp;
+    <a href="{{ '/notes/physics.html' | relative_url }}">物理</a>
+    &nbsp;|&nbsp;
+    <a href="{{ '/tutoring.html' | relative_url }}">家教方案</a>
+    &nbsp;|&nbsp;
+    <a href="{{ '/contact.html' | relative_url }}">聯絡</a>
+  </nav>
+  <hr>
+</header>
 <body>
   <header>
     <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
