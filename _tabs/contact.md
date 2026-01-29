@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Contact
+title: 聯絡
 permalink: /contact/
 icon: fas fa-address-book
 order: 4

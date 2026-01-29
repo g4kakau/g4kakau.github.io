@@ -1,12 +1,14 @@
 # The Site Configuration
 
+math: true
+
 # Import the theme
 theme: jekyll-theme-chirpy
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: nan-TW
+lang: zh-TW
 
 # Change to your timezone › https://zones.arilyn.cc
 timezone: Asia/Taipei
@@ -157,6 +159,7 @@ baseurl: ""  # user site，留空
 kramdown:
   footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
+  math_engine: mathjax
   syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
     css_class: highlight
     # default_lang: console

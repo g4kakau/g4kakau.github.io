@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: 紹介
 icon: fas fa-leaf
 order: 1
 ---
