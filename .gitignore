@@ -1,0 +1,18 @@
+# Jekyll 產生的檔案（不需要 push）
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/
+
+# Gemfile.lock 要不要 push 看個人習慣
+# 建議 push（確保環境一致），但如果不同機器 Ruby 版本差很多可以忽略
+# Gemfile.lock
+
+# 本地筆記（不 push）
+DEV_NOTES.md
+
+# macOS
+.DS_Store
