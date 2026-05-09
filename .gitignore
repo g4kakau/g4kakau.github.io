@@ -22,7 +22,7 @@ package-lock.json
 !.vscode/extensions.json
 !.vscode/tasks.json
 
-# Local notes
+# Local notes (do not commit)
 DEV_NOTES.md
 
 # Misc
