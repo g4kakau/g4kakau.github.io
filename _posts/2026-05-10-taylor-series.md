@@ -2,7 +2,9 @@
 layout: post
 title: "泰勒展開：為什麼任何函數都可以用多項式近似？"
 date: 2026-05-10
-categories: [math]
+categories: [大學數學, 微積分]
+tags: [泰勒展開, 泰勒級數, 馬克勞林級數, 冪級數, 大學微積分]
+math: true
 description: "從「在一點接觸」的直覺出發，推導泰勒展開的係數公式，並整理 e^x、sin x、cos x 等常見馬克勞林級數。大學微積分必讀。"
 ---
 

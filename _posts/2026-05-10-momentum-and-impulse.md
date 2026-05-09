@@ -2,7 +2,9 @@
 layout: post
 title: "動量與衝量：從棒球到安全氣囊，一個觀念貫穿全場"
 date: 2026-05-10
-categories: [physics]
+categories: [高中物理, 力學]
+tags: [動量, 衝量, 牛頓第二定律, 高中物理, 段考]
+math: true
 description: "高中物理最常考的力學觀念之一。從直覺出發，帶你理解動量、衝量、衝量－動量定理，並附上真實考題解析與常見錯誤排雷。"
 ---
 

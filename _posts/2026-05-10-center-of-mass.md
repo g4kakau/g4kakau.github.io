@@ -2,7 +2,9 @@
 layout: post
 title: "質心：為什麼「整個系統」可以當成一個質點來算？"
 date: 2026-05-10
-categories: [physics]
+categories: [高中物理, 力學]
+tags: [質心, 質點系統, 動量, 高中物理, 大學普物]
+math: true
 description: "從高中到大學物理都會出現的核心概念。用加權平均的直覺帶你理解質心定義、計算方式，以及最重要的結論：質心運動只由外力決定。"
 ---
 
