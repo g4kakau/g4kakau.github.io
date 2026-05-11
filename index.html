@@ -1,15 +1,72 @@
 ---
 layout: home
-title: 頭頁
+title: 首頁
 ---
 
-<!--
-這個檔案刻意保持極簡。
-首頁交給 Chirpy 顯示：
-- 最近文章
-- 搜尋
-- 標籤 / 分類
-- 側欄資訊
+<style>
+.kk-intro {
+  text-align: center;
+  padding: 1.5rem 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+.kk-intro-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--heading-color, #222);
+  margin-bottom: 0.45rem;
+}
+.kk-intro-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted-color, #777);
+  max-width: 520px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+}
+.kk-cats {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+}
+.kk-cat {
+  display: inline-block;
+  padding: 0.28rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color, #ddd);
+  color: var(--text-color, #444);
+  text-decoration: none !important;
+  transition: border-color 0.15s, color 0.15s;
+}
+.kk-cat:hover {
+  border-color: var(--link-color, #1e6cc8);
+  color: var(--link-color, #1e6cc8) !important;
+}
+.kk-main-link {
+  font-size: 0.78rem;
+  color: var(--text-muted-color, #aaa);
+  margin-top: 0.1rem;
+}
+.kk-main-link a {
+  color: var(--text-muted-color, #aaa);
+  text-decoration: underline;
+}
+.kk-main-link a:hover {
+  color: var(--link-color, #1e6cc8);
+}
+</style>
 
-真正的人設與說明放在 Intro tab。
--->
+<div class="kk-intro">
+  <p class="kk-intro-title">數理教學筆記庫</p>
+  <p class="kk-intro-sub">整理高中數學、物理與大學基礎數學的核心觀念，<br>重視定義、推導、圖像與例題之間的連結。</p>
+  <div class="kk-cats">
+    <a href="/categories/高中數學/" class="kk-cat">高中數學</a>
+    <a href="/categories/高中物理/" class="kk-cat">高中物理</a>
+    <a href="/categories/大學數學/" class="kk-cat">大學數學</a>
+    <a href="/categories/" class="kk-cat">全部分類 →</a>
+  </div>
+  <p class="kk-main-link">需要家教或預約諮詢？→ <a href="https://kakau-front.vercel.app" target="_blank" rel="noopener">主網站</a>（建置中）</p>
+</div>

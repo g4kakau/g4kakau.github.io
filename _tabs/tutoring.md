@@ -2,8 +2,7 @@
 layout: page
 title: 家教方案
 permalink: /tutoring-plans/
-icon: fas fa-chalkboard-teacher
-order: 3
+order: 10
 ---
 
 我提供 **高中數學／物理** 的家教與學習策略指導。

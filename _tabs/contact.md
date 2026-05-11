@@ -2,8 +2,7 @@
 layout: page
 title: 聯絡
 permalink: /contact/
-icon: fas fa-address-book
-order: 4
+order: 11
 ---
 
 可以用以下方式聯絡我：
