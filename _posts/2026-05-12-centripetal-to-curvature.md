@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "向心力的幾何本質：從高中公式到曲率"
-date: 2026-05-12
+date: 2026-05-12 06:57:54 +0800
 categories: [大學物理, 力學]
 tags: [向心力, 曲率, 法向加速度, 微分幾何, Frenet-Serret, 弧長參數化]
 math: true

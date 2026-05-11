@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "三角代換法：把根號變掉"
-date: 2026-05-12
+date: 2026-05-12 04:00:11 +0800
 categories: [大學數學, 微積分]
 tags: [積分技巧, 三角代換, 換元法, 大學微積分]
 math: true

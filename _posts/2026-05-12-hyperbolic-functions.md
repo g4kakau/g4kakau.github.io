@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "雙曲函數：sinh 和 cosh 是什麼？"
-date: 2026-05-12
+date: 2026-05-12 04:25:38 +0800
 categories: [大學數學, 微積分]
 tags: [雙曲函數, sinh, cosh, 積分技巧, 懸鏈線]
 math: true

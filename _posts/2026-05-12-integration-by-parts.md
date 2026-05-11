@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "分部積分法：乘法法則的積分版本"
-date: 2026-05-12
+date: 2026-05-12 04:24:44 +0800
 categories: [大學數學, 微積分]
 tags: [積分技巧, 分部積分, 大學微積分, LIATE]
 math: true

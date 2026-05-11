@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "從 11^30 mod 100 走進抽象代數"
-date: 2026-05-12
+date: 2026-05-12 03:58:52 +0800
 categories: [大學數學, 代數]
 tags: [抽象代數, 模算術, 二項式定理, 環論, 冪零元, 商環]
 math: true

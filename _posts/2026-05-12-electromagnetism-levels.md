@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "電磁學的高低階統整：從三句話到 Maxwell 方程"
-date: 2026-05-12
+date: 2026-05-12 04:26:40 +0800
 categories: [大學物理, 電磁學]
 tags: [電磁學, Maxwell方程, 必歐沙伐定律, 法拉第定律, 勞侖茲力, 相對論]
 math: true

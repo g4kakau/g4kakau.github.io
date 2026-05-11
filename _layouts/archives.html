@@ -1,0 +1,107 @@
+---
+layout: page
+# The Archives of posts.
+---
+
+{% include lang.html %}
+
+{% assign posts = site.posts %}
+
+<div class="d-flex justify-content-end mb-3">
+  <button
+    id="archives-sort-toggle"
+    class="btn btn-sm btn-outline-primary"
+    type="button"
+    data-sort="desc"
+    data-desc-label="排序：新到舊"
+    data-asc-label="排序：舊到新"
+    aria-label="切換封存頁文章排序"
+  >
+    排序：新到舊
+  </button>
+</div>
+
+<div id="archives" class="pl-xl-3">
+  {% for post in posts %}
+    {% assign cur_year = post.date | date: '%Y' %}
+
+    {% if cur_year != last_year %}
+      {% unless forloop.first %}</ul>{% endunless %}
+
+      <time class="year lead d-block">{{ cur_year }}</time>
+      {{ '<ul class="list-unstyled">' }}
+
+      {% assign last_year = cur_year %}
+    {% endif %}
+
+    <li data-archive-ts="{{ post.date | date: '%s' }}" data-archive-index="{{ forloop.index0 }}">
+      {% assign ts = post.date | date: '%s' %}
+      <span class="date day" data-ts="{{ ts }}" data-df="MM">{{ post.date | date: '%m' }}</span>
+      <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="/DD">
+        {{ post.date | date: '/%d' }}
+      </span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const archives = document.getElementById('archives');
+    const toggle = document.getElementById('archives-sort-toggle');
+
+    if (!archives || !toggle) {
+      return;
+    }
+
+    const groups = [];
+    let currentGroup = null;
+
+    Array.from(archives.children).forEach((child) => {
+      if (child.matches('time.year')) {
+        currentGroup = { year: child, list: null };
+        groups.push(currentGroup);
+      } else if (child.matches('ul') && currentGroup) {
+        currentGroup.list = child;
+      }
+    });
+
+    const render = (direction) => {
+      const isAscending = direction === 'asc';
+      const orderedGroups = isAscending ? [...groups].reverse() : [...groups];
+
+      orderedGroups.forEach((group) => {
+        if (!group.list) {
+          return;
+        }
+
+        archives.appendChild(group.year);
+        archives.appendChild(group.list);
+
+        const orderedPosts = Array.from(group.list.children).sort((a, b) => {
+          const aTs = Number(a.dataset.archiveTs);
+          const bTs = Number(b.dataset.archiveTs);
+          const aIndex = Number(a.dataset.archiveIndex);
+          const bIndex = Number(b.dataset.archiveIndex);
+
+          if (aTs === bTs) {
+            return isAscending ? bIndex - aIndex : aIndex - bIndex;
+          }
+
+          return isAscending ? aTs - bTs : bTs - aTs;
+        });
+
+        orderedPosts.forEach((post) => group.list.appendChild(post));
+      });
+
+      toggle.dataset.sort = direction;
+      toggle.textContent = isAscending ? toggle.dataset.ascLabel : toggle.dataset.descLabel;
+    };
+
+    toggle.addEventListener('click', () => {
+      render(toggle.dataset.sort === 'desc' ? 'asc' : 'desc');
+    });
+  });
+</script>

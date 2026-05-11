@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "從向心力到測地線：廣義相對論的入口"
-date: 2026-05-12
+date: 2026-05-12 06:57:57 +0800
 categories: [大學物理, 力學]
 tags: [向心力, 測地線, 廣義相對論, 協變導數, 微分幾何, Frenet-Serret]
 math: true
