@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 聯絡
+icon: fas fa-paper-plane
 permalink: /contact/
 order: 11
 ---

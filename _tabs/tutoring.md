@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 家教方案
+icon: fas fa-chalkboard-teacher
 permalink: /tutoring-plans/
 order: 10
 ---
