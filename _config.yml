@@ -28,23 +28,18 @@ description: >- # used by seo meta and the atom feed
 url: "https://g4kakau.github.io"
 
 github:
-  username: g4kakau # change to your GitHub username
+  username: g4kakau
 
-twitter:
-  username: twitter_username # change to your Twitter username
+# twitter:
+#   username: twitter_username
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: g4kakau
-  email: g4kakau@gmail.com # change to your email address
+  email: g4kakau@gmail.com
   links:
-    # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/g4kakau # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://github.com/g4kakau
+    - https://www.youtube.com/@Sin-iu
+    - https://www.threads.net/@placeholder  # TODO: 註冊後更新
 
 # Site Verification Settings
 webmaster_verifications:
