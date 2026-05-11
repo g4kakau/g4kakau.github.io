@@ -111,95 +111,109 @@ $$e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script>
 (function(){
+  var container = document.getElementById('taylor-viz');
   var sl = document.getElementById('tf-n');
   var nv = document.getElementById('tf-n-val');
-  sl.addEventListener('input', function(){ nv.textContent = this.value; });
+  var canvas = document.createElement('canvas');
+  var ctx = canvas.getContext('2d');
+  var H=300, LP=50, RP=16, TP=30, BP=24, W;
 
-  new p5(function(p){
-    var W, H=300, LP=50, RP=16, TP=30, BP=24;
+  container.appendChild(canvas);
 
-    function fact(n){ var r=1; for(var i=2;i<=n;i++) r*=i; return r; }
+  sl.addEventListener('input', function(){ nv.textContent = this.value; redraw(); });
+  document.querySelectorAll('input[name="tf-func"]').forEach(function(r){
+    r.addEventListener('change', redraw);
+  });
 
-    function trueF(x,f){
-      if(f===0) return Math.sin(x);
-      if(f===1) return Math.cos(x);
-      return Math.exp(x);
+  function fact(n){ var r=1; for(var i=2;i<=n;i++) r*=i; return r; }
+
+  function trueF(x,f){
+    if(f===0) return Math.sin(x);
+    if(f===1) return Math.cos(x);
+    return Math.exp(x);
+  }
+
+  function taylorF(x,n,f){
+    var s=0,k;
+    if(f===0){      for(k=0;k<n;k++) s+=Math.pow(-1,k)*Math.pow(x,2*k+1)/fact(2*k+1); }
+    else if(f===1){ for(k=0;k<n;k++) s+=Math.pow(-1,k)*Math.pow(x,2*k)/fact(2*k); }
+    else{           for(k=0;k<n;k++) s+=Math.pow(x,k)/fact(k); }
+    return s;
+  }
+
+  function rng(f){
+    return f<2 ? {x0:-2*Math.PI,x1:2*Math.PI,y0:-2.5,y1:2.5}
+               : {x0:-3,x1:3,y0:-0.5,y1:9};
+  }
+
+  function mv(v,a,b,c,d){ return c+(v-a)/(b-a)*(d-c); }
+
+  function drawCurve(fn,r,color,lw){
+    ctx.strokeStyle=color; ctx.lineWidth=lw; ctx.beginPath();
+    var go=false;
+    for(var i=LP;i<=W-RP;i++){
+      var x=mv(i,LP,W-RP,r.x0,r.x1);
+      var y=fn(x);
+      var sy=mv(y,r.y0,r.y1,H-BP,TP);
+      if(isFinite(y)&&sy>=TP-14&&sy<=H-BP+14){
+        go ? ctx.lineTo(i,sy) : ctx.moveTo(i,sy);
+        go=true;
+      } else { go=false; }
+    }
+    ctx.stroke();
+  }
+
+  function redraw(){
+    var n=parseInt(sl.value);
+    var el=document.querySelector('input[name="tf-func"]:checked');
+    var f=el?parseInt(el.value):0;
+    var r=rng(f);
+
+    ctx.fillStyle='#fff';
+    ctx.fillRect(0,0,W,H);
+
+    // 軸線
+    var ax=mv(0,r.y0,r.y1,H-BP,TP);
+    var ay=mv(0,r.x0,r.x1,LP,W-RP);
+    ctx.strokeStyle='#d2d2d2'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(LP,ax); ctx.lineTo(W-RP,ax); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(ay,TP); ctx.lineTo(ay,H-BP); ctx.stroke();
+
+    // x 軸刻度標籤
+    if(f<2){
+      ctx.font='10px sans-serif'; ctx.textAlign='center'; ctx.fillStyle='#999';
+      [[-2*Math.PI,'-2π'],[-Math.PI,'-π'],[0,'0'],[Math.PI,'π'],[2*Math.PI,'2π']].forEach(function(t){
+        var tx=mv(t[0],r.x0,r.x1,LP,W-RP);
+        ctx.strokeStyle='#d2d2d2'; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(tx,ax-3); ctx.lineTo(tx,ax+3); ctx.stroke();
+        ctx.fillStyle='#999'; ctx.fillText(t[1],tx,ax+14);
+      });
     }
 
-    function taylorF(x,n,f){
-      var s=0,k;
-      if(f===0){      for(k=0;k<n;k++) s+=Math.pow(-1,k)*Math.pow(x,2*k+1)/fact(2*k+1); }
-      else if(f===1){ for(k=0;k<n;k++) s+=Math.pow(-1,k)*Math.pow(x,2*k)/fact(2*k); }
-      else {          for(k=0;k<n;k++) s+=Math.pow(x,k)/fact(k); }
-      return s;
-    }
+    // 原函數（藍）
+    drawCurve(function(x){return trueF(x,f);},r,'rgb(41,98,255)',2.5);
+    // 泰勒近似（橙紅）
+    drawCurve(function(x){return taylorF(x,n,f);},r,'rgb(215,65,15)',2);
 
-    function rng(f){
-      return f<2 ? {x0:-2*Math.PI,x1:2*Math.PI,y0:-2.5,y1:2.5}
-                 : {x0:-3,x1:3,y0:-0.5,y1:9};
-    }
+    // 圖例
+    ctx.font='12px sans-serif'; ctx.textAlign='left';
+    ctx.fillStyle='rgb(41,98,255)';
+    ctx.fillText('—— 原函數', LP+4, TP+14);
+    ctx.fillStyle='rgb(215,65,15)';
+    ctx.fillText('—— 泰勒近似（n='+n+'）', LP+82, TP+14);
+  }
 
-    function drawCurve(fn,r,rc,gc,bc,sw){
-      p.stroke(rc,gc,bc); p.strokeWeight(sw);
-      var ok=false,px_=0,py_=0;
-      for(var i=LP;i<=W-RP;i++){
-        var x=p.map(i,LP,W-RP,r.x0,r.x1);
-        var y=fn(x);
-        var sy=p.map(y,r.y0,r.y1,H-BP,TP);
-        var good=isFinite(y)&&sy>=TP-14&&sy<=H-BP+14;
-        if(good&&ok) p.line(px_,py_,i,sy);
-        ok=good; px_=i; py_=sy;
-      }
-    }
+  function resize(){
+    W = Math.min(container.offsetWidth||620, 680);
+    canvas.width = W;
+    canvas.height = H;
+    redraw();
+  }
 
-    p.setup=function(){
-      var el=document.getElementById('taylor-viz');
-      W=Math.min(el.offsetWidth||620,680);
-      p.createCanvas(W,H).parent('taylor-viz');
-      p.textFont('sans-serif');
-      p.frameRate(30);
-    };
-
-    p.draw=function(){
-      var n=parseInt(sl.value);
-      var checked=document.querySelector('input[name="tf-func"]:checked');
-      var f=checked?parseInt(checked.value):0;
-      var r=rng(f);
-
-      p.background(255);
-
-      // 軸線
-      p.stroke(210); p.strokeWeight(1);
-      var ax=p.map(0,r.y0,r.y1,H-BP,TP);
-      var ay=p.map(0,r.x0,r.x1,LP,W-RP);
-      p.line(LP,ax,W-RP,ax);
-      p.line(ay,TP,ay,H-BP);
-
-      // x 軸刻度標籤
-      if(f<2){
-        p.fill(150); p.noStroke(); p.textSize(10); p.textAlign(p.CENTER,p.TOP);
-        [[-2*Math.PI,'-2π'],[-Math.PI,'-π'],[0,'0'],[Math.PI,'π'],[2*Math.PI,'2π']].forEach(function(t){
-          var tx=p.map(t[0],r.x0,r.x1,LP,W-RP);
-          p.stroke(210); p.strokeWeight(1); p.line(tx,ax-3,tx,ax+3);
-          p.noStroke(); p.text(t[1],tx,ax+5);
-        });
-      }
-
-      // 原函數（藍）
-      drawCurve(function(x){return trueF(x,f);},r,41,98,255,2.5);
-      // 泰勒近似（橙紅）
-      drawCurve(function(x){return taylorF(x,n,f);},r,215,65,15,2);
-
-      // 圖例
-      p.noStroke(); p.textSize(12); p.textAlign(p.LEFT,p.TOP);
-      p.fill(41,98,255);  p.text('── 原函數',LP+4,TP+2);
-      p.fill(215,65,15);  p.text('── 泰勒近似（n='+n+'）',LP+82,TP+2);
-    };
-
-  },'taylor-viz');
+  resize();
+  window.addEventListener('resize', resize);
 })();
 </script>
 
