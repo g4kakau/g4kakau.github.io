@@ -6,7 +6,43 @@ permalink: /contact/
 order: 11
 ---
 
-可以用以下方式聯絡我：
+<style>
+.kk-contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.5rem;
+}
+
+.kk-contact-button {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border-radius: 4px;
+  background: var(--link-color, #1e6cc8);
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.kk-contact-button:hover {
+  filter: brightness(0.94);
+}
+
+.kk-contact-note {
+  color: var(--text-muted-color, #777);
+  font-size: 0.9rem;
+}
+</style>
+
+若想詢問家教、試教或學習規劃，建議先填寫表單，讓我可以更快了解你的需求。
+
+<div class="kk-contact-actions">
+  <a class="kk-contact-button" href="https://forms.gle/R38gD1b9SecEbufq8" target="_blank" rel="noopener">填寫 Google 諮詢表單</a>
+  <span class="kk-contact-note">約 2-3 分鐘，填完後我會再回覆你。</span>
+</div>
+
+也可以用以下方式聯絡我：
 
 - **Email**：[g4kakau@gmail.com](mailto:g4kakau@gmail.com)
 

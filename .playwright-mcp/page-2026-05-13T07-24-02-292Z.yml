@@ -1,0 +1,146 @@
+- generic [active] [ref=e1]:
+  - complementary "Sidebar" [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: /
+      - link "Kakau 數理筆記" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - paragraph [ref=e6]: 數學｜物理｜概念理解｜學習方法
+    - navigation [ref=e7]:
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "首頁" [ref=e10] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e12]: 首頁
+        - listitem [ref=e13]:
+          - link "分類" [ref=e14] [cursor=pointer]:
+            - /url: /categories/
+            - generic [ref=e16]: 分類
+        - listitem [ref=e17]:
+          - link "導讀" [ref=e18] [cursor=pointer]:
+            - /url: /intro/
+            - generic [ref=e20]: 導讀
+        - listitem [ref=e21]:
+          - link "標籤" [ref=e22] [cursor=pointer]:
+            - /url: /tags/
+            - generic [ref=e24]: 標籤
+        - listitem [ref=e25]:
+          - link "封存" [ref=e26] [cursor=pointer]:
+            - /url: /archives/
+            - generic [ref=e28]: 封存
+        - listitem [ref=e29]:
+          - link "關於" [ref=e30] [cursor=pointer]:
+            - /url: /about/
+            - generic [ref=e32]: 關於
+        - listitem [ref=e33]:
+          - link "家教方案" [ref=e34] [cursor=pointer]:
+            - /url: /tutoring-plans/
+            - generic [ref=e36]: 家教方案
+        - listitem [ref=e37]:
+          - link "聯絡" [ref=e38] [cursor=pointer]:
+            - /url: /contact/
+            - generic [ref=e40]: 聯絡
+    - generic [ref=e41]:
+      - button "Switch Mode" [ref=e42] [cursor=pointer]
+      - link "youtube" [ref=e45] [cursor=pointer]:
+        - /url: https://www.youtube.com/@Sin-iu
+      - link "email" [ref=e47] [cursor=pointer]:
+        - /url: javascript:location.href = 'mailto:' + ['g4kakau','gmail.com'].join('@')
+  - generic [ref=e49]:
+    - generic [ref=e50]:
+      - banner "Top Bar" [ref=e51]:
+        - generic [ref=e52]:
+          - navigation "Breadcrumb" [ref=e53]:
+            - generic [ref=e54]:
+              - link "首頁" [ref=e55] [cursor=pointer]:
+                - /url: /
+              - text: ›
+            - text: 聯絡
+          - search [ref=e56]:
+            - searchbox "search" [ref=e58]
+      - generic [ref=e59]:
+        - main "Main Content" [ref=e60]:
+          - article [ref=e61]:
+            - heading "聯絡" [level=1] [ref=e62]
+            - generic [ref=e63]:
+              - paragraph [ref=e64]: 若想詢問家教、試教或學習規劃，建議先填寫表單，讓我可以更快了解你的需求。
+              - generic [ref=e65]:
+                - link "填寫 Google 諮詢表單" [ref=e66] [cursor=pointer]:
+                  - /url: https://forms.gle/R38gD1b9SecEbufq8
+                - generic [ref=e67]: 約 2-3 分鐘，填完後我會再回覆你。
+              - paragraph [ref=e68]: 也可以用以下方式聯絡我：
+              - list [ref=e69]:
+                - listitem [ref=e70]:
+                  - strong [ref=e71]: Email
+                  - text: ：
+                  - link "g4kakau@gmail.com" [ref=e72] [cursor=pointer]:
+                    - /url: mailto:g4kakau@gmail.com
+              - separator [ref=e73]
+              - heading "聯絡前請先提供以下資訊" [level=2] [ref=e74]
+              - paragraph [ref=e75]: 為了更快了解你目前的狀況，請簡單說明：
+              - list [ref=e76]:
+                - listitem [ref=e77]: 年級與科目（例：高一數學、高二物理……）
+                - listitem [ref=e78]: 目標（段考、學測、複習進度、補觀念）
+                - listitem [ref=e79]: 目前覺得卡住的地方（觀念／計算／題型／心態）
+                - listitem [ref=e80]: 希望上課的時間與頻率
+              - paragraph [ref=e81]: 我會根據這些資訊，建議適合的學習方式或家教安排。
+        - complementary "Panel" [ref=e82]:
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - heading "最近更新" [level=2] [ref=e85]
+              - list [ref=e86]:
+                - listitem [ref=e87]:
+                  - link "三角代換法：把根號變掉" [ref=e88] [cursor=pointer]:
+                    - /url: /posts/trigonometric-substitution/
+                - listitem [ref=e89]:
+                  - link "分部積分法：乘法法則的積分版本" [ref=e90] [cursor=pointer]:
+                    - /url: /posts/integration-by-parts/
+                - listitem [ref=e91]:
+                  - link "雙曲函數：sinh 和 cosh 是什麼？" [ref=e92] [cursor=pointer]:
+                    - /url: /posts/hyperbolic-functions/
+                - listitem [ref=e93]:
+                  - link "電磁學的高低階統整：從三句話到 Maxwell 方程" [ref=e94] [cursor=pointer]:
+                    - /url: /posts/electromagnetism-levels/
+                - listitem [ref=e95]:
+                  - link "拋體運動的曲率：最高點為什麼最彎？" [ref=e96] [cursor=pointer]:
+                    - /url: /posts/projectile-curvature/
+            - generic [ref=e97]:
+              - heading "熱門標籤" [level=2] [ref=e98]
+              - generic [ref=e99]:
+                - link "大學微積分" [ref=e100] [cursor=pointer]:
+                  - /url: /tags/%E5%A4%A7%E5%AD%B8%E5%BE%AE%E7%A9%8D%E5%88%86/
+                - link "積分技巧" [ref=e101] [cursor=pointer]:
+                  - /url: /tags/%E7%A9%8D%E5%88%86%E6%8A%80%E5%B7%A7/
+                - link "微分幾何" [ref=e102] [cursor=pointer]:
+                  - /url: /tags/%E5%BE%AE%E5%88%86%E5%B9%BE%E4%BD%95/
+                - link "高中物理" [ref=e103] [cursor=pointer]:
+                  - /url: /tags/%E9%AB%98%E4%B8%AD%E7%89%A9%E7%90%86/
+                - link "Frenet-Serret" [ref=e104] [cursor=pointer]:
+                  - /url: /tags/frenet-serret/
+                - link "動量" [ref=e105] [cursor=pointer]:
+                  - /url: /tags/%E5%8B%95%E9%87%8F/
+                - link "向心力" [ref=e106] [cursor=pointer]:
+                  - /url: /tags/%E5%90%91%E5%BF%83%E5%8A%9B/
+                - link "曲率" [ref=e107] [cursor=pointer]:
+                  - /url: /tags/%E6%9B%B2%E7%8E%87/
+                - link "段考" [ref=e108] [cursor=pointer]:
+                  - /url: /tags/%E6%AE%B5%E8%80%83/
+                - link "法向加速度" [ref=e109] [cursor=pointer]:
+                  - /url: /tags/%E6%B3%95%E5%90%91%E5%8A%A0%E9%80%9F%E5%BA%A6/
+      - contentinfo "Site Info" [ref=e112]:
+        - paragraph [ref=e113]:
+          - text: ©
+          - time [ref=e114]: "2026"
+          - link "g4kakau" [ref=e115] [cursor=pointer]:
+            - /url: https://github.com/g4kakau
+          - text: . 保留部份權利。
+        - paragraph [ref=e116]:
+          - text: 本網站使用
+          - link "Jekyll" [ref=e117] [cursor=pointer]:
+            - /url: https://jekyllrb.com
+          - text: 產生，採用
+          - link "Chirpy" [ref=e118] [cursor=pointer]:
+            - /url: https://github.com/cotes2020/jekyll-theme-chirpy
+          - text: 主題
+      - text: "# # # # # # # # # #"
+    - complementary "Scroll to Top"
