@@ -23,7 +23,7 @@ $$\require{physics}$$
 1. 一條光滑軌跡 $\vb{r}(t)$（一維可微流形的嵌入）
 2. 弧長參數化 $s$（選擇自然參數）
 3. 單位切向量 $\mathbf{T} = \dv{\vb{r}}{s}$
-4. 曲率 $\kappa = \left|\dv{\mathbf{T}}{s}\right|$，以及 $\dv{\mathbf{T}}{s} = \kappa\mathbf{N}$（Frenet–Serret 公式，平面版）
+4. 曲率 $\kappa = \lvert\dv{\mathbf{T}}{s}\rvert$，以及 $\dv{\mathbf{T}}{s} = \kappa\mathbf{N}$（Frenet–Serret 公式，平面版）
 
 這正是任何微分幾何教科書的第一章。微分幾何不是突然變難的學問——它是把「光滑曲線上的幾何量（方向、彎曲程度）」用微積分精確描述的語言。
 
@@ -175,3 +175,8 @@ $$
 - $\nabla_{\mathbf{T}}\mathbf{T} = 0$ 是「自由運動」的幾何定義
 
 廣義相對論看起來難，是因為計算技術（張量指標、Christoffel symbol）很繁瑣。但概念本身——**重力 = 時空彎曲，自由落體 = 測地線**——根植於你已經理解的向心加速度裡。
+
+<div class="cta-box">
+  <strong>還有問題嗎？</strong><br>
+  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
+</div>
