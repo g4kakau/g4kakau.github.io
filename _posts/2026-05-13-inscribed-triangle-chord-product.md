@@ -150,7 +150,4 @@ $$
 
 這正是複數在幾何問題中的威力——它能把多個距離的乘積，透過代數恆等式，壓縮成一個式子。
 
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
+{% include cta.html %}

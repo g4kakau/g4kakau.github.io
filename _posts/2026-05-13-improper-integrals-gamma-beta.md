@@ -216,7 +216,4 @@ $$\text{表面積} = 2\pi\int_1^{\infty} \frac{1}{x}\sqrt{1+\frac{1}{x^4}}\,\dd{
 
 體積有限，但表面積無窮大——「可以裝滿油漆，卻無法塗滿它的表面」。這個悖論其實說明的是：「體積有限」和「表面積有限」是兩個獨立的條件，互不蘊含。
 
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
+{% include cta.html %}

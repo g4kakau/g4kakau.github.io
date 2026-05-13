@@ -190,7 +190,4 @@ $$
 
 曲率最大的地方，恰好也是速率最小、重力完全用來改變方向的地方。這不是巧合，而是法向加速度 $a_n = \kappa v^2$ 這個等式的直接結果。
 
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
+{% include cta.html %}

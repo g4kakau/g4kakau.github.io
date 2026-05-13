@@ -176,7 +176,4 @@ $$
 
 廣義相對論看起來難，是因為計算技術（張量指標、Christoffel symbol）很繁瑣。但概念本身——**重力 = 時空彎曲，自由落體 = 測地線**——根植於你已經理解的向心加速度裡。
 
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
+{% include cta.html %}

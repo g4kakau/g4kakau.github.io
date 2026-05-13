@@ -177,7 +177,4 @@ $$
 
 分部積分本身是工具，難的是判斷什麼時候該用、$u$ 選誰最合適。多做幾道題，熟悉之後選法會變成直覺。
 
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
+{% include cta.html %}

@@ -207,7 +207,4 @@ $$\int \frac{x^2+2x+1}{(x^2+1)^2}\,\dd{x} = \arctan x - \frac{1}{x^2+1} + C$$
 4. 求未知係數（掩蓋法 + 比較係數）
 5. 逐項積分
 
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
+{% include cta.html %}

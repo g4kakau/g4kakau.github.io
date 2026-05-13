@@ -250,7 +250,4 @@ $$
 
 馬達、發電機、變壓器、電磁波——都只是這一個想法的不同組合。
 
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
+{% include cta.html %}

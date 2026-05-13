@@ -242,7 +242,4 @@ Lorentz boost 用的是雙曲角（rapidity）：$\cosh\phi = \gamma$，$\sinh\p
 
 雙曲函數不是憑空製造的新東西——它們是 $e^x$ 的偶數部分和奇數部分，是對稱與反對稱的分解。一旦接受這個角度，一切性質都變得自然。
 
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
+{% include cta.html %}
