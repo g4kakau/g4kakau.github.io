@@ -119,8 +119,4 @@ description: "靜力學的優雅定理，很多人背了結論但從來不知道
 
 ---
 
-<div class="cta-box">
-  <strong>靜力學一直是高中物理的隱形難關？</strong><br>
-  三力共點、力矩平衡、受力分析，這些同時需要空間想像力和系統性思考。<br>
-  <a href="/contact.html">→ 預約高中物理家教諮詢</a>
-</div>
+{% include cta.html %}

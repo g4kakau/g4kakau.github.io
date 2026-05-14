@@ -148,8 +148,4 @@ $\Delta p$ 不變，$\Delta t$ 拉長，$F$ 就縮小。**安全氣囊的作用�
 
 ---
 
-<div class="cta-box">
-  <strong>還在為高中物理卡關嗎？</strong><br>
-  我提供高中物理一對一家教，把觀念講清楚、把常見錯誤挖出來。<br>
-  <a href="/contact.html">→ 預約諮詢或了解課程方案</a>
-</div>
+{% include cta.html %}

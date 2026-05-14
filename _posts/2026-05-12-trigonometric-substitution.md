@@ -5,7 +5,7 @@ date: 2026-05-12 04:00:11 +0800
 categories: [大學數學, 微積分]
 tags: [積分技巧, 三角代換, 換元法, 大學微積分]
 math: true
-description: "根號積分讓你卡關？三角代換把 $\\sqrt{a^2 - x^2}$、$\\sqrt{x^2 − x^2}$、$\\sqrt{x^2 + a^2}$ 等三種根號一次解決。從橢圓面積推導直覺，附策略表與例題。"
+description: "根號積分讓你卡關？三角代換把 sqrt(a²-x²)、sqrt(x²-a²)、sqrt(x²+a²) 等三種根號一次解決。從橢圓面積推導直覺，附策略表與例題。"
 ---
 
 $$\require{physics}$$

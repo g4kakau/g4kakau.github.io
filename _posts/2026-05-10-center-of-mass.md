@@ -133,8 +133,4 @@ $$2 \times 15 + 3 \times v = 0 \implies v = -10\ \text{m/s}\ \text{（向左）}
 
 ---
 
-<div class="cta-box">
-  <strong>普物卡在質心和碰撞？</strong><br>
-  我提供高中物理、大學普通物理一對一家教，從你真正不懂的地方開始講。<br>
-  <a href="/contact.html">→ 預約諮詢</a>
-</div>
+{% include cta.html %}

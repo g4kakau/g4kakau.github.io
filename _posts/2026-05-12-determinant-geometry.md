@@ -40,7 +40,9 @@ $$
 
 接下來用兩個行列式性質把一般情況化為這個特例：
 
-1. **列對調變號**：$\det\begin{pmatrix} c & d \\ a & b \end{pmatrix} = -\det\begin{pmatrix} a & b \\ c & d \end{pmatrix}$
+1. **列對調變號**：
+
+   $$\det\begin{pmatrix} c & d \\ a & b \end{pmatrix} = -\det\begin{pmatrix} a & b \\ c & d \end{pmatrix}$$
 
 2. **某列加上另一列的倍數，行列式不變**：這對應到「斜切（shear）不改變面積」
 

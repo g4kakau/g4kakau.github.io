@@ -172,7 +172,4 @@ $$\int_0^t e^{-x^2}\, dx = \sum_{n=0}^{\infty} \frac{(-1)^n}{n!} \cdot \frac{t^{
 
 這個架構是大學微積分第二學期最核心的內容之一。學會之後，後續的 Fourier 分析、數值方法、物理中的小角近似，全部都會用到。
 
-<div class="cta-box">
-  <strong>對泰勒展開還有問題嗎？</strong><br>
-  <a href="/contact.html">→ 歡迎預約微積分家教課，直接針對你的題目討論</a>
-</div>
+{% include cta.html %}
