@@ -79,7 +79,7 @@ $$
 \mathbf{T} = \dv{\vb{r}}{s}
 $$
 
-由鏈鎖律，速度可以寫成：
+由連鎖律，速度可以寫成：
 
 $$
 \vb{v} = \dv{\vb{r}}{t} = \dv{\vb{r}}{s}\dv{s}{t} = \mathbf{T}\,v
@@ -95,7 +95,7 @@ $$
 \vb{a} = \dot{\vb{v}} = \dv{t}(v\mathbf{T}) = \dot{v}\,\mathbf{T} + v\,\dot{\mathbf{T}}
 $$
 
-用鏈鎖律把 $\dot{\mathbf{T}}$ 換成對弧長的微分：
+用連鎖律把 $\dot{\mathbf{T}}$ 換成對弧長的微分：
 
 $$
 \dot{\mathbf{T}} = \dv{\mathbf{T}}{s}\dv{s}{t} = \dv{\mathbf{T}}{s}\,v

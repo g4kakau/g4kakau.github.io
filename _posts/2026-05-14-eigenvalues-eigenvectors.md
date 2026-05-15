@@ -114,7 +114,7 @@ $$
 
 $$
 A - 5I = \begin{bmatrix}-9&-3\\3&1\end{bmatrix}
-\xrightarrow{\text{列化簡}} \begin{bmatrix}1 & 1/3 \\ 0 & 0\end{bmatrix}
+\xrightarrow{\text{行化簡}} \begin{bmatrix}1 & 1/3 \\ 0 & 0\end{bmatrix}
 $$
 
 解：$x_1 = -\dfrac{1}{3}x_2$，令 $x_2 = 3$，得特徵向量
@@ -125,7 +125,7 @@ $$\vb{v}_1 = \begin{bmatrix}-1\\3\end{bmatrix}$$
 
 $$
 A + 3I = \begin{bmatrix}-1&-3\\3&9\end{bmatrix}
-\xrightarrow{\text{列化簡}} \begin{bmatrix}1 & 3 \\ 0 & 0\end{bmatrix}
+\xrightarrow{\text{行化簡}} \begin{bmatrix}1 & 3 \\ 0 & 0\end{bmatrix}
 $$
 
 解：$x_1 = -3x_2$，令 $x_2 = 1$，得特徵向量
