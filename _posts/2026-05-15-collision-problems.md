@@ -38,39 +38,45 @@ $$\require{physics}$$
 
 **動量守恆：**
 
-$$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2' \tag{1}$$
+\begin{equation}\label{eq:collision-momentum}
+m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'
+\end{equation}
 
 **動能守恆：**
 
-$$\frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2 = \frac{1}{2}m_1 v_1'^2 + \frac{1}{2}m_2 v_2'^2 \tag{2}$$
+\begin{equation}\label{eq:collision-kinetic-energy}
+\frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2 = \frac{1}{2}m_1 v_1'^2 + \frac{1}{2}m_2 v_2'^2
+\end{equation}
 
-整理 (1)：$m_1(v_1 - v_1') = m_2(v_2' - v_2)$
+整理 \eqref{eq:collision-momentum}：$m_1(v_1 - v_1') = m_2(v_2' - v_2)$
 
-整理 (2)（乘以 2）：$m_1(v_1^2 - v_1'^2) = m_2(v_2'^2 - v_2^2)$
+整理 \eqref{eq:collision-kinetic-energy}（乘以 2）：$m_1(v_1^2 - v_1'^2) = m_2(v_2'^2 - v_2^2)$
 
 即 $m_1(v_1-v_1')(v_1+v_1') = m_2(v_2'-v_2)(v_2'+v_2)$
 
 兩式相除（假設 $v_1 \neq v_1'$，即確實發生碰撞）：
 
-$$v_1 + v_1' = v_2' + v_2 \implies v_1 - v_2 = v_2' - v_1' \tag{3}$$
+\begin{equation}\label{eq:collision-relative-speed}
+v_1 + v_1' = v_2' + v_2 \implies v_1 - v_2 = v_2' - v_1'
+\end{equation}
 
-(3) 式有個優美的物理意義：**彈性碰撞中，相對接近速度等於相對分離速度**（恢復係數 $e = 1$）。
+\eqref{eq:collision-relative-speed} 有個優美的物理意義：**彈性碰撞中，相對接近速度等於相對分離速度**（恢復係數 $e = 1$）。
 
-聯立 (1) 和 (3) 解出：
+聯立 \eqref{eq:collision-momentum} 和 \eqref{eq:collision-relative-speed} 解出：
 
-$$
+\begin{equation}\label{eq:elastic-collision-v1}
 \boxed{v_1' = \frac{m_1 - m_2}{m_1 + m_2}v_1 + \frac{2m_2}{m_1 + m_2}v_2}
-$$
+\end{equation}
 
-$$
+\begin{equation}\label{eq:elastic-collision-v2}
 \boxed{v_2' = \frac{2m_1}{m_1 + m_2}v_1 + \frac{m_2 - m_1}{m_1 + m_2}v_2}
-$$
+\end{equation}
 
 ---
 
 ## 特殊情況速記
 
-以 $v_2 = 0$（靜止目標）代入公式，觀察各種質量比的結果：
+以 $v_2 = 0$（靜止目標）代入 \eqref{eq:elastic-collision-v1}、\eqref{eq:elastic-collision-v2}，觀察各種質量比的結果：
 
 | 質量關係 | $v_1'$ | $v_2'$ | 物理圖像 |
 |:---:|:---:|:---:|---|
@@ -88,7 +94,9 @@ $m_1 = m_2$ 的情況是撞球比賽的物理原理：正碰後母球靜止，�
 
 $$m_1 v_1 + m_2 v_2 = (m_1 + m_2)v'$$
 
-$$\boxed{v' = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}}$$
+\begin{equation}\label{eq:perfectly-inelastic-velocity}
+\boxed{v' = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}}
+\end{equation}
 
 **動能損失：**
 
@@ -96,7 +104,9 @@ $$\Delta KE = \frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2 - \frac{1}{2}(m_1+m_2)
 
 代入化簡後得到：
 
-$$\Delta KE = \frac{m_1 m_2}{2(m_1+m_2)}(v_1 - v_2)^2 \geq 0$$
+\begin{equation}\label{eq:inelastic-energy-loss}
+\Delta KE = \frac{m_1 m_2}{2(m_1+m_2)}(v_1 - v_2)^2 \geq 0
+\end{equation}
 
 動能損失量只與**相對速度**和**約化質量**（reduced mass）有關。
 
@@ -106,11 +116,11 @@ $$\Delta KE = \frac{m_1 m_2}{2(m_1+m_2)}(v_1 - v_2)^2 \geq 0$$
 
 質量 $m = 0.01\,\text{kg}$ 的子彈以 $v_0 = 400\,\text{m/s}$ 射入質量 $M = 1\,\text{kg}$ 的靜止木塊，嵌在裡面。求：(a) 共同速度，(b) 動能損失。
 
-**(a)** 完全非彈性碰撞：
+**(a)** 完全非彈性碰撞，套用 \eqref{eq:perfectly-inelastic-velocity}：
 
 $$v' = \frac{mv_0}{m+M} = \frac{(0.01)(400)}{1.01} \approx 3.96\,\text{m/s}$$
 
-**(b)** 動能損失：
+**(b)** 動能損失，套用 \eqref{eq:inelastic-energy-loss}：
 
 $$\Delta KE = \frac{1}{2}mv_0^2 - \frac{1}{2}(m+M)v'^2 = 800 - \frac{1}{2}(1.01)(3.96)^2 \approx 800 - 7.9 \approx 792\,\text{J}$$
 
@@ -122,7 +132,7 @@ $$\Delta KE = \frac{1}{2}mv_0^2 - \frac{1}{2}(m+M)v'^2 = 800 - \frac{1}{2}(1.01)
 
 質量 $3\,\text{kg}$ 的物體以 $4\,\text{m/s}$ 向右移動，撞上質量 $1\,\text{kg}$ 的靜止物體，發生彈性碰撞。求碰後各物體速度。
 
-代入公式（$m_1 = 3$，$m_2 = 1$，$v_1 = 4$，$v_2 = 0$）：
+代入 \eqref{eq:elastic-collision-v1}、\eqref{eq:elastic-collision-v2}（$m_1 = 3$，$m_2 = 1$，$v_1 = 4$，$v_2 = 0$）：
 
 $$v_1' = \frac{3-1}{3+1}(4) = \frac{2}{4}(4) = 2\,\text{m/s}$$
 
@@ -178,7 +188,9 @@ $$v_\text{cm} = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$$
 
 恢復係數（coefficient of restitution）$e$ 定義為：
 
-$$e = \frac{\text{分離相對速度}}{\text{接近相對速度}} = \frac{v_2' - v_1'}{v_1 - v_2}$$
+\begin{equation}\label{eq:coefficient-of-restitution}
+e = \frac{\text{分離相對速度}}{\text{接近相對速度}} = \frac{v_2' - v_1'}{v_1 - v_2}
+\end{equation}
 
 | 碰撞類型 | 恢復係數 |
 |---|:---:|
@@ -186,7 +198,7 @@ $$e = \frac{\text{分離相對速度}}{\text{接近相對速度}} = \frac{v_2' -
 | 完全非彈性碰撞 | $e = 0$ |
 | 一般非彈性碰撞 | $0 < e < 1$ |
 
-用恢復係數可以替代動能守恆方程式，搭配動量守恆方程式求解非完全彈性碰撞（已知 $e$ 的問題）。
+用恢復係數 \eqref{eq:coefficient-of-restitution} 可以替代動能守恆方程式，搭配動量守恆方程式求解非完全彈性碰撞（已知 $e$ 的問題）。
 
 ---
 

@@ -60,9 +60,9 @@ $$
 a_n = \sqrt{g^2 - g^2\frac{v_y^2}{|\vb{v}|^2}} = g\frac{|v_x|}{|\vb{v}|} = g\frac{v_0\cos\alpha}{|\vb{v}(t)|}
 $$
 
-$$
+\begin{equation}\label{eq:projectile-normal-acceleration}
 \boxed{a_n(t) = \frac{gv_0\cos\alpha}{|\vb{v}(t)|}}
-$$
+\end{equation}
 
 物理直覺：重力 $g$ 裡只有垂直於速度的那一部分在彎曲軌跡；平行於速度的部分只改變速率，不改變方向。
 
@@ -70,15 +70,15 @@ $$
 
 ## 三、曲率與曲率半徑
 
-由 $a_n = \kappa v^2$，可以直接得到軌跡的曲率：
+由 $a_n = \kappa v^2$ 與 \eqref{eq:projectile-normal-acceleration}，可以直接得到軌跡的曲率：
 
 $$
 \kappa(t) = \frac{a_n}{|\vb{v}|^2} = \frac{gv_0\cos\alpha}{|\vb{v}(t)|^3}
 $$
 
-$$
+\begin{equation}\label{eq:projectile-curvature-time}
 \boxed{\kappa(t) = \frac{gv_0\cos\alpha}{\left[(v_0\cos\alpha)^2 + (v_0\sin\alpha - gt)^2\right]^{3/2}}}
-$$
+\end{equation}
 
 曲率半徑：
 
@@ -124,7 +124,7 @@ $$
 
 這件事有直覺支持，但也可以用微分法嚴格證明。
 
-令 $A = (v_0\cos\alpha)^2$（常數），$u(t) = v_0\sin\alpha - gt = v_y(t)$，則：
+令 $A = (v_0\cos\alpha)^2$（常數），$u(t) = v_0\sin\alpha - gt = v_y(t)$，則 \eqref{eq:projectile-curvature-time} 可寫成：
 
 $$
 \kappa(t) = C\,(A + u^2)^{-3/2}, \qquad C = gv_0\cos\alpha > 0
@@ -176,7 +176,7 @@ $$
 = \frac{\dfrac{g}{v_0^2\cos^2\alpha}}{\left[1+\left(\tan\alpha - \dfrac{g}{v_0^2\cos^2\alpha}x\right)^2\right]^{3/2}}
 $$
 
-把 $x = v_0\cos\alpha\cdot t$ 代回，結果與 $\kappa(t)$ 完全吻合——兩條路殊途同歸。
+把 $x = v_0\cos\alpha\cdot t$ 代回，結果與 \eqref{eq:projectile-curvature-time} 完全吻合——兩條路殊途同歸。
 
 ---
 
@@ -188,6 +188,6 @@ $$
 | **最高點** | $0$ | $g$（全部） | $g/(v_0^2\cos^2\alpha)$（**最大**） |
 | 落地前 | 很負 | 趨近 0 | 趨近 0 |
 
-曲率最大的地方，恰好也是速率最小、重力完全用來改變方向的地方。這不是巧合，而是法向加速度 $a_n = \kappa v^2$ 這個等式的直接結果。
+曲率最大的地方，恰好也是速率最小、重力完全用來改變方向的地方。這不是巧合，而是 \eqref{eq:projectile-curvature-time} 背後的法向加速度關係 $a_n = \kappa v^2$ 的直接結果。
 
 {% include cta.html %}

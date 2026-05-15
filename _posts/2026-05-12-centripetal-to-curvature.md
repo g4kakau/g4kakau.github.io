@@ -136,9 +136,9 @@ $$
 
 所以**法向加速度大小**（向心加速度的推廣）是：
 
-$$
+\begin{equation}\label{eq:normal-acceleration-curvature}
 \boxed{a_n = \kappa v^2}
-$$
+\end{equation}
 
 ---
 
@@ -183,13 +183,13 @@ $R$ 越大，走很久方向才轉一點（很平緩）；$R$ 越小，走一點
 - 弧長與圓心角的關係：$s = r\theta$，所以 $\dv{s}{\theta} = r$
 - 因此 $\kappa = \dv{\theta}{s} = 1/r$，曲率半徑 $R = r$
 
-代入 $a_n = \kappa v^2$：
+代入 \eqref{eq:normal-acceleration-curvature}：
 
 $$
 a_n = \frac{v^2}{r}
 $$
 
-這正是高中公式——但它現在只是 $a_n = \kappa v^2$ 在「曲率恆定」這個特殊情況下的結果。
+這正是高中公式——但它現在只是 \eqref{eq:normal-acceleration-curvature} 在「曲率恆定」這個特殊情況下的結果。
 
 任何光滑曲線的每一點都有各自的曲率 $\kappa(s)$，因此「向心加速度」在不同點可以不同，拋體軌跡、橢圓軌道都適用同一套框架。
 

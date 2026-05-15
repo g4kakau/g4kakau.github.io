@@ -106,7 +106,9 @@ $$\int_0^1 \ln x\,\dd{x} = -1$$
 
 **Gamma 函數**（$\Gamma$ function）是一個瑕積分定義的特殊函數：
 
-$$\boxed{\Gamma(z) = \int_0^{\infty} t^{z-1} e^{-t}\,\dd{t}, \quad \operatorname{Re}(z) > 0}$$
+\begin{equation}\label{eq:gamma-definition}
+\boxed{\Gamma(z) = \int_0^{\infty} t^{z-1} e^{-t}\,\dd{t}, \quad \operatorname{Re}(z) > 0}
+\end{equation}
 
 它又稱為**歐拉第二類積分**（Euler integral of the second kind）。
 
@@ -116,13 +118,15 @@ $$\boxed{\Gamma(z) = \int_0^{\infty} t^{z-1} e^{-t}\,\dd{t}, \quad \operatorname
 
 $$\Gamma(z+1) = \int_0^{\infty} t^z e^{-t}\,\dd{t} = \left[-t^z e^{-t}\right]_0^{\infty} + z\int_0^{\infty} t^{z-1} e^{-t}\,\dd{t} = z\,\Gamma(z)$$
 
-$$\boxed{\Gamma(z+1) = z\,\Gamma(z)}$$
+\begin{equation}\label{eq:gamma-recurrence}
+\boxed{\Gamma(z+1) = z\,\Gamma(z)}
+\end{equation}
 
 **與階乘的關係：** 由於 $\Gamma(1) = \int_0^{\infty} e^{-t}\,\dd{t} = 1$，反覆應用遞推關係：
 
 $$\Gamma(n) = (n-1)!, \quad n \in \mathbb{N}$$
 
-Gamma 函數是把階乘**推廣到非整數**的自然方式——例如 $\Gamma(3.5) = 2.5! = \frac{5}{2}\cdot\frac{3}{2}\cdot\frac{1}{2}\cdot\sqrt{\pi}$。
+Gamma 函數是把階乘**推廣到非整數**的自然方式——例如可由 \eqref{eq:gamma-recurrence} 算出 $\Gamma(3.5) = 2.5! = \frac{5}{2}\cdot\frac{3}{2}\cdot\frac{1}{2}\cdot\sqrt{\pi}$。
 
 **特殊值：** $\Gamma\!\left(\dfrac{1}{2}\right) = \sqrt{\pi}$
 
@@ -136,7 +140,7 @@ $$\Gamma\!\left(\tfrac{3}{2}\right) = \tfrac{1}{2}\Gamma\!\left(\tfrac{1}{2}\rig
 
 ### 計算例題
 
-**例 6：** 計算 $\displaystyle\int_0^{\infty} x^3 e^{-x}\,\dd{x}$
+**例 6：** 計算 $\displaystyle\int_0^{\infty} x^3 e^{-x}\,\dd{x}$。由 \eqref{eq:gamma-definition}：
 
 $$\int_0^{\infty} x^3 e^{-x}\,\dd{x} = \Gamma(4) = 3! = 6$$
 
@@ -158,7 +162,9 @@ $$\int_0^{\infty} x^{\alpha-1} e^{-x/\beta}\,\dd{x} = \beta^{\alpha}\,\Gamma(\al
 
 **Beta 函數**（$\mathrm{B}$ function）定義為：
 
-$$\boxed{\mathrm{B}(x,y) = \int_0^1 t^{x-1}(1-t)^{y-1}\,\dd{t}, \quad x,y > 0}$$
+\begin{equation}\label{eq:beta-definition}
+\boxed{\mathrm{B}(x,y) = \int_0^1 t^{x-1}(1-t)^{y-1}\,\dd{t}, \quad x,y > 0}
+\end{equation}
 
 ### 關鍵性質
 
@@ -170,7 +176,9 @@ $$\mathrm{B}(x,y) = \mathrm{B}(y,x)$$
 
 **與 Gamma 函數的關係：**
 
-$$\boxed{\mathrm{B}(x,y) = \frac{\Gamma(x)\,\Gamma(y)}{\Gamma(x+y)}}$$
+\begin{equation}\label{eq:beta-gamma-relation}
+\boxed{\mathrm{B}(x,y) = \frac{\Gamma(x)\,\Gamma(y)}{\Gamma(x+y)}}
+\end{equation}
 
 這個等式的證明需要二重積分換元（雅可比行列式），結論是：$\Gamma(x)\cdot\Gamma(y) = \mathrm{B}(x,y)\cdot\Gamma(x+y)$。
 
@@ -182,7 +190,7 @@ $$\mathrm{B}(x,y) = 2\int_0^{\pi/2} (\sin\theta)^{2x-1}(\cos\theta)^{2y-1}\,\dd{
 
 ### 計算例題
 
-**例 8：** 計算 $\displaystyle\int_0^1 x^4(1-x)^6\,\dd{x}$
+**例 8：** 計算 $\displaystyle\int_0^1 x^4(1-x)^6\,\dd{x}$。套用 \eqref{eq:beta-definition} 與 \eqref{eq:beta-gamma-relation}：
 
 $$\int_0^1 x^4(1-x)^6\,\dd{x} = \mathrm{B}(5,7) = \frac{\Gamma(5)\,\Gamma(7)}{\Gamma(12)} = \frac{4!\cdot 6!}{11!} = \frac{24 \times 720}{39916800} \approx 4.33 \times 10^{-4}$$
 

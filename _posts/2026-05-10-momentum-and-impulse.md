@@ -67,7 +67,9 @@ $$\vec{J} = \vec{F} \cdot \Delta t$$
 
 這是整個章節最重要的公式：
 
-$$\boxed{\vec{J}_{\text{合}} = \Delta\vec{p}}$$
+\begin{equation}\label{eq:impulse-momentum-theorem}
+\boxed{\vec{J}_{\text{合}} = \Delta\vec{p}}
+\end{equation}
 
 白話版：**合力對物體作用一段時間，等於物體動量的改變量。**
 
@@ -81,7 +83,7 @@ $$\vec{F}_{\text{合}} = m\vec{a} = m\frac{\Delta\vec{v}}{\Delta t}$$
 
 $$\vec{F}_{\text{合}} \cdot \Delta t = m\Delta\vec{v} = \Delta\vec{p}$$
 
-這正是衝量－動量定理。事實上，這才是牛頓第二定律的**原始形式**，比 $F=ma$ 更基本。
+這正是 \eqref{eq:impulse-momentum-theorem} 的衝量－動量定理。事實上，這才是牛頓第二定律的**原始形式**，比 $F=ma$ 更基本。
 
 ---
 
@@ -91,7 +93,7 @@ $$\vec{F}_{\text{合}} \cdot \Delta t = m\Delta\vec{v} = \Delta\vec{p}$$
 
 $$\vec{F}_{\text{avg}} = \frac{\Delta\vec{p}}{\Delta t}$$
 
-這個公式非常好用，也是大多數考題的計算核心。
+這是由 \eqref{eq:impulse-momentum-theorem} 直接得到的公式，非常好用，也是大多數考題的計算核心。
 
 ---
 
