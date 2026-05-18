@@ -6,9 +6,13 @@ categories: [大學物理, 電路學]
 tags: [克希荷夫定律, KCL, KVL, 節點電壓法, 電路分析, 電荷守恆, 電位, 競賽物理]
 math: true
 description: "克希荷夫定律不是憑空定義的電路規則，而是從電荷守恆與電場保守性推導出來的。本文說明 KCL 與 KVL 的物理根源，以及它們如何讓我們系統性地列出電路方程式。立方晶格等效電阻系列第二篇。"
+media_subpath: /assets/img/posts/cube-resistor
+image:
 ---
 
 $$\require{physics}$$
+
+<link rel="stylesheet" href="/assets/css/posts-custom.css">
 
 > 《立方晶格等效電阻》系列：[第一篇](/posts/resistor-cube-1-node-voltage/) ｜ **第二篇** ｜ [第三篇](/posts/resistor-cube-3-symmetry/) ｜ [第四篇](/posts/resistor-cube-4-group-theory/)
 
@@ -37,11 +41,15 @@ $$\require{physics}$$
 
 **KCL 的正式敘述：**
 
-對電路中任意節點 $i$，流入節點的電流總和等於零：
+對電路中任意節點 $i$，**流入電流總和等於流出電流總和**：
+
+$$\sum_{\text{流入}} I = \sum_{\text{流出}} I$$
+
+若把「從鄰居 $j$ 流向節點 $i$」統一定義為正方向——流出電流（實際方向為 $i \to j$）記為負值——則兩側合併，得到等價的緊湊形式：
 
 $$\sum_{j \sim i} I_{j \to i} = 0 \tag{1}\label{eq2:kcl}$$
 
-其中求和遍歷所有與 $i$ 相鄰的節點 $j$，$I_{j \to i}$ 代表從 $j$ 流向 $i$ 的電流（可以為負，表示實際方向相反）。
+這裡 $j \sim i$ 表示節點 $j$ 與節點 $i$ **相鄰**（兩者之間有電阻直接相連），求和遍歷所有鄰居 $j$。$I_{j \to i}$ 代表從 $j$ 流向 $i$ 的電流；若實際電流方向相反（從 $i$ 流向 $j$），則 $I_{j \to i} < 0$。
 
 用電位表示，從 $j$ 到 $i$ 流過電阻 $R_{ij}$ 的電流是
 
@@ -53,21 +61,25 @@ $$\sum_{j \sim i} \frac{V_j - V_i}{R_{ij}} = 0 \tag{3}\label{eq2:kcl-node}$$
 
 這就是**節點電壓法**（node voltage method）的核心方程式。每個未知電位的節點列一條這樣的方程式，就能解出整個電路。
 
-![KCL 節點流入流出示意圖](/assets/img/posts/cube-resistor-fig2-kcl-zh-light.svg){: .light w="760" }
-![KCL 節點流入流出示意圖](/assets/img/posts/cube-resistor-fig2-kcl-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 2-1：KCL 的核心圖像：穩態節點不累積電荷，因此流入電流總和等於流出電流總和。</em></p>
+> **KCL（克希荷夫電流定律）**：穩態電路中，任意節點的流入電流總和等於流出電流總和；等價地，以統一正方向定義後，所有鄰居電流的代數和為零（式 $\eqref{eq2:kcl}$）。**物理根源：電荷守恆。**
+{: .prompt-tip }
 
-### 與馬克士威方程組的關係
+![KCL 節點流入流出示意圖](kcl-zh-light.svg){: .light w="760" }
+![KCL 節點流入流出示意圖](kcl-zh-dark.svg){: .dark w="760" }
 
-更深層地說，KCL 是馬克士威方程組中電流連續性方程式（continuity equation）在穩態下的推論：
+**圖 1：** KCL 的核心圖像：穩態節點不累積電荷，因此流入電流總和等於流出電流總和。
+{: .fig-caption }
 
-$$\frac{\partial \rho}{\partial t} + \nabla \cdot \vb{J} = 0 \tag{4}\label{eq2:continuity}$$
+### 與電流連續性的關係
 
-穩態時 $\partial \rho / \partial t = 0$，所以 $\nabla \cdot \vb{J} = 0$：電流密度的散度為零，也就是「電流線不會無端消失或冒出」。對任一節點積分，就得到式 $\eqref{eq2:kcl}$。
+更深層地說，KCL 是電流連續性方程式（continuity equation）在穩態下的推論：
 
-![連續性方程式控制體積示意圖](/assets/img/posts/cube-resistor-fig2-continuity-zh-light.svg){: .light w="760" }
-![連續性方程式控制體積示意圖](/assets/img/posts/cube-resistor-fig2-continuity-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 2-2：把節點附近看成一個控制體積，連續性方程式說明電荷流入與流出不能任意失衡；穩態時就化為 KCL。</em></p>
+$$\pdv{\rho}{t} + \divergence \vb{J} = 0 \tag{4}\label{eq2:continuity}$$
+
+穩態時 $\pdv*{\rho}{t} = 0$，所以 $\divergence \vb{J}  = 0$：電流密度的散度為零，也就是「電流線不會無端消失或冒出」。對任一節點積分，就得到式 $\eqref{eq2:kcl}$。想深入了解連續性方程式與守恆律的關係，可參考 Griffiths《Introduction to Electrodynamics》第 5 章，或 Jackson《Classical Electrodynamics》第 6 章。
+
+> 把節點附近看成一個控制體積（control volume）：電流連續性方程式說明電荷不能在此無端積累或消失；穩態時散度為零，積分後就得到 KCL——這是「每個節點的電流代數和為零」的深層原因。
+{: .prompt-info }
 
 ---
 
@@ -89,17 +101,25 @@ $$\sum_{\text{迴路中的元件}} V_k = 0 \tag{6}\label{eq2:kvl}$$
 
 「電壓降」指的是沿著選定的行進方向，元件高電位端減去低電位端的差值（若行進方向與電流方向相同，電阻有正的電壓降 $IR$；若反向，則為 $-IR$）。
 
-![KVL 閉合迴路示意圖](/assets/img/posts/cube-resistor-fig2-kvl-zh-light.svg){: .light w="760" }
-![KVL 閉合迴路示意圖](/assets/img/posts/cube-resistor-fig2-kvl-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 2-3：KVL 關心的是沿閉合迴路走一圈後，電位變化的總和必須回到零。</em></p>
+> **KVL（克希荷夫電壓定律）**：沿任意閉合迴路，所有元件的電壓降代數和為零（式 $\eqref{eq2:kvl}$）。**物理根源：靜電場是保守場（路徑無關）。**  
+> ⚠️ 若迴路圍住時變磁通，KVL 失效，需改用法拉第定律。
+{: .prompt-tip }
+
+![KVL 閉合迴路示意圖](kvl-zh-light.svg){: .light w="760" }
+![KVL 閉合迴路示意圖](kvl-zh-dark.svg){: .dark w="760" }
+
+**圖 2：** KVL 關心的是沿閉合迴路走一圈後，電位變化的總和必須回到零。
+{: .fig-caption }
 
 ### KVL 適用的條件
 
-KVL 要求電場是保守場，也就是空間中沒有**時變磁場**穿過迴路（法拉第定律：$\oint \vb{E} \cdot \dd{\vb{l}} = -\dv{\Phi_B}{t}$）。在直流電路或低頻交流電路中，這個條件通常滿足。含有電感（inductor）或快速變化電流的電路需要更小心。
+KVL 要求電場是保守場，也就是空間中沒有**時變磁場**穿過迴路（法拉第定律：$\oint \vb{E} \cdot \dd{\vb{l}} = -\dv*{\Phi_B}{t}$）。在直流電路或低頻交流電路中，這個條件通常滿足。含有電感（inductor）或快速變化電流的電路需要更小心。
 
-![時變磁通使一般 KVL 失效的示意圖](/assets/img/posts/cube-resistor-fig2-kvl-faraday-zh-light.svg){: .light w="760" }
-![時變磁通使一般 KVL 失效的示意圖](/assets/img/posts/cube-resistor-fig2-kvl-faraday-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 2-4：若閉合迴路中穿過時變磁通，感應電場不再是保守場，一般形式的 KVL 必須改用法拉第定律修正。</em></p>
+![時變磁通使一般 KVL 失效的示意圖](faraday-loop-light.png){: .light w="480" }
+![時變磁通使一般 KVL 失效的示意圖](faraday-loop-dark.png){: .dark w="480" }
+
+**圖 3：** 若閉合迴路中穿過時變磁通，感應電場不再是保守場，一般形式的 KVL 必須改用法拉第定律修正。
+{: .fig-caption }
 
 ## KCL 與 KVL 的互補關係
 
@@ -122,9 +142,11 @@ $$
 A \xrightarrow{R_1} B \xrightarrow{R_3} D, \quad A \xrightarrow{R_2} C \xrightarrow{R_4} D, \quad B \xrightarrow{R_5} C
 $$
 
-![惠斯通電橋平衡示意圖](/assets/img/posts/cube-resistor-fig2-wheatstone-zh-light.svg){: .light w="760" }
-![惠斯通電橋平衡示意圖](/assets/img/posts/cube-resistor-fig2-wheatstone-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 2-5：惠斯通電橋平衡時，$B$ 與 $C$ 電位相同，因此中間支路 $R_5$ 沒有電流。</em></p>
+![惠斯通電橋平衡示意圖](wheatstone-light.png){: .light w="380" }
+![惠斯通電橋平衡示意圖](wheatstone-dark.png){: .dark w="380" }
+
+**圖 4：** 惠斯通電橋平衡時，$B$ 與 $C$ 電位相同，因此中間支路 $R_5$ 沒有電流。
+{: .fig-caption }
 
 設 $V_A = V$，$V_D = 0$，求各節點電位。
 
@@ -146,7 +168,7 @@ $$\frac{V - V_C}{R_2} + \frac{V_B - V_C}{R_5} = \frac{V_C - V_D}{R_4} \tag{8}\la
 
 回顧[第一篇](/posts/resistor-cube-1-node-voltage/)的立方體問題。我們設起點 A 電位為 $1$，終點 H 電位為 $0$，然後對 B 型和 C 型節點各列一條 KCL 方程式：
 
-對 B 型節點（代表 $(1,0,0)$，電位 $b$，3 個鄰居電位分別為 $1, c, c$），套用式 $\eqref{eq2:kcl-node}$（即[第一篇的式 (1)](/posts/resistor-cube-1-node-voltage/)）：
+對 B 型節點（代表 $(1,0,0)$，電位 $b$，3 個鄰居電位分別為 $1, c, c$），套用式 $\eqref{eq2:kcl-node}$（即[第一篇的節點電壓方程式](/posts/resistor-cube-1-node-voltage/)）：
 
 $$\frac{1-b}{R} + \frac{c-b}{R} + \frac{c-b}{R} = 0$$
 

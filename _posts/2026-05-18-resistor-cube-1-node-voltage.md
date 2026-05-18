@@ -7,9 +7,15 @@ tags: [等效電阻, 節點電壓法, 克希荷夫定律, 電路分析, 競賽�
 math: true
 mermaid: true
 description: "一個正方體的 12 條邊上各有一顆電阻 R，體對角線兩端的等效電阻是多少？從節點電壓法出發，用對稱性把 8 個節點壓縮成 4 類，列 2 條 KCL 方程式，得出 5R/6 這個優美的答案。立方晶格等效電阻系列第一篇。"
+media_subpath: /assets/img/posts/cube-resistor
+image:
+  path: cube-resistor-og-light.png
+  alt: "正方體電阻網路全圖。12 條邊的電阻均為 R。"
 ---
 
 $$\require{physics}$$
+
+<link rel="stylesheet" href="/assets/css/posts-custom.css">
 
 > 《立方晶格等效電阻》系列：**第一篇** ｜ [第二篇](/posts/resistor-cube-2-kirchhoff/) ｜ [第三篇](/posts/resistor-cube-3-symmetry/) ｜ [第四篇](/posts/resistor-cube-4-group-theory/)
 
@@ -17,9 +23,12 @@ $$\require{physics}$$
 
 一個正方體，12 條邊上各有一顆電阻 $R$。把電源接在**體對角線的兩個頂點**，等效電阻是多少？
 
-<!-- 圖 1-0（OC，待補）：正方體電阻網路全圖。12 條邊各有電阻 R，標示起點 A=(0,0,0)、終點 H=(1,1,1)，體對角線以虛線連接。-->
-> **〔圖 1-0 待補〕** 正方體電阻網路：12 條邊各有電阻 $R$，體對角線兩端分別為起點 $A$ 與終點 $H$。
-{: .prompt-info }
+
+![正方體電阻網路全圖](cube-resistor-light.png){: .light w="480" }
+![正方體電阻網路全圖](cube-resistor-dark.png){: .dark w="480" }
+
+**圖 1：** 正方體電阻網路全圖。12 條邊的電阻均為 $R$。電源接在體對角線的兩個頂點 $A$ 和 $H$。
+{: .fig-caption }
 
 這是一道赫赫有名的競賽物理題，答案是
 
@@ -41,9 +50,12 @@ $$\boxed{R_{\text{eq}} = \frac{5}{6}R}$$
 
 相鄰節點之間（即恰好有一個座標不同的兩點之間）有一顆電阻 $R$，共 12 顆。
 
-<!-- 圖 1-A（待補）：正方體頂點座標示意圖，斜投影，各頂點標示 (x,y,z) 二進位座標，三條座標軸箭頭。-->
-> **〔圖 1-A 待補〕** 正方體頂點的座標標記：$(0,0,0)$ 至 $(1,1,1)$，三條座標軸 $x,y,z$ 以箭頭標示。
-{: .prompt-info }
+
+![正方體電阻網路全圖](cube-coordinates-light.png){: .light w="540" }
+![正方體電阻網路全圖](cube-coordinates-dark.png){: .dark w="540" }
+
+**圖 2：** 正方體頂點的座標標記：$(0,0,0)$ 至 $(1,1,1)$，三條座標軸 $x,y,z$ 以箭頭標示。
+{: .fig-caption }
 
 ---
 
@@ -86,9 +98,11 @@ $$\sum_{\text{鄰居 }j} \frac{V_j - V_i}{R} = 0 \label{eq1:kcl}$$
 | C 型（3 個） | $(1,1,0),\ (1,0,1),\ (0,1,1)$ | $c$  |
 | 終點 H       | $(1,1,1)$                     | $0$  |
 
-![正方體電阻網路節點分類圖](/assets/img/posts/cube-resistor-fig1-node-classification-zh-light.svg){: .light w="760" }
-![正方體電阻網路節點分類圖](/assets/img/posts/cube-resistor-fig1-node-classification-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 1-1：12 條邊各有電阻 $R$ 的正方體。節點依對稱性分為 4 類：起點 A、B 型、C 型、終點 H（對稱性的嚴格討論見<a href="/posts/resistor-cube-3-symmetry/">第三篇</a>）。</em></p>
+![正方體電阻網路節點分類圖](node-classification-zh-light.svg){: .light w="760" }
+![正方體電阻網路節點分類圖](node-classification-zh-dark.svg){: .dark w="760" }
+
+**圖 3：** 12 條邊各有電阻 $R$ 的正方體。節點依對稱性分為 4 類：起點 A、B 型、C 型、終點 H（對稱性的嚴格討論見[第三篇](/posts/resistor-cube-3-symmetry/)）。
+{: .fig-caption }
 
 6 個方程式簡化成 2 個未知數。
 
@@ -136,9 +150,11 @@ $$
 2(b - c) - c = 0 \implies 3c - 2b = 0 \tag{2}\label{eq1:c-kcl}
 $$
 
-![B 型與 C 型代表節點的 KCL 鄰居](/assets/img/posts/cube-resistor-fig1-kcl-representatives-zh-light.svg){: .light w="760" }
-![B 型與 C 型代表節點的 KCL 鄰居](/assets/img/posts/cube-resistor-fig1-kcl-representatives-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 1-2：用對稱性分類後，只要對 B 型與 C 型各選一個代表節點列 KCL；其他同類節點的方程式會完全相同。</em></p>
+![B 型與 C 型代表節點的 KCL 鄰居](kcl-representatives-zh-light.svg){: .light w="760" }
+![B 型與 C 型代表節點的 KCL 鄰居](kcl-representatives-zh-dark.svg){: .dark w="760" }
+
+**圖 4：** 用對稱性分類後，只要對 B 型與 C 型各選一個代表節點列 KCL；其他同類節點的方程式會完全相同。
+{: .fig-caption }
 
 ---
 
@@ -168,9 +184,11 @@ $$
 
 起點 A 連到 3 個 B 型節點，每條邊的電流為
 
-![從 A 流出的三條相同電流](/assets/img/posts/cube-resistor-fig1-current-from-a-zh-light.svg){: .light w="760" }
-![從 A 流出的三條相同電流](/assets/img/posts/cube-resistor-fig1-current-from-a-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 1-3：三個 B 型節點電位相同，所以從 A 流出的三條邊電流也相同，總電流是單條電流的 3 倍。</em></p>
+![從 A 流出的三條相同電流](current-from-node-a-light.png){: .light w="480" }
+![從 A 流出的三條相同電流](current-from-node-a-dark.png){: .dark w="480" }
+
+**圖 5：** 三個 B 型節點電位相同，所以從 A 流出的三條邊電流也相同，總電流是單條電流的 3 倍。
+{: .fig-caption }
 
 $$
 I_{\text{每條}} = \frac{V_A - b}{R} = \frac{1 - \frac{3}{5}}{R} = \frac{2}{5R}
@@ -204,9 +222,11 @@ $$\frac{R}{3} + \frac{R}{6} + \frac{R}{3} = \frac{2R + R + 2R}{6} = \frac{5R}{6}
 
 這與節點電壓法結果完全一致，也是一個直觀的驗算。
 
-![商掉對稱性後的等效小電路](/assets/img/posts/cube-resistor-fig1-quotient-circuit-zh-light.svg){: .light w="760" }
-![商掉對稱性後的等效小電路](/assets/img/posts/cube-resistor-fig1-quotient-circuit-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 1-4：把電位相同的節點合併後，正方體電路等效為 A-B-C-H 四節點的小電路；三段分別對應 $3,6,3$ 條等價邊（「等電位節點可以合併」的嚴格證明見<a href="/posts/resistor-cube-3-symmetry/">第三篇</a>）。</em></p>
+![商掉對稱性後的等效小電路](quotient-circuit-zh-light.svg){: .light w="760" }
+![商掉對稱性後的等效小電路](quotient-circuit-zh-dark.svg){: .dark w="760" }
+
+**圖 6：** 把電位相同的節點合併後，正方體電路等效為 A-B-C-H 四節點的小電路；三段分別對應 $3,6,3$ 條等價邊（「等電位節點可以合併」的嚴格證明見[第三篇](/posts/resistor-cube-3-symmetry/)）。
+{: .fig-caption }
 
 ---
 
@@ -230,12 +250,23 @@ flowchart TD
 
 注意電位並不是等間距遞減（$1, \frac23, \frac13, 0$），而是 $1, \frac35, \frac25, 0$。這是因為 B→C 段比 A→B 段有更多電阻可以並聯，所以電位降落較小。
 
+![A、B、C、H 四類節點的電位階梯](voltage-levels-zh-light.svg){: .light w="760" }
+![A、B、C、H 四類節點的電位階梯](voltage-levels-zh-dark.svg){: .dark w="760" }
+
+**圖 7：** A、B、C、H 的電位依序下降，但下降量不平均；這反映了不同段落的並聯通道數不同。
+{: .fig-caption }
+
+
+> **主要結論**：12 個 $R$ 的正方體電阻網路，體對角線兩端的等效電阻為
+>
+> $$R_{\text{eq}} = \frac{5}{6}R$$
+>
+> 對稱性把 8 個未知數壓縮成 2 個，只需解 $2\times 2$ 線性方程組即可得出。
+{: .prompt-tip }
+
 > **注意**：在 1×1×1 的立方體中，「座標中 1 的個數」（即到起點 A 的曼哈頓距離）恰好與節點的等電位類別一一對應——但這只是此特例的巧合，**不是**一般分類依據。在更大的晶格（例如 2×2×2，共 27 個節點）中，曼哈頓距離相同的節點電位不一定相同，必須用[第三篇](/posts/resistor-cube-3-symmetry/)的對稱群軌道來正確分類。
 {: .prompt-warning }
 
-![A、B、C、H 四類節點的電位階梯](/assets/img/posts/cube-resistor-fig1-voltage-levels-zh-light.svg){: .light w="760" }
-![A、B、C、H 四類節點的電位階梯](/assets/img/posts/cube-resistor-fig1-voltage-levels-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 1-5：A、B、C、H 的電位依序下降，但下降量不平均；這反映了不同段落的並聯通道數不同。</em></p>
 
 ---
 

@@ -6,9 +6,13 @@ categories: [大學數學, 代數]
 tags: [對稱性, 等效節點, 節點電壓法, 電路分析, 競賽物理, 對稱群, 軌道, 立方晶格]
 math: true
 description: "為什麼立方體問題裡的某些節點電位一定相同？答案不是「感覺對稱」，而是可以從唯一性定理嚴格證明。本文介紹對稱操作如何把節點分成等價類，把 8 個未知數壓縮成 2 個。立方晶格等效電阻系列第三篇。"
+media_subpath: /assets/img/posts/cube-resistor
+image:
 ---
 
 $$\require{physics}$$
+
+<link rel="stylesheet" href="/assets/css/posts-custom.css">
 
 > 《立方晶格等效電阻》系列：[第一篇](/posts/resistor-cube-1-node-voltage/) ｜ [第二篇](/posts/resistor-cube-2-kirchhoff/) ｜ **第三篇** ｜ [第四篇](/posts/resistor-cube-4-group-theory/)
 
@@ -34,6 +38,9 @@ $$\sum_{j \sim i} \frac{V_j - V_i}{R_{ij}} = 0 \quad \text{（對所有內部節
 
 唯一性是對稱性論證的基礎。
 
+> **唯一性定理**：給定所有邊界節點的電位（邊界條件），滿足式 $\eqref{eq3:kcl}$ 的電位分布**有且只有一組**。
+{: .prompt-tip }
+
 ---
 
 ## 對稱操作與等電位節點：嚴格論證
@@ -55,11 +62,14 @@ $$\sum_{j \sim \sigma(i)} \frac{W_j - W_{\sigma(i)}}{R_j} = \sum_{k \sim i} \fra
 
 **推論：** 由唯一性，$V_{\sigma(i)} = V_i$ 對所有節點成立——對稱操作不改變電位分布。特別地，若 $\sigma(i) = j$，則 $V_j = V_i$。
 
-結論：**如果兩個節點 $i$ 和 $j$ 被某個對稱操作映射到彼此，則它們的電位必然相同**。這不是直覺，而是一個定理。
+> **對稱等電位定理**：若存在電路的對稱操作 $\sigma$ 使得 $\sigma(i) = j$，則節點 $i$ 與節點 $j$ 的電位必然相同：$V_i = V_j$。這不是直覺，而是由唯一性嚴格推導出來的定理。
+{: .prompt-tip }
 
-![唯一性與對稱性推出等電位的流程圖](/assets/img/posts/cube-resistor-fig3-uniqueness-zh-light.svg){: .light w="760" }
-![唯一性與對稱性推出等電位的流程圖](/assets/img/posts/cube-resistor-fig3-uniqueness-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 3-1：對稱操作把一組合法解送到另一組合法解；因為邊界條件下的解唯一，兩組解只能是同一組。</em></p>
+![唯一性與對稱性推出等電位的流程圖](uniqueness-zh-light.svg){: .light w="760" }
+![唯一性與對稱性推出等電位的流程圖](uniqueness-zh-dark.svg){: .dark w="760" }
+
+**圖 1：** 對稱操作把一組合法解送到另一組合法解；因為邊界條件下的解唯一，兩組解只能是同一組。
+{: .fig-caption }
 
 ---
 
@@ -75,9 +85,8 @@ $$\sum_{j \sim \sigma(i)} \frac{W_j - W_{\sigma(i)}}{R_j} = \sum_{k \sim i} \fra
 - 它把 $(1,1,1)$ 映射到自身（固定 $H$）。
 - 它把相鄰節點映射到相鄰節點（保持電路連接）。
 
-![交換座標軸仍固定 A 與 H](/assets/img/posts/cube-resistor-fig3-axis-permutation-zh-light.svg){: .light w="760" }
-![交換座標軸仍固定 A 與 H](/assets/img/posts/cube-resistor-fig3-axis-permutation-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 3-2：交換 $x,y,z$ 座標軸會改變中間節點的位置，但仍固定體對角線兩端 A 與 H。</em></p>
+> **直觀說明**：交換 $x,y,z$ 座標軸（例如把 $(x,y,z)$ 映射到 $(y,x,z)$）會把節點 $(1,0,0)$ 送到 $(0,1,0)$，但 $(0,0,0)$ 和 $(1,1,1)$ 都不受影響——體對角線兩端始終固定。因此這樣的置換是電路的對稱操作。
+{: .prompt-info }
 
 三個元素 $\{x, y, z\}$ 的所有置換構成**對稱群 $S_3$**，共有 $3! = 6$ 個元素：
 
@@ -102,24 +111,28 @@ $$\text{軌道}(i) = \{\sigma(i) \mid \sigma \in S_3\} \tag{3}\label{eq3:orbit}$
 
 在同一軌道的節點必然有相同電位（由式 $\eqref{eq3:proof}$ 的推論）。計算各節點的軌道：
 
-| 軌道                          | 節點 | 大小  | 電位            |
-| ----------------------------- | ---- | :---: | --------------- |
-| $\{(0,0,0)\}$                 | $A$  |  $1$  | $1$（邊界條件） |
-| $\{(1,0,0),(0,1,0),(0,0,1)\}$ | B 型 |  $3$  | $b$（待求）     |
-| $\{(1,1,0),(1,0,1),(0,1,1)\}$ | C 型 |  $3$  | $c$（待求）     |
-| $\{(1,1,1)\}$                 | $H$  |  $1$  | $0$（邊界條件） |
+| 軌道                            | 節點 | 大小  | 電位            |
+| ------------------------------- | ---- | :---: | --------------- |
+| $\\{(0,0,0)\\}$                 | $A$  |  $1$  | $1$（邊界條件） |
+| $\\{(1,0,0),(0,1,0),(0,0,1)\\}$ | B 型 |  $3$  | $b$（待求）     |
+| $\\{(1,1,0),(1,0,1),(0,1,1)\\}$ | C 型 |  $3$  | $c$（待求）     |
+| $\\{(1,1,1)\\}$                 | $H$  |  $1$  | $0$（邊界條件） |
 
-![8 個節點壓縮成 4 個軌道示意圖](/assets/img/posts/cube-resistor-fig3-orbit-compression-zh-light.svg){: .light w="760" }
-![8 個節點壓縮成 4 個軌道示意圖](/assets/img/posts/cube-resistor-fig3-orbit-compression-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 3-3：$S_3$ 作用把 8 個節點分成 A、B、C、H 四個軌道；其中 A 與 H 已由邊界條件固定，只剩 $b,c$ 兩個未知電位。</em></p>
+![8 個節點壓縮成 4 個軌道示意圖](orbit-compression-zh-light.svg){: .light w="760" }
+![8 個節點壓縮成 4 個軌道示意圖](orbit-compression-zh-dark.svg){: .dark w="760" }
+
+**圖 2：** $S_3$ 作用把 8 個節點分成 A、B、C、H 四個軌道；其中 A 與 H 已由邊界條件固定，只剩 $b,c$ 兩個未知電位。
+{: .fig-caption }
 
 為什麼 $(1,0,0)$ 和 $(1,1,0)$ 不在同一軌道？因為沒有 $S_3$ 元素能把 $(1,0,0)$（只有一個分量為 1）映射到 $(1,1,0)$（有兩個分量為 1）——置換不改變各座標的值，只交換哪個位置放哪個值，所以「有幾個分量等於 1」是不變量（invariant）。
 
 8 個節點 → 4 個軌道 → 2 個未知電位 $b, c$（其餘兩個由邊界條件固定）。
 
-![S₃ 作用下 B 型節點的軌道示意圖](/assets/img/posts/cube-resistor-fig3-s3-orbit-zh-light.svg){: .light w="760" }
-![S₃ 作用下 B 型節點的軌道示意圖](/assets/img/posts/cube-resistor-fig3-s3-orbit-zh-dark.svg){: .dark w="760" }
-<p class="text-center"><em>圖 3-4：$S_3$ 的座標置換會把三個 B 型節點互相映射；它們在同一個軌道中，因此電位相同。</em></p>
+![S₃ 作用下 B 型節點的軌道示意圖](s3-orbit-zh-light.svg){: .light w="760" }
+![S₃ 作用下 B 型節點的軌道示意圖](s3-orbit-zh-dark.svg){: .dark w="760" }
+
+**圖 3：** $S_3$ 的座標置換會把三個 B 型節點互相映射；它們在同一個軌道中，因此電位相同。
+{: .fig-caption }
 
 ---
 
@@ -133,7 +146,7 @@ $$3b - 2c = 1 \tag{B型代表}\label{eq3:b-repr}$$
 
 $$3c - 2b = 0 \tag{C型代表}\label{eq3:c-repr}$$
 
-由式 $\eqref{eq3:b-repr}$ 和 $\eqref{eq3:c-repr}$ 解得 $b = 3/5$，$c = 2/5$，代入[第一篇的式 $\eqref{eq1:req}$](/posts/resistor-cube-1-node-voltage/) 得 $R_{\text{eq}} = 5R/6$。
+由式 $\eqref{eq3:b-repr}$ 和 $\eqref{eq3:c-repr}$ 解得 $b = 3/5$，$c = 2/5$，代入[第一篇的等效電阻算式](/posts/resistor-cube-1-node-voltage/#計算等效電阻) $R_{\text{eq}} = \Delta V / I$ 得 $R_{\text{eq}} = 5R/6$。
 
 **對稱性把方程組的規模從 $6\times 6$ 縮小到 $2\times 2$。** 這個縮小的比例在更大的問題裡更戲劇性——對 $2\times 2\times 2$ 的晶格（27 個節點），對稱性能把未知數從 25 個降到 3 個，我們後面會看到。
 
@@ -151,7 +164,10 @@ $$3c - 2b = 0 \tag{C型代表}\label{eq3:c-repr}$$
 
 4. **軌道 = 未知數**：方程組的規模等於軌道數（減去邊界節點數）。
 
-這個邏輯不只適用於電路——凡是有唯一解的物理問題，對稱性都能縮小求解規模。在量子力學裡，同樣的邏輯讓我們能用群的**不可約表示**來分類能態；在固體物理裡，它讓 Bloch 定理成立。
+這個邏輯不只適用於電路——凡是有唯一解的物理問題，對稱性都能縮小求解規模。在量子力學裡，同樣的邏輯讓我們能用群的**不可約表示**（irreducible representation）來分類能態；在固體物理裡，它讓 Bloch 定理成立。若想深入了解這套邏輯的完整數學框架，可參考 Arfken, Weber & Harris 的 *Mathematical Methods for Physicists*（第七版）第 16 章，或 Tinkham 的 *Group Theory and Quantum Mechanics* 第 2–3 章。
+
+> **對稱性降維的核心邏輯**（適用於任何有唯一解的問題）：唯一性 → 對稱操作送解到解 → 同一組解 → 同軌道節點等值 → 未知數個數等於軌道數。
+{: .prompt-tip }
 
 ---
 
