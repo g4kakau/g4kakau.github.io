@@ -138,6 +138,58 @@ body.dark .cube-resistor-interactive,
   accent-color: var(--cube-demo-accent);
 }
 
+.cube-resistor-interactive__tooltip {
+  align-items: center;
+  background: var(--cube-demo-panel-2);
+  border: 1px solid var(--cube-demo-grid);
+  border-radius: 999px;
+  color: var(--cube-demo-muted);
+  cursor: help;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 0.86rem;
+  font-weight: 750;
+  height: 1.65rem;
+  justify-content: center;
+  line-height: 1;
+  position: relative;
+  width: 1.65rem;
+}
+
+.cube-resistor-interactive__tooltip::after {
+  background: var(--cube-demo-ink);
+  border-radius: 6px;
+  bottom: calc(100% + 0.55rem);
+  color: var(--cube-demo-bg);
+  content: attr(aria-label);
+  font-size: 0.84rem;
+  font-weight: 500;
+  left: 50%;
+  line-height: 1.45;
+  max-width: min(22rem, 82vw);
+  opacity: 0;
+  padding: 0.45rem 0.6rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  transform: translateX(-50%) translateY(0.2rem);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  white-space: normal;
+  width: max-content;
+  z-index: 20;
+}
+
+.cube-resistor-interactive__tooltip:hover::after,
+.cube-resistor-interactive__tooltip:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.cube-resistor-interactive__tooltip:focus-visible {
+  outline: 2px solid var(--cube-demo-accent);
+  outline-offset: 2px;
+}
+
 .cube-resistor-interactive__hint {
   color: var(--cube-demo-muted);
   flex-basis: 100%;

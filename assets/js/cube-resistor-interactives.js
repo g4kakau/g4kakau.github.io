@@ -40,6 +40,16 @@
     return wrapper;
   }
 
+  function makeTooltip(text) {
+    const tooltip = document.createElement("span");
+    tooltip.className = "cube-resistor-interactive__tooltip";
+    tooltip.textContent = "i";
+    tooltip.tabIndex = 0;
+    tooltip.title = text;
+    tooltip.setAttribute("aria-label", text);
+    return tooltip;
+  }
+
   function makeLabelTexture(THREE, text, fg, bg) {
     const canvas = document.createElement("canvas");
     const measuring = canvas.getContext("2d");
@@ -82,9 +92,24 @@
     return new THREE.Line(geometry, material);
   }
 
-  function setLinePoints(THREE, line, points) {
-    line.geometry.dispose();
-    line.geometry = new THREE.BufferGeometry().setFromPoints(points);
+  function makeCylinderBetween(THREE, start, end, color, radius = 0.018) {
+    const direction = new THREE.Vector3().subVectors(end, start);
+    const length = direction.length();
+    const geometry = new THREE.CylinderGeometry(radius, radius, length, 24);
+    const material = new THREE.MeshStandardMaterial({
+      color,
+      transparent: true,
+      opacity: 0.76,
+      roughness: 0.58,
+      metalness: 0,
+    });
+    const cylinder = new THREE.Mesh(geometry, material);
+    cylinder.position.copy(start).add(end).multiplyScalar(0.5);
+    cylinder.quaternion.setFromUnitVectors(
+      new THREE.Vector3(0, 1, 0),
+      direction.normalize(),
+    );
+    return cylinder;
   }
 
   function makeScene(THREE, root, renderer) {
@@ -267,7 +292,7 @@
     return new THREE.ShaderMaterial({
       uniforms: {
         colorA: { value: new THREE.Color("#ffffff") },
-        colorB: { value: new THREE.Color("#9ca3af") },
+        colorB: { value: new THREE.Color("#4b5563") },
         inverted: { value: inverted ? 1 : 0 },
       },
       vertexShader: `
@@ -286,12 +311,15 @@
         varying vec3 vLocalPosition;
         varying vec3 vNormal;
         void main() {
-          float product = vLocalPosition.x * vLocalPosition.y * vLocalPosition.z;
+          vec3 local = normalize(vLocalPosition);
+          float product = local.x * local.y * local.z;
           bool useA = product >= 0.0;
           if (inverted == 1) {
             useA = !useA;
           }
           vec3 base = useA ? colorA : colorB;
+          float directionMark = smoothstep(0.92, 0.98, local.x) * smoothstep(-0.18, 0.12, local.y);
+          base = mix(base, useA ? vec3(0.18, 0.22, 0.28) : vec3(0.95, 0.96, 0.98), directionMark);
           float light = 0.58 + 0.42 * max(dot(normalize(vNormal), normalize(vec3(0.35, 0.7, 0.62))), 0.0);
           gl_FragColor = vec4(base * light, 1.0);
         }
@@ -299,27 +327,22 @@
     });
   }
 
-  function operationPoint(THREE, op, p) {
-    if (op === "C2") return new THREE.Vector3(-p.x, p.y, -p.z);
-    if (op === "sigma_v") return new THREE.Vector3(p.x, p.y, -p.z);
-    if (op === "sigma_v_prime") return new THREE.Vector3(-p.x, p.y, p.z);
-    return p.clone();
-  }
-
-  function animatedPoint(THREE, op, p, t) {
+  function operationMatrix(THREE, op, t = 1) {
+    const matrix = new THREE.Matrix4();
+    const mirrorScale = (progress) => {
+      const scale = 1 - 2 * progress;
+      if (Math.abs(scale) >= 0.055 || progress === 1) return scale;
+      return scale < 0 ? -0.055 : 0.055;
+    };
     if (op === "C2") {
-      const angle = Math.PI * t;
-      return new THREE.Vector3(
-        p.x * Math.cos(angle) + p.z * Math.sin(angle),
-        p.y,
-        -p.x * Math.sin(angle) + p.z * Math.cos(angle),
-      );
+      return matrix.makeRotationY(Math.PI * t);
     }
-    return p.clone().lerp(operationPoint(THREE, op, p), t);
+    if (op === "sigma_v") return matrix.makeScale(1, 1, mirrorScale(t));
+    if (op === "sigma_v_prime") return matrix.makeScale(mirrorScale(t), 1, 1);
+    return matrix.identity();
   }
 
   function buildWaterC2v(THREE, root, scene, camera, controls) {
-    const muted = cssVar(root, "--cube-demo-muted");
     const edge = cssVar(root, "--cube-demo-edge");
     const accent = cssVar(root, "--cube-demo-accent");
     const accent2 = cssVar(root, "--cube-demo-accent-2");
@@ -336,7 +359,9 @@
     rootGroup.scale.setScalar(1.28);
     scene.add(rootGroup);
 
-    const atomGroup = new THREE.Group();
+    const moleculeGroup = new THREE.Group();
+    moleculeGroup.matrixAutoUpdate = false;
+    const labelGroup = new THREE.Group();
     const atomMeshes = new Map();
     atoms.forEach((atom) => {
       const material = atom.id === "O"
@@ -347,16 +372,15 @@
         material,
       );
       mesh.position.copy(atom.original);
-      atomGroup.add(mesh);
+      moleculeGroup.add(mesh);
       const label = labelSprite(THREE, atom.label, labelGray, labelBg, 0.3, 0.76);
-      label.position.copy(atom.original).add(new THREE.Vector3(0, 0.31, 0.06));
-      atomGroup.add(label);
+      labelGroup.add(label);
       atomMeshes.set(atom.id, { mesh, label, atom });
     });
-    const bond1 = makeLine(THREE, [atoms[0].original, atoms[1].original], edge, 5);
-    const bond2 = makeLine(THREE, [atoms[0].original, atoms[2].original], edge, 5);
-    atomGroup.add(bond1, bond2);
-    rootGroup.add(atomGroup);
+    const bond1 = makeCylinderBetween(THREE, atoms[0].original, atoms[1].original, edge, 0.02);
+    const bond2 = makeCylinderBetween(THREE, atoms[0].original, atoms[2].original, edge, 0.02);
+    moleculeGroup.add(bond1, bond2);
+    rootGroup.add(moleculeGroup, labelGroup);
 
     const referenceGroup = new THREE.Group();
     rootGroup.add(referenceGroup);
@@ -366,6 +390,10 @@
       labels: true,
       reference: true,
       locked: false,
+      animation: 0,
+      animating: false,
+      displayMatrix: new THREE.Matrix4(),
+      logicalMatrix: new THREE.Matrix4(),
     };
 
     function syncVisibility() {
@@ -409,30 +437,48 @@
       syncVisibility();
     }
 
-    function updateGeometry(op, t) {
-      const positions = new Map();
+    function updateGeometry(matrix) {
+      moleculeGroup.matrix.copy(matrix);
+      moleculeGroup.matrixWorldNeedsUpdate = true;
       atoms.forEach((atom) => {
-        const pos = animatedPoint(THREE, op, atom.original, t);
-        positions.set(atom.id, pos);
+        const pos = atom.original.clone().applyMatrix4(matrix);
         const entry = atomMeshes.get(atom.id);
-        entry.mesh.position.copy(pos);
         entry.label.position.copy(pos).add(new THREE.Vector3(0, 0.31, 0.06));
       });
-      setLinePoints(THREE, bond1, [positions.get("O"), positions.get("H1")]);
-      setLinePoints(THREE, bond2, [positions.get("O"), positions.get("H2")]);
     }
 
     function applyOperation(op) {
       state.operation = op;
+      state.animation += 1;
+      const animation = state.animation;
+      const startMatrix = (state.animating ? state.logicalMatrix : state.displayMatrix).clone();
+      const targetMatrix = operationMatrix(THREE, op, 1).multiply(startMatrix);
+      state.logicalMatrix.copy(targetMatrix);
+      state.animating = true;
       addReference(op);
       const start = performance.now();
       const duration = 850;
+
+      function frameMatrix(t) {
+        return operationMatrix(THREE, op, t).multiply(startMatrix);
+      }
+
       function tick(now) {
+        if (animation !== state.animation) return;
         const t = Math.min(1, (now - start) / duration);
         const eased = 1 - Math.pow(1 - t, 3);
-        updateGeometry(op, eased);
-        if (t < 1) requestAnimationFrame(tick);
+        const matrix = t === 1 ? targetMatrix : frameMatrix(eased);
+        updateGeometry(matrix);
+        state.displayMatrix.copy(matrix);
+        if (t < 1) {
+          requestAnimationFrame(tick);
+          return;
+        }
+        updateGeometry(targetMatrix);
+        state.displayMatrix.copy(targetMatrix);
+        state.animating = false;
       }
+
       requestAnimationFrame(tick);
     }
 
@@ -452,7 +498,7 @@
     }
 
     addReference("e");
-    updateGeometry("e", 1);
+    updateGeometry(state.displayMatrix);
     syncVisibility();
     controls.target.set(0, 0.28, 0);
     camera.position.set(3.6, 2.6, 4.7);
@@ -517,14 +563,12 @@
             renderButtons();
           }));
         });
-        const hint = document.createElement("div");
-        hint.className = "cube-resistor-interactive__hint";
-        hint.textContent = demo === "water-c2v"
+        const hintText = demo === "water-c2v"
           ? "拖曳可旋轉視角；按鈕切換 C₂v 的四個操作，灰白八卦限球追蹤 H₁/H₂ 身份。"
           : demo === "triangle-rotation"
           ? "拖曳可旋轉視角；按鈕切換 e、r、r²。"
           : "拖曳可旋轉視角；按鈕切換繞 A-H 軸的旋轉。";
-        controlsEl.appendChild(hint);
+        controlsEl.appendChild(makeTooltip(hintText));
         if (water) {
           const toggles = document.createElement("div");
           toggles.className = "cube-resistor-interactive__toggles";
