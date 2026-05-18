@@ -1,0 +1,23 @@
+/* ============================================================
+   posts-custom.css
+   Series-wide style overrides for g4kakau.github.io posts
+   ============================================================ */
+
+/* Figure captions
+   Usage (after image markdown):
+     **圖 N：** caption text
+     {: .fig-caption }
+
+   Usage (after an HTML block like <div>):
+     <p class="fig-caption"><strong>圖 N：</strong>caption text</p>
+   ============================================================ */
+.fig-caption {
+  display: block;
+  text-align: center;
+  font-size: 1em;
+  font-style: normal;
+  color: var(--text-muted-color, #6c757d);
+  margin-top: 0.25em;
+  margin-bottom: 1.75em;
+  line-height: 1.4;
+}
