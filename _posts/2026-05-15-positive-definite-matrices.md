@@ -158,7 +158,7 @@ $$
 Q = XX^T
 $$
 
-**推導：** 由實對稱矩陣的譜定理，$Q = V\Lambda V^T$，其中 $V$ 是正交矩陣（列是特徵向量），$\Lambda = \operatorname{diag}(\lambda_1, \ldots, \lambda_n)$。
+**推導：** 由實對稱矩陣的譜定理，$Q = V\Lambda V^T$，其中 $V$ 是正交矩陣（行是特徵向量），$\Lambda = \operatorname{diag}(\lambda_1, \ldots, \lambda_n)$。
 
 因為 $\lambda_i \geq 0$，可以定義 $\sqrt{\Lambda} = \operatorname{diag}(\sqrt{\lambda_1}, \ldots, \sqrt{\lambda_n})$。令
 
