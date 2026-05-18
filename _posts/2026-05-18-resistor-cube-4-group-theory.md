@@ -1,0 +1,216 @@
+---
+layout: post
+title: "正方體等效電阻（四）：群論是什麼？從晶體學與化學鍵出發"
+date: 2026-05-18 00:00:00 +0800
+categories: [大學數學, 代數]
+tags: [群論, 點群, 對稱群, 晶體學, 化學鍵, 對稱操作, 軌道, 置換群, 抽象代數]
+math: true
+description: "食鹽為什麼是正方體？水分子為什麼是彎曲的？這些問題背後都有同一個數學結構——群。本文從晶體學與化學鍵出發，介紹群的四條公理，以及點群如何描述分子對稱性，為理解立方體電路問題的對稱降維打下數學基礎。立方晶格等效電阻系列第四篇。"
+---
+
+$$\require{physics}$$
+
+<link rel="stylesheet" href="/assets/css/cube-resistor-interactives.css">
+<script defer src="/assets/js/cube-resistor-interactives.js"></script>
+
+> 《立方晶格等效電阻》系列：[第一篇](/posts/resistor-cube-1-node-voltage/) ｜ [第二篇](/posts/resistor-cube-2-kirchhoff/) ｜ [第三篇](/posts/resistor-cube-3-symmetry/) ｜ **第四篇**
+
+---
+
+為什麼食鹽晶體（NaCl）長成正方體，而雪花有六重對稱？為什麼水分子 H₂O 是彎曲的（$104.5°$），而二氧化碳 CO₂ 是直線型的？
+
+物理學家和化學家研究這些問題時，發現背後有同一個數學語言：**群論（group theory）**。
+
+在[第三篇](/posts/resistor-cube-3-symmetry/)，我們用了「對稱操作的集合 $S_3$」來分類立方體電路的節點。但 $S_3$ 是一個**群**，而「群」這個詞背後有精確的定義。這篇從物理和化學的直覺出發，介紹群的概念，然後把它連回電路問題。
+
+---
+
+## 對稱操作的例子
+
+先看具體的對稱操作。
+
+### 等邊三角形的旋轉
+
+一個等邊三角形，三個頂點標記為 $1, 2, 3$。以三角形中心為軸，有三種旋轉使三角形「回到原位」：
+
+- $e$：旋轉 $0°$（不動）
+- $r$：旋轉 $120°$（$1\to 2 \to 3 \to 1$）
+- $r^2$：旋轉 $240°$（$1\to 3 \to 2 \to 1$）
+
+連續做兩個旋轉，結果仍然是一個旋轉。例如先做 $r$ 再做 $r$，等於 $r^2$；先做 $r^2$ 再做 $r^2$，等於 $r$（因為旋轉 $480° = 360° + 120°$，等效於 $120°$）。
+
+![等邊三角形的三個旋轉對稱操作](/assets/img/posts/cube-resistor-fig4-triangle-rotations-zh-light.svg){: .light w="760" }
+![等邊三角形的三個旋轉對稱操作](/assets/img/posts/cube-resistor-fig4-triangle-rotations-zh-dark.svg){: .dark w="760" }
+<p class="text-center"><em>圖 4-1：等邊三角形的三個旋轉操作 $e,r,r^2$。扇形標出旋轉角，頂點上的數字顯示標號如何隨操作移動。</em></p>
+
+### 水分子的對稱
+
+H₂O 分子：氧原子在中間，兩個氫原子在兩側，鍵角約 $104.5°$。
+
+以分子平面為鏡面，以氧原子到鍵角平分線為軸，水分子有以下對稱操作：
+
+- $e$：恆等操作
+- $C_2$：繞對稱軸旋轉 $180°$，兩個 H 互換
+- $\sigma_v$：鏡射，分子在平面內不動
+- $\sigma_v'$：另一個鏡射平面
+
+這四個操作的集合，就是水分子的**點群** $C_{2v}$。
+
+「點群」的意思是：所有對稱操作都固定空間中的至少一個點（通常是分子重心）。
+
+<div class="cube-resistor-interactive" data-demo="water-c2v"></div>
+<p class="text-center"><em>圖 4-2：水分子 H₂O 的 $C_{2v}$ 操作實驗台。切換 $e,C_2,\sigma_v,\sigma_v'$，觀察參考軸／鏡面與 H₁、H₂ 灰白八卦限球如何被操作送到新位置。</em></p>
+
+### 為什麼 CO₂ 是直線型而 H₂O 是彎曲型？
+
+這其實是量子化學的問題，但對稱性能給出半個答案：CO₂ 的點群是 $D_{\infty h}$（包含任意角度的繞軸旋轉），而 H₂O 的點群是 $C_{2v}$（只有 $180°$ 旋轉）。不同的點群對應不同的分子軌道結合方式，影響鍵的形成與鍵角。分子的幾何結構，就是最能讓電子能量降低的構型，而這個構型受制於原子種類和電子數目所允許的對稱性。
+
+---
+
+## 群的四條公理
+
+現在把直覺抽象化。**群（group）**是一個集合 $G$ 連同一個二元運算 $\cdot$（「乘法」或「組合」），滿足：
+
+**(1) 封閉性（Closure）：** 對任意 $a, b \in G$，$a \cdot b \in G$。
+
+組合兩個對稱操作，結果仍然是一個對稱操作。
+
+**(2) 結合律（Associativity）：** 對任意 $a, b, c \in G$，$(a \cdot b) \cdot c = a \cdot (b \cdot c)$。
+
+「先做 $a$ 再做 $b$，再做 $c$」等於「做 $a$，再做『先 $b$ 後 $c$』」——這對操作的組合總是成立的。
+
+**(3) 單位元（Identity）：** 存在 $e \in G$，使得對所有 $a \in G$，$e \cdot a = a \cdot e = a$。
+
+「不做任何事」是一個對稱操作（恆等操作 $e$），與任何操作組合都得到原來的操作。
+
+**(4) 逆元（Inverse）：** 對每個 $a \in G$，存在 $a^{-1} \in G$，使得 $a \cdot a^{-1} = a^{-1} \cdot a = e$。
+
+每個對稱操作都有「反向操作」：旋轉 $120°$ 的逆是旋轉 $-120°$（或旋轉 $240°$）；鏡射的逆是自己本身。
+
+**注意**：群不一定滿足**交換律** $a \cdot b = b \cdot a$。滿足交換律的群稱為**阿貝爾群（abelian group）**。旋轉群在三維空間通常是非阿貝爾的（先轉 $x$ 軸再轉 $y$ 軸，和先轉 $y$ 軸再轉 $x$ 軸，結果不同）。
+
+---
+
+## 幾個具體的群
+
+### $\mathbb{Z}_n$：整數模 $n$
+
+集合 $\{0, 1, 2, \ldots, n-1\}$，運算是模 $n$ 加法。這是大小為 $n$ 的阿貝爾群，也是$n$ 個旋轉（$k \times 360°/n$）的群。
+
+### $S_n$：$n$ 個元素的置換群
+
+集合：所有 $\{1, 2, \ldots, n\}$ 到自身的雙射（bijection）。運算：函數合成。$\lvert S_n \rvert = n!$。
+
+$S_2 = \{e, (12)\}$（大小 2）。
+
+$S_3 = \{e, (12), (13), (23), (123), (132)\}$（大小 6）——這正是我們在[第三篇](/posts/resistor-cube-3-symmetry/)遇到的立方體座標置換群。
+
+$S_3$ 是最小的非阿貝爾群：$(12)(13) = (132) \neq (123) = (13)(12)$。
+
+![S₃ 非交換性的兩種操作順序](/assets/img/posts/cube-resistor-fig4-s3-noncommutativity-zh-light.svg){: .light w="760" }
+![S₃ 非交換性的兩種操作順序](/assets/img/posts/cube-resistor-fig4-s3-noncommutativity-zh-dark.svg){: .dark w="760" }
+<p class="text-center"><em>圖 4-3：在 $S_3$ 裡，先做哪個置換會影響最後結果；這就是非阿貝爾群最小而具體的例子。</em></p>
+
+### 正方體的對稱群 $O_h$
+
+正方體在三維空間的完整對稱群包含旋轉和鏡射，共 $48$ 個元素。物理學中通常記為 $O_h$（$O$ 是旋轉部分，共 $24$ 個；$h$ 表示包含反轉）。
+
+這個群出現在：
+
+- 晶體學：NaCl、金剛石等立方晶系的對稱描述
+- 量子化學：過渡金屬配合物的 $d$ 軌道分裂（晶體場理論）
+- 固體物理：布里淵區（Brillouin zone）的對稱性
+
+<div class="cube-resistor-interactive" data-demo="cube-axis-rotation"></div>
+<p class="text-center"><em>圖 4-4：互動切換正方體繞體對角線 A-H 的旋轉。A、H 固定，三個 B 型節點在同一軌道中循環交換。</em></p>
+
+<details class="cube-resistor-static-compare">
+<summary>展開靜態 SVG 備用稿</summary>
+
+![正方體繞體對角線旋轉的對稱操作](/assets/img/posts/cube-resistor-fig4-cube-symmetry-zh-light.svg){: .light w="760" }
+![正方體繞體對角線旋轉的對稱操作](/assets/img/posts/cube-resistor-fig4-cube-symmetry-zh-dark.svg){: .dark w="760" }
+
+</details>
+
+---
+
+## 軌道（Orbit）：群作用的基本概念
+
+群 $G$ **作用在**集合 $X$ 上，是指每個 $g \in G$ 定義一個從 $X$ 到 $X$ 的映射，且這個映射與群的乘法相容：
+
+$$g \cdot (h \cdot x) = (g \cdot h) \cdot x, \qquad e \cdot x = x \tag{1}\label{eq4:action}$$
+
+集合 $X$ 中元素 $x$ 的**軌道**定義為：
+
+$$G \cdot x = \{g \cdot x \mid g \in G\} \subseteq X \tag{2}\label{eq4:orbit}$$
+
+不同軌道不相交，所有軌道的聯集等於整個 $X$——這稱為 $X$ 在 $G$ 作用下的**軌道分解**。
+
+**例（立方體電路）：** $G = S_3$，$X = $ 立方體的 8 個節點。$S_3$ 通過置換座標作用在節點上：
+
+$$\sigma \cdot (x, y, z) = (\sigma(x), \sigma(y), \sigma(z)) \tag{4}\label{eq4:sigma-action}$$
+
+由式 $\eqref{eq4:orbit}$，四個軌道為：
+
+$$
+\{(0,0,0)\}, \quad \{(1,0,0),(0,1,0),(0,0,1)\}, \quad \{(1,1,0),(1,0,1),(0,1,1)\}, \quad \{(1,1,1)\}
+$$
+
+這正好對應[第三篇式 (3)](/posts/resistor-cube-3-symmetry/) 定義的軌道分解，四個軌道各對應一個電位值。
+
+**軌道大小的計算**（Burnside 引理的鋪墊）：一個節點的軌道大小等於群的大小除以該節點的「穩定子群」（固定該節點的群元素個數）：
+
+$$\lvert G \cdot x \rvert = \frac{\lvert G \rvert}{\lvert \text{Stab}(x) \rvert} \tag{3}\label{eq4:orbit-stab}$$
+
+對 $(0,0,0)$：$S_3$ 的所有 6 個元素都固定它，由式 $\eqref{eq4:orbit-stab}$ 得軌道大小 $= 6/6 = 1$。
+
+對 $(1,0,0)$：只有固定 $x$ 的置換才保持它不動，有 2 個（$e$ 和 $(yz)$），由式 $\eqref{eq4:orbit-stab}$ 得軌道大小 $= 6/2 = 3$。
+
+## 晶體學中的點群
+
+晶體學裡，**點群**決定了晶體的巨觀對稱性，進而決定了很多物理性質（折射率方向、壓電效應、磁性方向等）。
+
+三維晶體有 $32$ 種點群，分屬 $7$ 個晶系：
+
+| 晶系 | 代表點群 | 例子 |
+|---|---|---|
+| 三斜晶系 | $C_1$ | 斜長石 |
+| 單斜晶系 | $C_{2h}$ | 石膏 |
+| 正交晶系 | $D_{2h}$ | 橄欖石 |
+| 三方晶系 | $C_{3v}$ | 方解石 |
+| 四方晶系 | $D_{4h}$ | 金紅石（TiO₂） |
+| 六方晶系 | $D_{6h}$ | 冰、石墨 |
+| 立方晶系 | $O_h$ | NaCl、金剛石 |
+
+NaCl 和金剛石屬於立方晶系，點群是 $O_h$——正方體的完整對稱群。雪花屬於六方晶系，點群是 $D_{6h}$，這就是雪花有六重對稱的根本原因。
+
+---
+
+## 連回電路問題
+
+在[第三篇](/posts/resistor-cube-3-symmetry/)，我們讓 $S_3$（正方體座標置換的 $6$ 元素群）以式 $\eqref{eq4:sigma-action}$ 的方式作用在 $8$ 個節點上，由式 $\eqref{eq4:orbit}$ 找到 $4$ 個軌道（[第三篇式 (3)](/posts/resistor-cube-3-symmetry/)），再由式 $\eqref{eq4:orbit-stab}$ 驗算各軌道大小，把 $6$ 個未知電位壓縮成 $2$ 個。
+
+這個過程有一個正式的名字：**商問題（quotient problem）**。原本的電路是「商掉對稱性」之後，等效於一個只有 $4$ 個節點的較小電路。這個等效電路完全保留了原問題的解，但規模大幅縮小。
+
+![從群作用到商電路的概念鏈](/assets/img/posts/cube-resistor-fig4-group-action-chain-zh-light.svg){: .light w="760" }
+![從群作用到商電路的概念鏈](/assets/img/posts/cube-resistor-fig4-group-action-chain-zh-dark.svg){: .dark w="760" }
+<p class="text-center"><em>圖 4-5：群作用先把節點分成軌道；唯一性讓同軌道節點等電位；最後把每個軌道合併成商電路。</em></p>
+
+在後續的篇章，我們會把同樣的邏輯應用到 $2\times 2\times 2$ 的立方晶格（$27$ 個節點）——那時用到的對稱群更大，把節點壓縮的效果也更驚人。
+
+---
+
+## 小結
+
+| 概念 | 意義 | 在電路問題中的角色 |
+|---|---|---|
+| 群（group） | 滿足 4 條公理的代數結構 | 對稱操作的集合 $S_3$ |
+| 群作用（group action） | 群元素作用在集合上的映射 | 置換節點座標 |
+| 軌道（orbit） | 某元素在群作用下的等價類 | 電位相同的節點類 |
+| 商（quotient） | 把同軌道元素合併後的結構 | 等效小電路 |
+
+群論的核心貢獻是：**讓「對稱性」從模糊的感覺變成可計算的代數結構**。一旦你知道問題的對稱群，就能系統性地找到所有等價關係，自動縮小求解規模。
+
+在分子物理裡，這讓化學家能預測哪些振動模式是紅外活性的；在固體物理裡，這是 Bloch 定理和能帶結構的基礎；在電路問題裡，這讓 27 個節點的方程組縮成 3 個未知數。
+
+下一篇：把 $S_3$ 換成整個 $O_h$ 群，把 $1\times1\times1$ 的立方體換成 $2\times2\times2$ 的立方晶格，看看對稱性能把問題縮小到什麼程度。

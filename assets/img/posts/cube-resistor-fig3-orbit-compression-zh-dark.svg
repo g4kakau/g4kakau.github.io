@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">8 個節點壓縮成 4 個軌道</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f87171"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #e5e7eb;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #9aa7b8; }
+    .edge { stroke: #cbd5e1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #334155; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #111827; stroke: #334155; stroke-width: 2; }
+    .panel2 { fill: #1e293b; stroke: #334155; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#0b1120"/>
+<rect x="60" y="75" width="840" height="390" rx="16" class="panel"/>
+<g transform="translate(15,5)"><line x1="235.0" y1="420.0" x2="281.8" y2="205.5" class="thin dash"/>
+<line x1="235.0" y1="420.0" x2="372.5" y2="400.8" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="235.0" y1="420.0" x2="144.2" y2="351.2" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="235.0" y1="420.0" x2="235.0" y2="293.5" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="235.0" y1="293.5" x2="372.5" y2="274.2" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="235.0" y1="293.5" x2="144.2" y2="224.8" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="144.2" y1="351.2" x2="281.8" y2="332.0" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="144.2" y1="351.2" x2="144.2" y2="224.8" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="144.2" y1="224.8" x2="281.8" y2="205.5" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="372.5" y1="400.8" x2="281.8" y2="332.0" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="372.5" y1="400.8" x2="372.5" y2="274.2" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="372.5" y1="274.2" x2="281.8" y2="205.5" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="281.8" y1="332.0" x2="281.8" y2="205.5" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g>
+    <circle cx="144.2" cy="224.8" r="17" fill="#34d399" stroke="#0b1120" stroke-width="4"/>
+    
+  </g>
+<g>
+    <circle cx="281.8" cy="205.5" r="17" fill="#a78bfa" stroke="#0b1120" stroke-width="4"/>
+    
+  </g>
+<g>
+    <circle cx="235.0" cy="293.5" r="17" fill="#60a5fa" stroke="#0b1120" stroke-width="4"/>
+    
+  </g>
+<g>
+    <circle cx="372.5" cy="274.2" r="17" fill="#34d399" stroke="#0b1120" stroke-width="4"/>
+    
+  </g>
+<g>
+    <circle cx="144.2" cy="351.2" r="17" fill="#60a5fa" stroke="#0b1120" stroke-width="4"/>
+    
+  </g>
+<g>
+    <circle cx="281.8" cy="332.0" r="17" fill="#34d399" stroke="#0b1120" stroke-width="4"/>
+    
+  </g>
+<g>
+    <circle cx="235.0" cy="420.0" r="17" fill="#64748b" stroke="#0b1120" stroke-width="4"/>
+    
+  </g>
+<g>
+    <circle cx="372.5" cy="400.8" r="17" fill="#60a5fa" stroke="#0b1120" stroke-width="4"/>
+    
+  </g></g>
+<g>
+    <circle cx="555.0" cy="270.0" r="28" fill="#64748b" stroke="#0b1120" stroke-width="4"/>
+    <text x="555.0" y="277.0" class="small" text-anchor="middle" style="fill:white">A</text>
+  </g>
+<text x="555.0" y="330.0" class="tiny" text-anchor="middle" style="fill:#9aa7b8">1 個節點</text>
+<g>
+    <circle cx="655.0" cy="270.0" r="28" fill="#60a5fa" stroke="#0b1120" stroke-width="4"/>
+    <text x="655.0" y="277.0" class="small" text-anchor="middle" style="fill:white">B</text>
+  </g>
+<text x="655.0" y="330.0" class="tiny" text-anchor="middle" style="fill:#9aa7b8">3 個節點</text>
+<g>
+    <circle cx="755.0" cy="270.0" r="28" fill="#34d399" stroke="#0b1120" stroke-width="4"/>
+    <text x="755.0" y="277.0" class="small" text-anchor="middle" style="fill:white">C</text>
+  </g>
+<text x="755.0" y="330.0" class="tiny" text-anchor="middle" style="fill:#9aa7b8">3 個節點</text>
+<g>
+    <circle cx="855.0" cy="270.0" r="28" fill="#a78bfa" stroke="#0b1120" stroke-width="4"/>
+    <text x="855.0" y="277.0" class="small" text-anchor="middle" style="fill:white">H</text>
+  </g>
+<text x="855.0" y="330.0" class="tiny" text-anchor="middle" style="fill:#9aa7b8">1 個節點</text>
+<text x="705.0" y="395.0" class="small" text-anchor="middle" style="fill:#60a5fa">邊界 A,H 固定；未知數只剩 b,c</text>
+</svg>

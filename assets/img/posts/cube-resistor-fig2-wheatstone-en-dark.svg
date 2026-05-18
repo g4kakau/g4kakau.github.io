@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">Balanced Wheatstone bridge</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f87171"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #e5e7eb;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #9aa7b8; }
+    .edge { stroke: #cbd5e1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #334155; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #111827; stroke: #334155; stroke-width: 2; }
+    .panel2 { fill: #1e293b; stroke: #334155; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#0b1120"/>
+<rect x="115" y="70" width="730" height="410" rx="16" class="panel"/>
+<line x1="245.0" y1="275.0" x2="480.0" y2="165.0" class="edge"/>
+<line x1="480.0" y1="165.0" x2="715.0" y2="275.0" class="edge"/>
+<line x1="245.0" y1="275.0" x2="480.0" y2="385.0" class="edge"/>
+<line x1="480.0" y1="385.0" x2="715.0" y2="275.0" class="edge"/>
+<line x1="480" y1="195" x2="480" y2="355" stroke="#334155" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 8"/>
+<text x="505.0" y="282.0" class="small" text-anchor="start" style="fill:#f59e0b">I₅ = 0</text>
+<g>
+    <circle cx="245.0" cy="275.0" r="26" fill="#1e293b" stroke="#cbd5e1" stroke-width="4"/>
+    <text x="245.0" y="282.0" class="small" text-anchor="middle" style="fill:#e5e7eb">A</text>
+  </g>
+<g>
+    <circle cx="480.0" cy="165.0" r="26" fill="#60a5fa" stroke="#cbd5e1" stroke-width="4"/>
+    <text x="480.0" y="172.0" class="small" text-anchor="middle" style="fill:white">B</text>
+  </g>
+<g>
+    <circle cx="480.0" cy="385.0" r="26" fill="#60a5fa" stroke="#cbd5e1" stroke-width="4"/>
+    <text x="480.0" y="392.0" class="small" text-anchor="middle" style="fill:white">C</text>
+  </g>
+<g>
+    <circle cx="715.0" cy="275.0" r="26" fill="#1e293b" stroke="#cbd5e1" stroke-width="4"/>
+    <text x="715.0" y="282.0" class="small" text-anchor="middle" style="fill:#e5e7eb">D</text>
+  </g>
+<text x="342.0" y="203.0" class="small" text-anchor="middle" style="fill:#9aa7b8">R₁</text>
+<text x="618.0" y="203.0" class="small" text-anchor="middle" style="fill:#9aa7b8">R₃</text>
+<text x="342.0" y="365.0" class="small" text-anchor="middle" style="fill:#9aa7b8">R₂</text>
+<text x="618.0" y="365.0" class="small" text-anchor="middle" style="fill:#9aa7b8">R₄</text>
+<text x="480.0" y="455.0" class="math" text-anchor="middle" style="fill:#60a5fa">R₁/R₂ = R₃/R₄</text>
+</svg>

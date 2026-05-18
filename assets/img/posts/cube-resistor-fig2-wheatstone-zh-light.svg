@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">惠斯通電橋平衡</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b42318"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #172033;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #64748b; }
+    .edge { stroke: #334155; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #d7dee8; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #f8fafc; stroke: #d7dee8; stroke-width: 2; }
+    .panel2 { fill: #eef2f7; stroke: #d7dee8; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#ffffff"/>
+<rect x="115" y="70" width="730" height="410" rx="16" class="panel"/>
+<line x1="245.0" y1="275.0" x2="480.0" y2="165.0" class="edge"/>
+<line x1="480.0" y1="165.0" x2="715.0" y2="275.0" class="edge"/>
+<line x1="245.0" y1="275.0" x2="480.0" y2="385.0" class="edge"/>
+<line x1="480.0" y1="385.0" x2="715.0" y2="275.0" class="edge"/>
+<line x1="480" y1="195" x2="480" y2="355" stroke="#d7dee8" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 8"/>
+<text x="505.0" y="282.0" class="small" text-anchor="start" style="fill:#d97706">I₅ = 0</text>
+<g>
+    <circle cx="245.0" cy="275.0" r="26" fill="#eef2f7" stroke="#334155" stroke-width="4"/>
+    <text x="245.0" y="282.0" class="small" text-anchor="middle" style="fill:#172033">A</text>
+  </g>
+<g>
+    <circle cx="480.0" cy="165.0" r="26" fill="#2563eb" stroke="#334155" stroke-width="4"/>
+    <text x="480.0" y="172.0" class="small" text-anchor="middle" style="fill:white">B</text>
+  </g>
+<g>
+    <circle cx="480.0" cy="385.0" r="26" fill="#2563eb" stroke="#334155" stroke-width="4"/>
+    <text x="480.0" y="392.0" class="small" text-anchor="middle" style="fill:white">C</text>
+  </g>
+<g>
+    <circle cx="715.0" cy="275.0" r="26" fill="#eef2f7" stroke="#334155" stroke-width="4"/>
+    <text x="715.0" y="282.0" class="small" text-anchor="middle" style="fill:#172033">D</text>
+  </g>
+<text x="342.0" y="203.0" class="small" text-anchor="middle" style="fill:#64748b">R₁</text>
+<text x="618.0" y="203.0" class="small" text-anchor="middle" style="fill:#64748b">R₃</text>
+<text x="342.0" y="365.0" class="small" text-anchor="middle" style="fill:#64748b">R₂</text>
+<text x="618.0" y="365.0" class="small" text-anchor="middle" style="fill:#64748b">R₄</text>
+<text x="480.0" y="455.0" class="math" text-anchor="middle" style="fill:#2563eb">R₁/R₂ = R₃/R₄</text>
+</svg>

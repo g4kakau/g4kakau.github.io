@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">連續性方程式的控制體積</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f87171"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #e5e7eb;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #9aa7b8; }
+    .edge { stroke: #cbd5e1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #334155; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #111827; stroke: #334155; stroke-width: 2; }
+    .panel2 { fill: #1e293b; stroke: #334155; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#0b1120"/>
+<rect x="90" y="75" width="780" height="390" rx="16" class="panel"/>
+<circle cx="480" cy="270" r="88" fill="#1e293b" stroke="#60a5fa" stroke-width="4" stroke-dasharray="10 8"/>
+<path d="M 180 210 C 270 210, 330 235, 398 252" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+<path d="M 780 190 C 675 195, 620 230, 560 252" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+<path d="M 355 420 C 395 355, 425 325, 452 300" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+<path d="M 515 238 C 585 190, 650 150, 760 125" stroke="#9aa7b8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="8 8" marker-end="url(#arrow-edge)"/>
+<path d="M 520 300 C 590 350, 660 385, 780 405" stroke="#9aa7b8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="8 8" marker-end="url(#arrow-edge)"/>
+<text x="480.0" y="274.0" class="small" text-anchor="middle">節點區域</text>
+<text x="480.0" y="440.0" class="math" text-anchor="middle" style="fill:#60a5fa">∂ρ/∂t + ∇·J = 0</text>
+<text x="480.0" y="125.0" class="small" text-anchor="middle" style="fill:#9aa7b8">穩態：∂ρ/∂t = 0</text>
+</svg>

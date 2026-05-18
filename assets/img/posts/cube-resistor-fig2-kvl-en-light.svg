@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">Closed path for KVL</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b42318"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #172033;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #64748b; }
+    .edge { stroke: #334155; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #d7dee8; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #f8fafc; stroke: #d7dee8; stroke-width: 2; }
+    .panel2 { fill: #eef2f7; stroke: #d7dee8; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#ffffff"/>
+<rect x="95" y="70" width="770" height="400" rx="16" class="panel"/>
+<line x1="265.0" y1="385.0" x2="695.0" y2="385.0" class="edge"/>
+<line x1="695.0" y1="385.0" x2="695.0" y2="185.0" class="edge"/>
+<line x1="695.0" y1="185.0" x2="265.0" y2="185.0" class="edge"/>
+<line x1="265.0" y1="185.0" x2="265.0" y2="385.0" class="edge"/>
+<path d="M 355 385 H 585" stroke="#d97706" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow2)"/>
+<path d="M 695 335 V 235" stroke="#d97706" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow2)"/>
+<path d="M 605 185 H 375" stroke="#d97706" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow2)"/>
+<path d="M 265 235 V 335" stroke="#d97706" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow2)"/>
+<g>
+    <circle cx="265.0" cy="385.0" r="24" fill="#eef2f7" stroke="#334155" stroke-width="4"/>
+    <text x="265.0" y="392.0" class="small" text-anchor="middle" style="fill:#172033">A</text>
+  </g>
+<g>
+    <circle cx="695.0" cy="385.0" r="24" fill="#eef2f7" stroke="#334155" stroke-width="4"/>
+    <text x="695.0" y="392.0" class="small" text-anchor="middle" style="fill:#172033">B</text>
+  </g>
+<g>
+    <circle cx="695.0" cy="185.0" r="24" fill="#eef2f7" stroke="#334155" stroke-width="4"/>
+    <text x="695.0" y="192.0" class="small" text-anchor="middle" style="fill:#172033">C</text>
+  </g>
+<g>
+    <circle cx="265.0" cy="185.0" r="24" fill="#eef2f7" stroke="#334155" stroke-width="4"/>
+    <text x="265.0" y="192.0" class="small" text-anchor="middle" style="fill:#172033">D</text>
+  </g>
+<text x="480.0" y="355.0" class="small" text-anchor="middle" style="fill:#64748b">ΔV₁</text>
+<text x="730.0" y="290.0" class="small" text-anchor="middle" style="fill:#64748b">ΔV₂</text>
+<text x="480.0" y="165.0" class="small" text-anchor="middle" style="fill:#64748b">ΔV₃</text>
+<text x="230.0" y="290.0" class="small" text-anchor="middle" style="fill:#64748b">ΔV₄</text>
+<text x="480.0" y="455.0" class="math" text-anchor="middle" style="fill:#2563eb">ΔV₁+ΔV₂+ΔV₃+ΔV₄ = 0</text>
+</svg>

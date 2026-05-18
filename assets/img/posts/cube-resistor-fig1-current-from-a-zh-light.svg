@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">從 A 流出的三條相同電流</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b42318"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #172033;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #64748b; }
+    .edge { stroke: #334155; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #d7dee8; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #f8fafc; stroke: #d7dee8; stroke-width: 2; }
+    .panel2 { fill: #eef2f7; stroke: #d7dee8; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#ffffff"/>
+
+  <rect x="95" y="75" width="770" height="390" rx="16" class="panel"/>
+  <g>
+    <circle cx="255.0" cy="270.0" r="34" fill="#475569" stroke="#ffffff" stroke-width="4"/>
+    <text x="255.0" y="277.0" class="small" text-anchor="middle" style="fill:white">A</text>
+  </g>
+  <g>
+    <circle cx="640.0" cy="160.0" r="25" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+    <text x="640.0" y="167.0" class="small" text-anchor="middle" style="fill:white">B</text>
+  </g>
+  <g>
+    <circle cx="690.0" cy="270.0" r="25" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+    <text x="690.0" y="277.0" class="small" text-anchor="middle" style="fill:white">B</text>
+  </g>
+  <g>
+    <circle cx="640.0" cy="380.0" r="25" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+    <text x="640.0" y="387.0" class="small" text-anchor="middle" style="fill:white">B</text>
+  </g>
+  <path d="M 292 260 C 390 210, 500 175, 608 162" stroke="#334155" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+  <path d="M 295 270 H 655" stroke="#334155" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+  <path d="M 292 280 C 390 330, 500 365, 608 378" stroke="#334155" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+  <g>
+    <rect x="397" y="152" width="116" height="40" rx="10" fill="#ffffff" stroke="#d7dee8" stroke-width="2"/>
+    <text x="455.0" y="181.0" class="small" text-anchor="middle" style="fill:#172033">(1-b)/R</text>
+  </g>
+  <g>
+    <rect x="422" y="202" width="116" height="40" rx="10" fill="#ffffff" stroke="#d7dee8" stroke-width="2"/>
+    <text x="480.0" y="231.0" class="small" text-anchor="middle" style="fill:#172033">(1-b)/R</text>
+  </g>
+  <g>
+    <rect x="397" y="390" width="116" height="40" rx="10" fill="#ffffff" stroke="#d7dee8" stroke-width="2"/>
+    <text x="455.0" y="419.0" class="small" text-anchor="middle" style="fill:#172033">(1-b)/R</text>
+  </g>
+  <path d="M 735 150 C 812 205, 812 335, 735 390" stroke="#2563eb" stroke-width="4" fill="none"/>
+  <text x="805.0" y="276.0" class="math" text-anchor="start" style="fill:#2563eb">I = 3(1-b)/R</text>
+
+</svg>

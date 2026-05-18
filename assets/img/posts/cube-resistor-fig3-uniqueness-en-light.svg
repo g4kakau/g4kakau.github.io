@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">Uniqueness turns symmetry into equal potentials</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b42318"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #172033;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #64748b; }
+    .edge { stroke: #334155; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #d7dee8; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #f8fafc; stroke: #d7dee8; stroke-width: 2; }
+    .panel2 { fill: #eef2f7; stroke: #d7dee8; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#ffffff"/>
+<text x="480.0" y="105.0" class="label" text-anchor="middle">Uniqueness turns symmetry into equal potentials</text>
+<rect x="98" y="170" width="184" height="120" rx="16" class="panel"/>
+<text x="190.0" y="240.0" class="small" text-anchor="middle">solution</text>
+<rect x="388" y="170" width="184" height="120" rx="16" class="panel"/>
+<text x="480.0" y="240.0" class="small" text-anchor="middle">symmetry</text>
+<rect x="678" y="170" width="184" height="120" rx="16" class="panel"/>
+<text x="770.0" y="240.0" class="small" text-anchor="middle">another valid solution</text>
+<path d="M 290 230 H 372" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow)"/>
+<path d="M 580 230 H 662" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow)"/>
+<path d="M 190 315 C 300 425, 660 425, 770 315" stroke="#d97706" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow2)"/>
+<text x="480.0" y="455.0" class="math" text-anchor="middle" style="fill:#d97706">uniqueness ⇒ same solution</text>
+</svg>

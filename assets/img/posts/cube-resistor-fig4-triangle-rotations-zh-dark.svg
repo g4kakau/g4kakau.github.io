@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-labelledby="title">
+  <title id="title">等邊三角形的旋轉</title>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e5e7eb" />
+    </marker>
+    <style>
+      text {
+        font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        fill: #e5e7eb;
+      }
+      .tri { fill: none; stroke: #e5e7eb; stroke-width: 2.5; }
+      .vertex-circle { fill: #0b1120; stroke: #e5e7eb; stroke-width: 2.4; }
+      .vertex-label { font-size: 18px; font-weight: 700; dominant-baseline: middle; text-anchor: middle; }
+      .center-dot { fill: #e5e7eb; }
+      .center-label { font-size: 15px; fill: #9aa7b8; }
+      .rot-arc { fill: none; stroke: #e5e7eb; stroke-width: 2; marker-end: url(#arrow); }
+      .angle-sector { fill: #60a5fa; fill-opacity: 0.18; stroke: #f59e0b; stroke-opacity: 0.7; stroke-width: 1.5; }
+      .title { font-size: 22px; font-weight: 700; text-anchor: middle; }
+      .angle-label { font-size: 17px; text-anchor: middle; fill: #9aa7b8; }
+      .note { font-size: 14px; text-anchor: middle; fill: #9aa7b8; }
+    </style>
+  </defs>
+  <rect width="960" height="320" fill="#0b1120"/>
+  <g transform="translate(160,170)">
+    <text class="title" x="0" y="-125">e</text>
+    <text class="note" x="0" y="-100">恆等，0°</text>
+    <polygon class="tri" points="0,-70 60,35 -60,35" />
+    <circle class="vertex-circle" cx="0" cy="-70" r="16" />
+    <circle class="vertex-circle" cx="60" cy="35" r="16" />
+    <circle class="vertex-circle" cx="-60" cy="35" r="16" />
+    <text class="vertex-label" x="0" y="-70">1</text>
+    <text class="vertex-label" x="60" y="35">2</text>
+    <text class="vertex-label" x="-60" y="35">3</text>
+    <circle class="center-dot" cx="0" cy="0" r="3.5" />
+    <text class="center-label" x="8" y="15">O</text>
+    <line x1="0" y1="0" x2="48" y2="0" stroke="#e5e7eb" stroke-width="1.5" />
+    <text class="angle-label" x="0" y="82">0°</text>
+  </g>
+  <g transform="translate(480,170)">
+    <text class="title" x="0" y="-125">r</text>
+    <text class="note" x="0" y="-100">旋轉 120°</text>
+    <path class="angle-sector" d="M 0 0 L 55 0 A 55 55 0 0 1 -27.5 47.6 Z" />
+    <path class="rot-arc" d="M 72 0 A 72 72 0 0 1 -36 62.4" />
+    <polygon class="tri" points="60.6,35 -60.3,34.5 -0.3,-69.5" />
+    <circle class="vertex-circle" cx="60.6" cy="35" r="16" />
+    <circle class="vertex-circle" cx="-60.3" cy="34.5" r="16" />
+    <circle class="vertex-circle" cx="-0.3" cy="-69.5" r="16" />
+    <text class="vertex-label" x="60.6" y="35">1</text>
+    <text class="vertex-label" x="-60.3" y="34.5">2</text>
+    <text class="vertex-label" x="-0.3" y="-69.5">3</text>
+    <circle class="center-dot" cx="0" cy="0" r="3.5" />
+    <text class="center-label" x="8" y="15">O</text>
+    <text class="angle-label" x="35" y="65">120°</text>
+  </g>
+  <g transform="translate(800,170)">
+    <text class="title" x="-5" y="-125">r</text>
+    <text x="13" y="-137" font-size="13" font-weight="700" text-anchor="middle">2</text>
+    <text class="note" x="0" y="-100">旋轉 240°</text>
+    <path class="angle-sector" d="M 0 0 L 55 0 A 55 55 0 1 1 -27.5 -47.6 Z" />
+    <path class="rot-arc" d="M 72 0 A 72 72 0 1 1 -36 -62.4" />
+    <polygon class="tri" points="-60.6,35 0.3,-69.5 60.3,34.5" />
+    <circle class="vertex-circle" cx="-60.6" cy="35" r="16" />
+    <circle class="vertex-circle" cx="0.3" cy="-69.5" r="16" />
+    <circle class="vertex-circle" cx="60.3" cy="34.5" r="16" />
+    <text class="vertex-label" x="-60.6" y="35">1</text>
+    <text class="vertex-label" x="0.3" y="-69.5">2</text>
+    <text class="vertex-label" x="60.3" y="34.5">3</text>
+    <circle class="center-dot" cx="0" cy="0" r="3.5" />
+    <text class="center-label" x="8" y="15">O</text>
+    <text class="angle-label" x="-15" y="82">240°</text>
+  </g>
+</svg>

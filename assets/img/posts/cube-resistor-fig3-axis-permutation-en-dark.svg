@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">Permuting axes still fixes A and H</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f87171"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #e5e7eb;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #9aa7b8; }
+    .edge { stroke: #cbd5e1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #334155; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #111827; stroke: #334155; stroke-width: 2; }
+    .panel2 { fill: #1e293b; stroke: #334155; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#0b1120"/>
+<rect x="80" y="80" width="800" height="380" rx="16" class="panel"/>
+<text x="480.0" y="125.0" class="math" text-anchor="middle" style="fill:#60a5fa">(x,y,z) → (y,x,z)</text>
+<text x="170.0" y="205.0" class="math" text-anchor="start">(0,0,0)</text>
+<path d="M 365 197 H 485" stroke="#9aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+<text x="545.0" y="205.0" class="math" text-anchor="start">(0,0,0)</text>
+<text x="170.0" y="281.0" class="math" text-anchor="start">(1,1,1)</text>
+<path d="M 365 273 H 485" stroke="#9aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+<text x="545.0" y="281.0" class="math" text-anchor="start">(1,1,1)</text>
+<text x="170.0" y="357.0" class="math" text-anchor="start">(1,0,0)</text>
+<path d="M 365 349 H 485" stroke="#9aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow-edge)"/>
+<text x="545.0" y="357.0" class="math" text-anchor="start">(0,1,0)</text>
+<g transform="translate(5,10)"><line x1="745.0" y1="390.0" x2="780.7" y2="226.2" class="thin dash"/>
+<line x1="745.0" y1="390.0" x2="850.0" y2="375.3" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="745.0" y1="390.0" x2="675.7" y2="337.5" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="745.0" y1="390.0" x2="745.0" y2="293.4" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="745.0" y1="293.4" x2="850.0" y2="278.7" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="745.0" y1="293.4" x2="675.7" y2="240.9" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="675.7" y1="337.5" x2="780.7" y2="322.8" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="675.7" y1="337.5" x2="675.7" y2="240.9" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="675.7" y1="240.9" x2="780.7" y2="226.2" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="850.0" y1="375.3" x2="780.7" y2="322.8" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="850.0" y1="375.3" x2="850.0" y2="278.7" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="850.0" y1="278.7" x2="780.7" y2="226.2" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="780.7" y1="322.8" x2="780.7" y2="226.2" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g>
+    <circle cx="675.7" cy="240.9" r="17" fill="#1e293b" stroke="#0b1120" stroke-width="4"/>
+    <text x="675.7" y="247.9" class="small" text-anchor="middle" style="fill:#9aa7b8">C</text>
+  </g>
+<g>
+    <circle cx="780.7" cy="226.2" r="22" fill="#a78bfa" stroke="#0b1120" stroke-width="4"/>
+    <text x="780.7" y="233.2" class="small" text-anchor="middle" style="fill:white">H</text>
+  </g>
+<g>
+    <circle cx="745.0" cy="293.4" r="17" fill="#1e293b" stroke="#0b1120" stroke-width="4"/>
+    <text x="745.0" y="300.4" class="small" text-anchor="middle" style="fill:#9aa7b8">B</text>
+  </g>
+<g>
+    <circle cx="850.0" cy="278.7" r="17" fill="#1e293b" stroke="#0b1120" stroke-width="4"/>
+    <text x="850.0" y="285.7" class="small" text-anchor="middle" style="fill:#9aa7b8">C</text>
+  </g>
+<g>
+    <circle cx="675.7" cy="337.5" r="22" fill="#60a5fa" stroke="#0b1120" stroke-width="4"/>
+    <text x="675.7" y="344.5" class="small" text-anchor="middle" style="fill:white">B</text>
+  </g>
+<g>
+    <circle cx="780.7" cy="322.8" r="17" fill="#1e293b" stroke="#0b1120" stroke-width="4"/>
+    <text x="780.7" y="329.8" class="small" text-anchor="middle" style="fill:#9aa7b8">C</text>
+  </g>
+<g>
+    <circle cx="745.0" cy="390.0" r="22" fill="#64748b" stroke="#0b1120" stroke-width="4"/>
+    <text x="745.0" y="397.0" class="small" text-anchor="middle" style="fill:white">A</text>
+  </g>
+<g>
+    <circle cx="850.0" cy="375.3" r="22" fill="#60a5fa" stroke="#0b1120" stroke-width="4"/>
+    <text x="850.0" y="382.3" class="small" text-anchor="middle" style="fill:white">B</text>
+  </g></g>
+<path d="M 858.0 357.3 C 825 245, 745 245, 689.7 329.5" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow2)"/>
+</svg>

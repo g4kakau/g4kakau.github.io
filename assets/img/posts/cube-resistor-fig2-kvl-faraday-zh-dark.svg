@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">KVL 的失效條件</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-edge" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/>
+    </marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f87171"/>
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: #e5e7eb;
+    }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 18px; }
+    .tiny { font-size: 15px; }
+    .math { font-size: 24px; font-weight: 650; }
+    .muted { fill: #9aa7b8; }
+    .edge { stroke: #cbd5e1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .thin { stroke: #334155; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .dash { stroke-dasharray: 8 8; }
+    .panel { fill: #111827; stroke: #334155; stroke-width: 2; }
+    .panel2 { fill: #1e293b; stroke: #334155; stroke-width: 2; }
+  </style>
+  <rect width="960" height="540" fill="#0b1120"/>
+<rect x="95" y="70" width="770" height="400" rx="16" class="panel"/>
+<ellipse cx="480" cy="275" rx="230" ry="145" fill="none" stroke="#cbd5e1" stroke-width="5"/>
+<path d="M 345 390 C 260 315, 268 220, 360 170" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow2)"/>
+<path d="M 605 160 C 710 215, 725 325, 635 392" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#arrow2)"/>
+<circle cx="480" cy="275" r="70" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+<text x="430.0" y="286.0" class="math" text-anchor="middle" style="fill:#60a5fa">×</text>
+<text x="480.0" y="286.0" class="math" text-anchor="middle" style="fill:#60a5fa">×</text>
+<text x="530.0" y="286.0" class="math" text-anchor="middle" style="fill:#60a5fa">×</text>
+<text x="480.0" y="370.0" class="math" text-anchor="middle" style="fill:#60a5fa">Φ_B(t)</text>
+<text x="480.0" y="445.0" class="math" text-anchor="middle" style="fill:#f87171">∮E·dl = -dΦ_B/dt</text>
+<text x="480.0" y="125.0" class="small" text-anchor="middle" style="fill:#9aa7b8">時變磁通會產生非保守電場</text>
+</svg>
