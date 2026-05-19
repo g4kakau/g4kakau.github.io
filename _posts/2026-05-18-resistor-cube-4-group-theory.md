@@ -69,14 +69,6 @@ $\ce{H2O}$ 分子：氧原子在中間，兩個氫原子在兩側，鍵角約 $1
 <div class="cube-resistor-interactive" data-demo="water-c2v"></div>
 <p class="fig-caption"><strong>圖 2：</strong>水分子 $\ce{H2O}$ 的 $C_{2v}$ 操作實驗台。切換 $e,C_2,\sigma_v,\sigma_v'$，觀察參考軸／鏡面與 H₁、H₂ 身份如何被操作送到新位置。</p>
 
-<details class="cube-resistor-static-compare">
-<summary>展開靜態 SVG 備用稿</summary>
-
-![水分子 C₂v 對稱示意圖](water-c2v-zh-light.svg){: .light w="760" }
-![水分子 C₂v 對稱示意圖](water-c2v-zh-dark.svg){: .dark w="760" }
-
-</details>
-
 ### 為什麼 $\ce{CO2}$ 是直線型而 $\ce{H2O}$ 是彎曲型？
 
 這其實是量子化學的問題，但對稱性能給出半個答案：$\ce{CO2}$ 的點群是 $D_{\infty h}$（包含任意角度的繞軸旋轉），而 $\ce{H2O}$ 的點群是 $C_{2v}$（只有 $180°$ 旋轉）。不同的點群對應不同的分子軌道結合方式，影響鍵的形成與鍵角。分子的幾何結構，就是最能讓電子能量降低的構型，而這個構型受制於原子種類和電子數目所允許的對稱性。
@@ -90,6 +82,7 @@ $\ce{H2O}$ 分子：氧原子在中間，兩個氫原子在兩側，鍵角約 $1
 > - **結合律**（$(ab)c=a(bc)$）
 > - **單位元**（存在 $e$ 使 $ea=ae=a$）
 > - **逆元**（每個 $a$ 有 $a^{-1}$ 使 $aa^{-1}=e$）
+> 
 > 若另外滿足交換律 $ab=ba$，則稱為**阿貝爾群（abelian group）**。
 {: .prompt-tip }
 
