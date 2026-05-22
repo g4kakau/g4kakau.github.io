@@ -17,7 +17,7 @@ $$\require{physics}$$
 
 <link rel="stylesheet" href="/assets/css/posts-custom.css">
 
-> 《立方晶格等效電阻》系列：**第一篇** ｜ [第二篇](/posts/resistor-cube-2-kirchhoff/) ｜ [第三篇](/posts/resistor-cube-3-symmetry/) ｜ [第四篇](/posts/resistor-cube-4-group-theory/)
+> 《立方晶格等效電阻》系列：**第一篇** ｜ [第二篇](/posts/resistor-cube-2-kirchhoff/) ｜ [第三篇](/posts/resistor-cube-3-symmetry/) ｜ [第四篇](/posts/resistor-cube-4-group-theory/) ｜ [第五篇](/posts/resistor-cube-5-three-configurations/) ｜ [第六篇](/posts/resistor-cube-6-graph-theory/) ｜ [第七篇](/posts/resistor-cube-7-laplacian/) ｜ [第八篇](/posts/resistor-cube-8-infinite-lattice/)
 
 ---
 

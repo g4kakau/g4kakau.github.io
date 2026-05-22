@@ -19,7 +19,7 @@ $$
 <link rel="stylesheet" href="/assets/css/cube-resistor-interactives.css">
 <script defer src="/assets/js/cube-resistor-interactives.js"></script>
 
-> 《立方晶格等效電阻》系列：[第一篇](/posts/resistor-cube-1-node-voltage/) ｜ [第二篇](/posts/resistor-cube-2-kirchhoff/) ｜ [第三篇](/posts/resistor-cube-3-symmetry/) ｜ **第四篇**
+> 《立方晶格等效電阻》系列：[第一篇](/posts/resistor-cube-1-node-voltage/) ｜ [第二篇](/posts/resistor-cube-2-kirchhoff/) ｜ [第三篇](/posts/resistor-cube-3-symmetry/) ｜ **第四篇** ｜ [第五篇](/posts/resistor-cube-5-three-configurations/) ｜ [第六篇](/posts/resistor-cube-6-graph-theory/) ｜ [第七篇](/posts/resistor-cube-7-laplacian/) ｜ [第八篇](/posts/resistor-cube-8-infinite-lattice/)
 
 ---
 
@@ -193,7 +193,7 @@ $\ce{NaCl}$ 和金剛石屬於立方晶系，點群是 $O_h$——正方體的�
 **圖 5：** 群作用先把節點分成軌道；唯一性讓同軌道節點等電位；最後把每個軌道合併成商電路。
 {: .fig-caption }
 
-在後續的篇章，我們會把同樣的邏輯應用到 $2\times 2\times 2$ 的立方晶格（$27$ 個節點）——那時用到的對稱群更大，把節點壓縮的效果也更驚人。
+在後續的篇章，我們先把同樣的邏輯應用到正方體的**另外兩種連法**（面對角線與稜邊）——看看端點改變時，對稱群如何跟著縮小、軌道如何隨之增多。之後再把視野擴大到圖論與矩陣方法，用圖 Laplacian 把三個答案一次算出。
 
 ---
 
@@ -210,4 +210,4 @@ $\ce{NaCl}$ 和金剛石屬於立方晶系，點群是 $O_h$——正方體的�
 
 在分子物理裡，這讓化學家能預測哪些振動模式是紅外活性的；在固體物理裡，這是 Bloch 定理和能帶結構的基礎；在電路問題裡，這讓 27 個節點的方程組縮成 3 個未知數。
 
-**【系列待續】** 接下來的篇章將把 $S_3$ 換成整個 $O_h$ 群，把 $1\times1\times1$ 的立方體換成 $2\times2\times2$ 的立方晶格（27 個節點），看看對稱性能把問題縮小到什麼程度。
+**【系列待續】** 下一篇（[第五篇](/posts/resistor-cube-5-three-configurations/)）將改變端點配置：把同樣的群作用軌道法套用到**面對角線**與**稜邊**，展示不同端點如何決定不同的對稱子群，以及壓縮程度如何隨之改變。
