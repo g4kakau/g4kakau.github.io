@@ -1,0 +1,254 @@
+---
+layout: post
+title: "正方體等效電阻（六）：圖論入門——把電路翻譯成矩陣"
+date: 2026-05-19 00:00:00 +0800
+categories: [大學數學, 線性代數]
+tags: [圖論, 鄰接矩陣, 圖Laplacian, 節點電壓法, 電阻網路, KCL, 線性代數, 競賽物理]
+math: true
+description: "電路可以用圖來描述：節點是頂點，電阻是帶權重的邊。把這個想法寫成矩陣，就得到圖 Laplacian L = D - A。本文從小例子出發，推導出 KCL 的矩陣形式 Lv = i，並寫出正方體電路的 8×8 Laplacian 矩陣。立方晶格等效電阻系列第六篇。"
+media_subpath: /assets/img/posts/cube-resistor
+---
+
+$$\require{physics}$$
+
+<link rel="stylesheet" href="/assets/css/posts-custom.css">
+
+> 《立方晶格等效電阻》系列：[第一篇](/posts/resistor-cube-1-node-voltage/) ｜ [第二篇](/posts/resistor-cube-2-kirchhoff/) ｜ [第三篇](/posts/resistor-cube-3-symmetry/) ｜ [第四篇](/posts/resistor-cube-4-group-theory/) ｜ [第五篇](/posts/resistor-cube-5-three-configurations/) ｜ **第六篇** ｜ [第七篇](/posts/resistor-cube-7-laplacian/) ｜ [第八篇](/posts/resistor-cube-8-infinite-lattice/)
+
+---
+
+前五篇，我們用對稱性把方程組從 6 條壓縮到 2～4 條，再手解線性方程組。這個流程每換一種連法就要重來一遍。
+
+現在換個視角：不問「怎麼解」，先問「這個電路長什麼樣子」。把電路**翻譯成圖（graph）**，再把圖翻譯成**矩陣**，就能找到一個通用的矩陣方程式——不論哪種連法，不論多大的電路，都套同一套框架。
+
+這篇介紹這個翻譯的語言：圖論與圖 Laplacian。
+
+---
+
+## 電路就是加權圖
+
+**圖（graph）** 由兩個集合組成：
+
+- **頂點集** $V = \\{0, 1, \ldots, n-1\\}$（對應電路的節點）
+- **邊集** $E$（對應電路的電阻）
+
+**加權圖（weighted graph）** 在每條邊 $(i,j)$ 上附加一個正數**權重** $w_{ij}$。
+
+在電路問題裡，邊的自然權重是**電導（conductance）**：
+
+$$w_{ij} = G_{ij} = \frac{1}{R_{ij}}$$
+
+用電導而非電阻，是因為 KCL 的電流公式是「電導 × 電位差」：$I_{j\to i} = G_{ij}(v_j - v_i)$——電導讓公式更線性。
+
+> **翻譯對照表**
+>
+> | 電路語言 | 圖語言 |
+> |---|---|
+> | 節點 | 頂點 $i \in V$ |
+> | 電阻 $R_{ij}$ | 邊 $(i,j) \in E$ |
+> | 電導 $G_{ij} = 1/R_{ij}$ | 邊的權重 $w_{ij}$ |
+> | KCL 方程式 | 矩陣方程式 $L\mathbf{v} = \mathbf{i}$ |
+
+---
+
+## 鄰接矩陣 $A$
+
+**鄰接矩陣（adjacency matrix）** $A$ 是一個 $n\times n$ 矩陣，記錄每對頂點之間的連接強度：
+
+$$A_{ij} = \begin{cases} G_{ij} & \text{若 } (i,j) \in E \\ 0 & \text{否則} \end{cases}$$
+
+$A$ 是對稱矩陣（$A_{ij} = A_{ji}$），因為電阻網路中電流可以雙向流動。
+
+### 三角形電路（暖身例子）
+
+三個節點 $\\{1,2,3\\}$ 兩兩相連，每條邊電阻均為 $R$，電導 $G = 1/R$：
+
+$$A = G\begin{pmatrix} 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \end{pmatrix}$$
+
+---
+
+## 度矩陣 $D$
+
+頂點 $i$ 的**加權度（weighted degree）** 是它所有邊的電導之和：
+
+$$d_i = \sum_{j \sim i} G_{ij}$$
+
+**度矩陣（degree matrix）** $D$ 是對角矩陣，$D_{ii} = d_i$，$D_{ij} = 0$（$i \neq j$）。
+
+物理意義：$d_i$ 是節點 $i$ 的「總電導」——從節點 $i$ 流向所有鄰居的電流，等於 $d_i$ 乘以節點 $i$ 的電位（若其他節點電位皆為零）。
+
+### 三角形電路（續）
+
+每個節點各有 2 條邊，每條電導 $G$，所以 $d_1 = d_2 = d_3 = 2G$：
+
+$$D = 2G\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = 2GI$$
+
+---
+
+## 圖 Laplacian $L = D - A$
+
+**圖 Laplacian**（圖拉普拉斯矩陣）定義為：
+
+$$\boxed{L = D - A}$$
+
+用元素寫出來：
+
+$$L_{ij} = \begin{cases} d_i = \displaystyle\sum_{k \sim i} G_{ik} & i = j \\ -G_{ij} & (i,j)\in E \\ 0 & \text{否則} \end{cases}$$
+
+### 三角形電路（續）
+
+$$L = D - A = G\begin{pmatrix} 2 & -1 & -1 \\ -1 & 2 & -1 \\ -1 & -1 & 2 \end{pmatrix}$$
+
+每列之和為零：$2-1-1=0$。這不是巧合——下一節會解釋原因。
+
+---
+
+## KCL 的矩陣形式：$L\mathbf{v} = \mathbf{i}$
+
+現在推導 $L\mathbf{v} = \mathbf{i}$ 如何等價於 KCL。
+
+設 $\mathbf{v} = (v_0, v_1, \ldots, v_{n-1})^\top$ 是各節點電位，$\mathbf{i} = (i_0, i_1, \ldots, i_{n-1})^\top$ 是各節點**外部注入電流**（$i_k > 0$ 表示外部電源把電流打進節點 $k$，$i_k < 0$ 表示抽出）。
+
+計算 $(L\mathbf{v})_k$，即矩陣 $L$ 第 $k$ 列與 $\mathbf{v}$ 的內積：
+
+$$\begin{aligned}
+(L\mathbf{v})_k
+&= \sum_j L_{kj}\,v_j \\
+&= D_{kk}\,v_k + \sum_{j \neq k} L_{kj}\,v_j \\
+&= d_k\,v_k - \sum_{j \sim k} G_{kj}\,v_j \\
+&= \sum_{j \sim k} G_{kj}\,v_k - \sum_{j \sim k} G_{kj}\,v_j \\
+&= \sum_{j \sim k} G_{kj}(v_k - v_j)
+\end{aligned}$$
+
+最後這個式子是什麼？正是從節點 $k$ **流向**所有鄰居的電流總和。
+
+KCL 說「穩態下，每個節點的淨電流為零」：從外部注入的電流 $i_k$，必須等於從該節點流出到網路的電流：
+
+$$i_k = \sum_{j \sim k} G_{kj}(v_k - v_j) = (L\mathbf{v})_k$$
+
+對所有節點同時寫出，就是：
+
+$$\boxed{L\mathbf{v} = \mathbf{i}}$$
+
+> **KCL 就是圖 Laplacian 方程式。** 不需要逐節點列方程——把電路的幾何結構編碼進 $L$ 之後，這一個矩陣方程式自動包含了所有節點的 KCL。
+
+---
+
+## $L$ 的四個關鍵性質
+
+**性質一：對稱性** $L^\top = L$
+
+因為 $G_{ij} = G_{ji}$（電阻是無方向性元件）。
+
+**性質二：每列之和為零** $L\mathbf{1} = \mathbf{0}$
+
+$$\sum_j L_{kj} = d_k + \sum_{j \sim k}(-G_{kj}) = d_k - d_k = 0$$
+
+物理意義：若所有節點電位相同（$\mathbf{v} = c\mathbf{1}$），沒有任何電流流動，所以 $L(c\mathbf{1}) = \mathbf{0}$。
+
+**性質三：正半定（PSD）** $\mathbf{x}^\top L \mathbf{x} \geq 0$
+
+利用恆等式（可由定義直接展開）：
+
+$$\mathbf{x}^\top L \mathbf{x} = \sum_{(i,j)\in E} G_{ij}(x_i - x_j)^2 \geq 0$$
+
+每一項都是非負的，所以整體非負。
+
+**性質四：零空間為 $\operatorname{span}\\{\mathbf{1}\\}$（連通圖）**
+
+由性質二知 $\mathbf{1} \in \ker L$。對連通圖，可以證明這是唯一的零向量方向：若 $L\mathbf{x} = \mathbf{0}$，則 $\mathbf{x}^\top L\mathbf{x} = \sum_{(i,j)} G_{ij}(x_i-x_j)^2 = 0$，由連通性得所有相鄰節點的電位差均為零，故 $\mathbf{x} = c\mathbf{1}$。
+
+> 結論：$n$ 節點連通圖的 $L$ 是**奇異矩陣**，$\operatorname{rank}(L) = n-1$，$\ker(L) = \operatorname{span}\\{\mathbf{1}\\}$。
+
+這正是電路的物理：電壓是**相對**的，必須選定接地節點才能確定唯一解。
+
+---
+
+## 正方體的節點編號與 $L$ 矩陣
+
+### 二進位節點編號
+
+把正方體 8 個頂點的三維座標 $(x,y,z)$ 直接編碼成整數：節點 $k$ 的座標為 $k$ 的二進位表示 $(k_2, k_1, k_0)$，其中 $k = 4k_2 + 2k_1 + k_0$。
+
+| 節點 $k$ | 二進位 | 座標 $(x,y,z)$ | 系列前五篇的稱呼 |
+|:---:|:---:|---|---|
+| 0 | 000 | $(0,0,0)$ | 起點 $A$ |
+| 1 | 001 | $(0,0,1)$ | — |
+| 2 | 010 | $(0,1,0)$ | — |
+| 3 | 011 | $(0,1,1)$ | — |
+| 4 | 100 | $(1,0,0)$ | — |
+| 5 | 101 | $(1,0,1)$ | — |
+| 6 | 110 | $(1,1,0)$ | — |
+| 7 | 111 | $(1,1,1)$ | 體對角線終點 $H$ |
+
+**相鄰判準**：節點 $i$ 和 $j$ 相鄰，若且唯若 $i \oplus j$（位元互斥或）是 $1$、$2$、$4$ 之一——即兩者恰好有一個二進位位元不同。
+
+這個編號的優點是：體對角線的兩端剛好是 $0$ 和 $7$（二進位全 $0$ 和全 $1$），在矩陣裡最好找。
+
+### 鄰接矩陣 $A$（以 $1/R$ 為單位）
+
+正方體每條邊電導 $G = 1/R$，12 條邊如下：
+
+$$\{(0,1),(0,2),(0,4),(1,3),(1,5),(2,3),(2,6),(3,7),(4,5),(4,6),(5,7),(6,7)\}$$
+
+其中 $(i,j)$ 的電導 $= 1/R$，其餘為 $0$。由於所有邊的電導相同，可以把 $1/R$ 提出：$A = \tilde{A}/R$，其中 $\tilde{A}$ 的元素只有 $0$ 和 $1$。
+
+### 度矩陣 $D$
+
+正方體的每個節點恰好有 $3$ 條邊，所以：
+
+$$D = \frac{3}{R}\,I_8$$
+
+### 圖 Laplacian（把 $1/R$ 提出）
+
+$$L = \frac{1}{R}\,\tilde{L}, \qquad \tilde{L} = \begin{pmatrix}
+ 3 & -1 & -1 &  0 & -1 &  0 &  0 &  0 \\
+-1 &  3 &  0 & -1 &  0 & -1 &  0 &  0 \\
+-1 &  0 &  3 & -1 &  0 &  0 & -1 &  0 \\
+ 0 & -1 & -1 &  3 &  0 &  0 &  0 & -1 \\
+-1 &  0 &  0 &  0 &  3 & -1 & -1 &  0 \\
+ 0 & -1 &  0 &  0 & -1 &  3 &  0 & -1 \\
+ 0 &  0 & -1 &  0 & -1 &  0 &  3 & -1 \\
+ 0 &  0 &  0 & -1 &  0 & -1 & -1 &  3
+\end{pmatrix}$$
+
+驗證幾個位置：
+- 對角線 $\tilde{L}_{kk} = 3$（每個節點度數為 3）
+- $\tilde{L}_{07} = 0$：節點 $0$（$000$）與節點 $7$（$111$）差了三個位元，**不相鄰**
+- $\tilde{L}_{37} = -1$：節點 $3$（$011$）與節點 $7$（$111$）差了一個位元，**相鄰**
+
+每列之和均為 $3 + (-1)\times3 = 0$，符合性質二。
+
+### 對稱性在矩陣裡的痕跡
+
+[第三篇](/posts/resistor-cube-3-symmetry/)和[第五篇](/posts/resistor-cube-5-three-configurations/)用對稱群 $S_3$ 把節點分成軌道，等價於說：對應的座標置換 $\sigma$ 作用在節點編號上，會把 $\tilde{L}$ 的某些列（行）互換，而 $\tilde{L}$ 保持不變——即 $P_\sigma \tilde{L} P_\sigma^\top = \tilde{L}$，其中 $P_\sigma$ 是置換矩陣。
+
+同軌道節點的電位相同，等效於把 $\tilde{L}$ 按軌道分塊化簡（Schur complement），這正是前幾篇手工對稱化簡的矩陣語言翻譯版本。
+
+---
+
+## 為什麼要建立這套語言？
+
+目前我們只是把熟悉的 KCL 重寫成 $L\mathbf{v} = \mathbf{i}$，看起來只是換個記法。真正的威力在下一篇：
+
+1. **不需要對稱性假設**：只要有 $L$，就能對任意連法、任意電路直接求解
+2. **等效電阻有閉合公式**：$R_\text{eff}(a,b) = (\mathbf{e}_a - \mathbf{e}_b)^\top L^+ (\mathbf{e}_a - \mathbf{e}_b)$，其中 $L^+$ 是 $L$ 的 Moore–Penrose 擬逆（pseudoinverse）
+3. **可以同時算出所有連法**：不需要重新列方程，換端點只需換向量 $\mathbf{e}_a - \mathbf{e}_b$
+
+> **預告**：[第七篇](/posts/resistor-cube-7-laplacian/)將從 $\tilde{L}$ 出發，用矩陣擬逆一次算出正方體三種連法的等效電阻，並用 Python 驗算：$5R/6$、$3R/4$、$7R/12$——全部正確。
+
+---
+
+## 小結
+
+| 概念 | 定義 | 電路意義 |
+|---|---|---|
+| 頂點集 $V$ | 節點 $\\{0,\ldots,n-1\\}$ | 電路節點 |
+| 邊集 $E$，權重 $G_{ij}$ | 帶電導的連接 | 電阻 $R_{ij} = 1/G_{ij}$ |
+| 鄰接矩陣 $A$ | $A_{ij} = G_{ij}$ | 電導矩陣 |
+| 度矩陣 $D$ | $D_{ii} = \sum_{j\sim i} G_{ij}$ | 節點總電導 |
+| 圖 Laplacian $L = D-A$ | $L_{ij}$ 見上 | KCL 係數矩陣 |
+| $L\mathbf{v} = \mathbf{i}$ | — | 全電路的 KCL 方程組 |
+| $\ker L = \operatorname{span}\\{\mathbf{1}\\}$ | — | 電壓是相對量，需接地 |
+
+**【系列待續】**
