@@ -233,8 +233,8 @@ def fig1_node_classification(cfg: Cfg) -> str:
     c = cfg.c
     rows = [
         ("A", tr(cfg, "端點", "terminal"), c["a"]),
-        ("B", tr(cfg, "3 個等位節點", "3 equal-potential nodes"), c["b"]),
-        ("C", tr(cfg, "3 個等位節點", "3 equal-potential nodes"), c["c"]),
+        ("B", tr(cfg, "3 個等電位節點", "3 equal-potential nodes"), c["b"]),
+        ("C", tr(cfg, "3 個等電位節點", "3 equal-potential nodes"), c["c"]),
         ("H", tr(cfg, "端點", "terminal"), c["h"]),
     ]
     legend = []
@@ -470,7 +470,7 @@ def fig3_uniqueness(cfg: Cfg) -> str:
 
 
 def fig3_axis_permutation(cfg: Cfg) -> str:
-    title = tr(cfg, "交換座標軸仍固定 A 與 H", "Permuting axes still fixes A and H")
+    title = tr(cfg, "交換坐標軸仍固定 A 與 H", "Permuting axes still fixes A and H")
     c = cfg.c
     cube, pts = draw_cube(cfg, ox=745, oy=390, scale=0.42, highlight={(0, 0, 0), (1, 1, 1), (1, 0, 0), (0, 1, 0)}, labels=True)
     rows = [
