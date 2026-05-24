@@ -3,7 +3,7 @@ layout: post
 title: "正方體等效電阻（二）：克希荷夫定律的物理根源"
 date: 2026-05-18 00:00:00 +0800
 categories: [大學物理, 電路學]
-tags: [克希荷夫定律, KCL, KVL, 節點電壓法, 電路分析, 電荷守恆, 電位, 競賽物理]
+tags: [等效電阻, 電阻網路, 克希荷夫定律, KCL, KVL, 節點電壓法, 電路分析, 電荷守恆, 電位, 競賽物理, 立方晶格]
 math: true
 description: "克希荷夫定律不是憑空定義的電路規則，而是從電荷守恆與電場保守性推導出來的。本文說明 KCL 與 KVL 的物理根源，以及它們如何讓我們系統性地列出電路方程式。立方晶格等效電阻系列第二篇。"
 media_subpath: /assets/img/posts/cube-resistor
