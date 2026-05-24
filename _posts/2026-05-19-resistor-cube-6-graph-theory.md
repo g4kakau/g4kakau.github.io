@@ -3,7 +3,7 @@ layout: post
 title: "正方體等效電阻（六）：圖論入門——把電路翻譯成矩陣"
 date: 2026-05-19 00:00:00 +0800
 categories: [大學數學, 線性代數]
-tags: [圖論, 鄰接矩陣, 圖Laplacian, 節點電壓法, 電阻網路, KCL, 線性代數, 競賽物理]
+tags: [等效電阻, 電阻網路, 圖論, 鄰接矩陣, 圖Laplacian, 節點電壓法, KCL, 線性代數, 競賽物理, 立方晶格]
 math: true
 description: "電路可以用圖來描述：節點是頂點，電阻是帶權重的邊。把這個想法寫成矩陣，就得到圖 Laplacian L = D - A。本文從小例子出發，推導出 KCL 的矩陣形式 Lv = i，並寫出正方體電路的 8×8 Laplacian 矩陣。立方晶格等效電阻系列第六篇。"
 media_subpath: /assets/img/posts/cube-resistor

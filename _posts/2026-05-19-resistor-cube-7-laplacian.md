@@ -3,7 +3,7 @@ layout: post
 title: "正方體等效電阻（七）：從圖 Laplacian 到有效電阻公式"
 date: 2026-05-19 00:00:00 +0800
 categories: [大學數學, 線性代數]
-tags: [圖Laplacian, 擬逆, 有效電阻, 特徵值, 節點電壓法, 電阻網路, 線性代數, 競賽物理]
+tags: [等效電阻, 電阻網路, 圖Laplacian, 擬逆, 有效電阻, 特徵值, 節點電壓法, 線性代數, 競賽物理, 立方晶格]
 math: true
 description: "有了圖 Laplacian L，解電路問題等同於解 Lv=i。但 L 是奇異矩陣，本文介紹兩種處理方式：接地縮減法與 Moore–Penrose 擬逆。從擬逆推導出有效電阻閉合公式，再用 Python 一次驗算正方體三種連法，並展示立方體 Laplacian 的美麗特徵譜。立方晶格等效電阻系列第七篇。"
 media_subpath: /assets/img/posts/cube-resistor
@@ -249,4 +249,4 @@ $$R_\text{eff}(a,b) = R \sum_{\lambda_k \neq 0} \frac{1}{\lambda_k}\left[\mathbf
 >
 > 更深刻的結果：$\sqrt{R_\text{eff}}$ 可以等距嵌入到希爾伯特空間（Hilbert space）中，這讓它在機器學習與圖聚類中有廣泛應用。
 
-**【系列待續】** 前七篇都在研究**有限**電路。[第八篇](/posts/resistor-cube-8-infinite-lattice/)將把問題推向極限：一個無限延伸的三維立方晶格，任意兩個相鄰節點之間的等效電阻是多少？這需要一套完全不同的工具——格點 Green's function。
+**【系列待續】** 前七篇都在研究**有限**電路。[第八篇](/posts/resistor-cube-8-infinite-lattice/)將把問題推向極限：一個無限延伸的三維立方晶格，任意兩個相鄰節點之間的等效電阻是多少？這需要一套完全不同的工具——格點格林函數。
