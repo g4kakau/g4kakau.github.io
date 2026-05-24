@@ -14,6 +14,7 @@
   color: var(--cube-demo-ink);
   margin: 1.25rem auto 0.65rem;
   max-width: 760px;
+  min-height: 500px;
 }
 
 html[data-mode="dark"] .cube-resistor-interactive,

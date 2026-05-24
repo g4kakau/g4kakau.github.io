@@ -1,0 +1,557 @@
+<div id="s3-noncommutativity">
+  <style>
+    #s3-noncommutativity {
+      --s3-fg: #2f343f;
+      --s3-muted: #7a8394;
+
+      --s3-blue: #0b63ce;
+      --s3-blue-hover: #084fa5;
+      --s3-blue-disabled: #94bdf2;
+
+      --s3-top: #3b82f6;
+      --s3-top-fill: rgba(59, 130, 246, 0.18);
+
+      --s3-bottom: #ec4899;
+      --s3-bottom-fill: rgba(236, 72, 153, 0.18);
+
+      --s3-glow: rgba(250, 204, 21, 0.38);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #s3-noncommutativity {
+        --s3-fg: #d7dce6;
+        --s3-muted: #8b95a8;
+
+        --s3-blue: #60a5fa;
+        --s3-blue-hover: #3b82f6;
+        --s3-blue-disabled: rgba(96, 165, 250, 0.35);
+
+        --s3-top: #60a5fa;
+        --s3-top-fill: rgba(96, 165, 250, 0.22);
+
+        --s3-bottom: #f472b6;
+        --s3-bottom-fill: rgba(244, 114, 182, 0.22);
+
+        --s3-glow: rgba(250, 204, 21, 0.28);
+      }
+    }
+
+    /* Chirpy 常見的明暗模式標記 */
+    html[data-mode="dark"] #s3-noncommutativity,
+    body[data-mode="dark"] #s3-noncommutativity,
+    [data-theme="dark"] #s3-noncommutativity {
+      --s3-fg: #d7dce6;
+      --s3-muted: #8b95a8;
+
+      --s3-blue: #60a5fa;
+      --s3-blue-hover: #3b82f6;
+      --s3-blue-disabled: rgba(96, 165, 250, 0.35);
+
+      --s3-top: #60a5fa;
+      --s3-top-fill: rgba(96, 165, 250, 0.22);
+
+      --s3-bottom: #f472b6;
+      --s3-bottom-fill: rgba(244, 114, 182, 0.22);
+
+      --s3-glow: rgba(250, 204, 21, 0.28);
+    }
+
+    html[data-mode="light"] #s3-noncommutativity,
+    body[data-mode="light"] #s3-noncommutativity,
+    [data-theme="light"] #s3-noncommutativity {
+      --s3-fg: #2f343f;
+      --s3-muted: #7a8394;
+
+      --s3-blue: #0b63ce;
+      --s3-blue-hover: #084fa5;
+      --s3-blue-disabled: #94bdf2;
+
+      --s3-top: #3b82f6;
+      --s3-top-fill: rgba(59, 130, 246, 0.18);
+
+      --s3-bottom: #ec4899;
+      --s3-bottom-fill: rgba(236, 72, 153, 0.18);
+
+      --s3-glow: rgba(250, 204, 21, 0.38);
+    }
+
+    #s3-noncommutativity,
+    #s3-noncommutativity * {
+      box-sizing: border-box;
+    }
+
+    #s3-noncommutativity {
+      width: min(620px, 100%);
+      margin: 1.1rem auto 0.35rem;
+      color: var(--s3-fg);
+      font-family:
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        sans-serif;
+    }
+
+    #s3-noncommutativity .s3-row {
+      display: grid;
+      grid-template-columns: 205px 1fr;
+      column-gap: 26px;
+      align-items: center;
+      min-height: 126px;
+      margin: 0 0 24px;
+    }
+
+    #s3-noncommutativity .s3-row:last-child {
+      margin-bottom: 0;
+    }
+
+    #s3-noncommutativity .s3-equation {
+      font-size: clamp(1.32rem, 3vw, 1.72rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--s3-fg);
+      white-space: nowrap;
+    }
+
+    #s3-noncommutativity .s3-result {
+      opacity: 0.38;
+      transition:
+        opacity 240ms ease,
+        filter 240ms ease,
+        transform 240ms ease;
+      display: inline-block;
+    }
+
+    #s3-noncommutativity .s3-result.is-active {
+      opacity: 1;
+      filter: drop-shadow(0 0 10px var(--s3-glow));
+      transform: scale(1.04);
+    }
+
+    #s3-noncommutativity .s3-stage {
+      min-width: 0;
+    }
+
+    #s3-noncommutativity .s3-controls {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    #s3-noncommutativity .s3-step-btn,
+    #s3-noncommutativity .s3-reset-btn {
+      appearance: none;
+      border: 2px solid var(--s3-blue);
+      border-radius: 6px;
+      background: var(--s3-blue);
+      color: #ffffff;
+      font: inherit;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+      transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        opacity 160ms ease,
+        transform 160ms ease;
+    }
+
+    #s3-noncommutativity .s3-step-btn {
+      min-width: 70px;
+      padding: 7px 14px;
+      font-size: 0.92rem;
+    }
+
+    #s3-noncommutativity .s3-step-btn:hover:not(:disabled),
+    #s3-noncommutativity .s3-reset-btn:hover {
+      background: var(--s3-blue-hover);
+      border-color: var(--s3-blue-hover);
+    }
+
+    #s3-noncommutativity .s3-step-btn:active:not(:disabled),
+    #s3-noncommutativity .s3-reset-btn:active {
+      transform: translateY(1px);
+    }
+
+    #s3-noncommutativity .s3-step-btn:disabled {
+      background: transparent;
+      border-color: var(--s3-blue-disabled);
+      color: var(--s3-blue-disabled);
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    #s3-noncommutativity .s3-svg {
+      width: 100%;
+      max-width: 330px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      overflow: visible;
+      background: transparent;
+    }
+
+    #s3-noncommutativity .s3-ball circle {
+      stroke-width: 2.8;
+    }
+
+    #s3-noncommutativity .s3-ball text {
+      font-size: 21px;
+      font-weight: 850;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: var(--s3-fg);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    #s3-noncommutativity .s3-ball-top circle {
+      fill: var(--s3-top-fill);
+      stroke: var(--s3-top);
+    }
+
+    #s3-noncommutativity .s3-ball-bottom circle {
+      fill: var(--s3-bottom-fill);
+      stroke: var(--s3-bottom);
+    }
+
+    #s3-noncommutativity .s3-reset-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.25rem;
+    }
+
+    #s3-noncommutativity .s3-reset-btn {
+      padding: 7px 16px;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 700px) {
+      #s3-noncommutativity .s3-row {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+        margin-bottom: 26px;
+      }
+
+      #s3-noncommutativity .s3-equation {
+        text-align: center;
+      }
+
+      #s3-noncommutativity .s3-svg {
+        max-width: 330px;
+      }
+    }
+  </style>
+
+  <div class="s3-row" data-row="top">
+    <div class="s3-equation">
+      \((12)(13)=\)<span class="s3-result" data-result="top">\((132)\)</span>
+    </div>
+
+    <div class="s3-stage">
+      <div class="s3-controls">
+        <button
+          class="s3-step-btn"
+          type="button"
+          data-row="top"
+          data-a="1"
+          data-b="3"
+        >
+          \((13)\)
+        </button>
+        <button
+          class="s3-step-btn"
+          type="button"
+          data-row="top"
+          data-a="1"
+          data-b="2"
+          disabled
+        >
+          \((12)\)
+        </button>
+      </div>
+
+      <svg
+        class="s3-svg"
+        viewBox="0 0 330 96"
+        role="img"
+        aria-label="上排置換動畫"
+      >
+        <g class="s3-ball s3-ball-top" data-row="top" data-ball="1">
+          <circle r="22"></circle>
+          <text y="2">1</text>
+        </g>
+        <g class="s3-ball s3-ball-top" data-row="top" data-ball="2">
+          <circle r="22"></circle>
+          <text y="2">2</text>
+        </g>
+        <g class="s3-ball s3-ball-top" data-row="top" data-ball="3">
+          <circle r="22"></circle>
+          <text y="2">3</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="s3-row" data-row="bottom">
+    <div class="s3-equation">
+      \((13)(12)=\)<span class="s3-result" data-result="bottom">\((123)\)</span>
+    </div>
+
+    <div class="s3-stage">
+      <div class="s3-controls">
+        <button
+          class="s3-step-btn"
+          type="button"
+          data-row="bottom"
+          data-a="1"
+          data-b="2"
+        >
+          \((12)\)
+        </button>
+        <button
+          class="s3-step-btn"
+          type="button"
+          data-row="bottom"
+          data-a="1"
+          data-b="3"
+          disabled
+        >
+          \((13)\)
+        </button>
+      </div>
+
+      <svg
+        class="s3-svg"
+        viewBox="0 0 330 96"
+        role="img"
+        aria-label="下排置換動畫"
+      >
+        <g class="s3-ball s3-ball-bottom" data-row="bottom" data-ball="1">
+          <circle r="22"></circle>
+          <text y="2">1</text>
+        </g>
+        <g class="s3-ball s3-ball-bottom" data-row="bottom" data-ball="2">
+          <circle r="22"></circle>
+          <text y="2">2</text>
+        </g>
+        <g class="s3-ball s3-ball-bottom" data-row="bottom" data-ball="3">
+          <circle r="22"></circle>
+          <text y="2">3</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="s3-reset-wrap">
+    <button id="s3-reset" class="s3-reset-btn" type="button">重置</button>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.querySelector("#s3-noncommutativity");
+      if (!root) return;
+
+      const DURATION = 620;
+      const EASING = "cubic-bezier(.2,.75,.2,1)";
+
+      const slotX = [55, 165, 275];
+      const slotY = 58;
+      let resetToken = 0;
+
+      const rows = {
+        top: {
+          state: [1, 2, 3],
+          step: 0,
+          sequence: [
+            { a: 1, b: 3 },
+            { a: 1, b: 2 },
+          ],
+          balls: {},
+          buttons: [],
+          result: root.querySelector('[data-result="top"]'),
+          isAnimating: false,
+        },
+
+        bottom: {
+          state: [1, 2, 3],
+          step: 0,
+          sequence: [
+            { a: 1, b: 2 },
+            { a: 1, b: 3 },
+          ],
+          balls: {},
+          buttons: [],
+          result: root.querySelector('[data-result="bottom"]'),
+          isAnimating: false,
+        },
+      };
+
+      root.querySelectorAll(".s3-ball").forEach((ball) => {
+        const rowName = ball.dataset.row;
+        const ballNumber = Number(ball.dataset.ball);
+        rows[rowName].balls[ballNumber] = ball;
+      });
+
+      root.querySelectorAll(".s3-step-btn").forEach((button) => {
+        const rowName = button.dataset.row;
+        rows[rowName].buttons.push(button);
+      });
+
+      function point(position) {
+        return {
+          x: slotX[position - 1],
+          y: slotY,
+        };
+      }
+
+      function setBallPosition(ball, p) {
+        ball.style.transform = `translate(${p.x}px, ${p.y}px)`;
+      }
+
+      function cancelBallAnimations(row) {
+        Object.values(row.balls).forEach((ball) => {
+          ball.getAnimations().forEach((animation) => animation.cancel());
+        });
+      }
+
+      function render(row) {
+        for (let pos = 1; pos <= 3; pos += 1) {
+          const element = row.state[pos - 1];
+          setBallPosition(row.balls[element], point(pos));
+        }
+      }
+
+      function syncButtons(row) {
+        row.buttons.forEach((button, index) => {
+          button.disabled = index !== row.step;
+        });
+
+        if (row.step >= row.sequence.length) {
+          row.buttons.forEach((button) => {
+            button.disabled = true;
+          });
+          row.result.classList.add("is-active");
+        } else {
+          row.result.classList.remove("is-active");
+        }
+      }
+
+      function animateAlongArc(ball, from, to, arcHeight) {
+        const mid = {
+          x: (from.x + to.x) / 2,
+          y: (from.y + to.y) / 2 + arcHeight,
+        };
+
+        return ball.animate(
+          [
+            {
+              transform: `translate(${from.x}px, ${from.y}px)`,
+              offset: 0,
+            },
+            {
+              transform: `translate(${mid.x}px, ${mid.y}px)`,
+              offset: 0.5,
+            },
+            {
+              transform: `translate(${to.x}px, ${to.y}px)`,
+              offset: 1,
+            },
+          ],
+          {
+            duration: DURATION,
+            easing: EASING,
+            fill: "forwards",
+          },
+        );
+      }
+
+      async function applyTransposition(rowName, a, b) {
+        const row = rows[rowName];
+
+        if (row.isAnimating) return;
+        if (row.step >= row.sequence.length) return;
+
+        const expected = row.sequence[row.step];
+        if (expected.a !== a || expected.b !== b) return;
+
+        row.isAnimating = true;
+        row.buttons.forEach((button) => {
+          button.disabled = true;
+        });
+
+        const elementAtA = row.state[a - 1];
+        const elementAtB = row.state[b - 1];
+
+        const ballA = row.balls[elementAtA];
+        const ballB = row.balls[elementAtB];
+
+        const fromA = point(a);
+        const fromB = point(b);
+        const toA = point(b);
+        const toB = point(a);
+
+        const arc = rowName === "top" ? -38 : 38;
+        const token = resetToken;
+
+        const animA = animateAlongArc(ballA, fromA, toA, arc);
+        const animB = animateAlongArc(ballB, fromB, toB, -arc);
+
+        try {
+          await Promise.all([animA.finished, animB.finished]);
+        } catch (_error) {
+          return;
+        }
+
+        if (token !== resetToken) return;
+
+        row.state[a - 1] = elementAtB;
+        row.state[b - 1] = elementAtA;
+
+        animA.cancel();
+        animB.cancel();
+        render(row);
+        row.step += 1;
+        row.isAnimating = false;
+        syncButtons(row);
+      }
+
+      function reset() {
+        resetToken += 1;
+        Object.values(rows).forEach((row) => {
+          row.state = [1, 2, 3];
+          row.step = 0;
+          row.isAnimating = false;
+
+          cancelBallAnimations(row);
+          render(row);
+          syncButtons(row);
+        });
+      }
+
+      root.querySelectorAll(".s3-step-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const rowName = button.dataset.row;
+          const a = Number(button.dataset.a);
+          const b = Number(button.dataset.b);
+          applyTransposition(rowName, a, b);
+        });
+      });
+
+      root.querySelector("#s3-reset").addEventListener("click", reset);
+
+      reset();
+
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([root]);
+      }
+    })();
+  </script>
+</div>
+<p class="fig-caption"><strong>圖 3：</strong>依序按下兩個置換按鈕，觀察 $S_3$ 的非交換性。上排表示 $(12)(13)$，依照右到左慣例先做 $(13)$ 再做 $(12)$，結果為 $(132)$；下排表示 $(13)(12)$，先做 $(12)$ 再做 $(13)$，結果為 $(123)$。</p>

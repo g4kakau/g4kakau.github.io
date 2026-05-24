@@ -24,8 +24,8 @@ $$\require{physics}$$
 一個正方體，12 條邊上各有一顆電阻 $R$。把電源接在**體對角線的兩個頂點**，等效電阻是多少？
 
 
-![正方體電阻網路全圖](cube-resistor-light.png){: .light w="480" }
-![正方體電阻網路全圖](cube-resistor-dark.png){: .dark w="480" }
+![正方體電阻網路全圖](cube-resistor-light.png){: .light w="480" h="401" }
+![正方體電阻網路全圖](cube-resistor-dark.png){: .dark w="480" h="401" }
 
 **圖 1：** 正方體電阻網路全圖。12 條邊的電阻均為 $R$。電源接在體對角線的兩個頂點 $A$ 和 $H$。
 {: .fig-caption }
@@ -51,8 +51,8 @@ $$\boxed{R_{\text{eq}} = \frac{5}{6}R}$$
 相鄰節點之間（即恰好有一個座標不同的兩點之間）有一顆電阻 $R$，共 12 顆。
 
 
-![正方體電阻網路全圖](cube-coordinates-light.png){: .light w="540" }
-![正方體電阻網路全圖](cube-coordinates-dark.png){: .dark w="540" }
+![正方體電阻網路全圖](cube-coordinates-light.png){: .light w="540" h="380" }
+![正方體電阻網路全圖](cube-coordinates-dark.png){: .dark w="540" h="380" }
 
 **圖 2：** 正方體頂點的座標標記：$(0,0,0)$ 至 $(1,1,1)$，三條座標軸 $x,y,z$ 以箭頭標示。
 {: .fig-caption }
@@ -98,8 +98,8 @@ $$\sum_{\text{鄰居 }j} \frac{V_j - V_i}{R} = 0 \label{eq1:kcl}$$
 | C 型（3 個） | $(1,1,0),\ (1,0,1),\ (0,1,1)$ | $c$  |
 | 終點 H       | $(1,1,1)$                     | $0$  |
 
-![正方體電阻網路節點分類圖](node-classification-zh-light.svg){: .light w="760" }
-![正方體電阻網路節點分類圖](node-classification-zh-dark.svg){: .dark w="760" }
+![正方體電阻網路節點分類圖](node-classification-zh-light.svg){: .light w="760" h="428" }
+![正方體電阻網路節點分類圖](node-classification-zh-dark.svg){: .dark w="760" h="428" }
 
 **圖 3：** 12 條邊各有電阻 $R$ 的正方體。節點依對稱性分為 4 類：起點 A、B 型、C 型、終點 H（對稱性的嚴格討論見[第三篇](/posts/resistor-cube-3-symmetry/)）。
 {: .fig-caption }
@@ -150,8 +150,8 @@ $$
 2(b - c) - c = 0 \implies 3c - 2b = 0 \tag{2}\label{eq1:c-kcl}
 $$
 
-![B 型與 C 型代表節點的 KCL 鄰居](kcl-representatives-zh-light.svg){: .light w="760" }
-![B 型與 C 型代表節點的 KCL 鄰居](kcl-representatives-zh-dark.svg){: .dark w="760" }
+![B 型與 C 型代表節點的 KCL 鄰居](kcl-representatives-zh-light.svg){: .light w="760" h="428" }
+![B 型與 C 型代表節點的 KCL 鄰居](kcl-representatives-zh-dark.svg){: .dark w="760" h="428" }
 
 **圖 4：** 用對稱性分類後，只要對 B 型與 C 型各選一個代表節點列 KCL；其他同類節點的方程式會完全相同。
 {: .fig-caption }
@@ -184,8 +184,8 @@ $$
 
 起點 A 連到 3 個 B 型節點，每條邊的電流為
 
-![從 A 流出的三條相同電流](current-from-node-a-light.png){: .light w="480" }
-![從 A 流出的三條相同電流](current-from-node-a-dark.png){: .dark w="480" }
+![從 A 流出的三條相同電流](current-from-node-a-light.png){: .light w="480" h="250" }
+![從 A 流出的三條相同電流](current-from-node-a-dark.png){: .dark w="480" h="250" }
 
 **圖 5：** 三個 B 型節點電位相同，所以從 A 流出的三條邊電流也相同，總電流是單條電流的 3 倍。
 {: .fig-caption }
@@ -222,8 +222,8 @@ $$\frac{R}{3} + \frac{R}{6} + \frac{R}{3} = \frac{2R + R + 2R}{6} = \frac{5R}{6}
 
 這與節點電壓法結果完全一致，也是一個直觀的驗算。
 
-![商掉對稱性後的等效小電路](quotient-circuit-zh-light.svg){: .light w="760" }
-![商掉對稱性後的等效小電路](quotient-circuit-zh-dark.svg){: .dark w="760" }
+![商掉對稱性後的等效小電路](quotient-circuit-zh-light.svg){: .light w="760" h="428" }
+![商掉對稱性後的等效小電路](quotient-circuit-zh-dark.svg){: .dark w="760" h="428" }
 
 **圖 6：** 把電位相同的節點合併後，正方體電路等效為 A-B-C-H 四節點的小電路；三段分別對應 $3,6,3$ 條等價邊（「等電位節點可以合併」的嚴格證明見[第三篇](/posts/resistor-cube-3-symmetry/)）。
 {: .fig-caption }
@@ -250,8 +250,8 @@ flowchart TD
 
 注意電位並不是等間距遞減（$1, \frac23, \frac13, 0$），而是 $1, \frac35, \frac25, 0$。這是因為 B→C 段比 A→B 段有更多電阻可以並聯，所以電位降落較小。
 
-![A、B、C、H 四類節點的電位階梯](voltage-levels-zh-light.svg){: .light w="760" }
-![A、B、C、H 四類節點的電位階梯](voltage-levels-zh-dark.svg){: .dark w="760" }
+![A、B、C、H 四類節點的電位階梯](voltage-levels-zh-light.svg){: .light w="760" h="428" }
+![A、B、C、H 四類節點的電位階梯](voltage-levels-zh-dark.svg){: .dark w="760" h="428" }
 
 **圖 7：** A、B、C、H 的電位依序下降，但下降量不平均；這反映了不同段落的並聯通道數不同。
 {: .fig-caption }
