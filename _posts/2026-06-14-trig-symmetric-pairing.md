@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "三角函數的對稱配對：為什麼 cos2°+cos4°+⋯+cos360°=0？"
-date: 2026-06-14 00:00:00 +0800
+date: 2026-06-14 11:52:00 +0800
 categories: [高中數學, 三角函數]
 tags: [三角函數, 對稱性, 單位圓, 學測, 高中數學]
 math: true
@@ -100,11 +100,11 @@ $$
 
 同樣的問題換成 $\sin$ 和 $\tan$，結果完全不同。原因在於三個函數在「平移 $180^\circ$」下的行為不一樣：
 
-| 函數 | $f(\theta+180^\circ)$ | 在等分點和式中的行為 |
-|---|---|---|
-| $\sin$ | $-\sin\theta$ | 兩兩抵消，和為 0 |
-| $\cos$ | $-\cos\theta$ | 兩兩抵消，和為 0 |
-| $\tan$ | $\tan\theta$（**不變**） | 無法用此法消去 |
+| 函數   | $f(\theta+180^\circ)$    | 在等分點和式中的行為 |
+| ------ | ------------------------ | -------------------- |
+| $\sin$ | $-\sin\theta$            | 兩兩抵消，和為 0     |
+| $\cos$ | $-\cos\theta$            | 兩兩抵消，和為 0     |
+| $\tan$ | $\tan\theta$（**不變**） | 無法用此法消去       |
 
 ### sin 的情況
 
@@ -220,11 +220,11 @@ $$
 
 ## 總結：三種對稱關係一覽
 
-| 對稱關係 | 公式 | 典型用途 |
-|---|---|---|
-| 平移 $180^\circ$ | $\cos(\theta+180^\circ)=-\cos\theta$，$\sin(\theta+180^\circ)=-\sin\theta$，$\tan(\theta+180^\circ)=\tan\theta$ | 等分點和式抵消（$\cos$、$\sin$ 可消，$\tan$ 不可） |
-| 餘角 $90^\circ-\theta$ | $\sin(90^\circ-\theta)=\cos\theta$，$\tan(90^\circ-\theta)=\cot\theta$ | $\sin^2+\cos^2=1$ 型配對 |
-| 補角 $180^\circ-\theta$ | $\sin(180^\circ-\theta)=\sin\theta$，$\cos(180^\circ-\theta)=-\cos\theta$，$\tan(180^\circ-\theta)=-\tan\theta$ | $\tan$ 系列和式的配對工具 |
+| 對稱關係                | 公式                                                                                                            | 典型用途                                           |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| 平移 $180^\circ$        | $\cos(\theta+180^\circ)=-\cos\theta$，$\sin(\theta+180^\circ)=-\sin\theta$，$\tan(\theta+180^\circ)=\tan\theta$ | 等分點和式抵消（$\cos$、$\sin$ 可消，$\tan$ 不可） |
+| 餘角 $90^\circ-\theta$  | $\sin(90^\circ-\theta)=\cos\theta$，$\tan(90^\circ-\theta)=\cot\theta$                                          | $\sin^2+\cos^2=1$ 型配對                           |
+| 補角 $180^\circ-\theta$ | $\sin(180^\circ-\theta)=\sin\theta$，$\cos(180^\circ-\theta)=-\cos\theta$，$\tan(180^\circ-\theta)=-\tan\theta$ | $\tan$ 系列和式的配對工具                          |
 
 ---
 
