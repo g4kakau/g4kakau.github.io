@@ -49,7 +49,7 @@ $$V_{\text{eff}}(r) = \underbrace{\frac{h^2}{2r^2}}_{\text{離心障壁}} - \und
 - 長距離：$\sim -1/r$ 項主導，$V_{\text{eff}} \to 0^-$
 - 中間有一個**極小值**
 
-極小值位置，令 $dV_{\text{eff}}/dr = 0$：
+極小值位置，令 $\dv*{V_{\text{eff}}}{r} = 0$：
 
 $$-\frac{h^2}{r^3} + \frac{GM}{r^2} = 0 \implies r_0 = \frac{h^2}{GM}$$
 
@@ -93,11 +93,11 @@ $$\boxed{e^2 = 1 + \frac{2\varepsilon h^2}{(GM)^2}}$$
 
 這裡的 $e$ 是離心率；$\varepsilon$ 是單位質量能量，兩者不是同一個符號。
 
-| $\varepsilon$                       | $e$            | 軌道   |
-| ----------------------------------- | -------------- | ------ |
-| $\varepsilon < 0$                   | $0 \leq e < 1$ | 橢圓   |
-| $\varepsilon = 0$                   | $e = 1$        | 拋物線 |
-| $\varepsilon > 0$                   | $e > 1$        | 雙曲線 |
+| $\varepsilon$                      | $e$            | 軌道   |
+| ---------------------------------- | -------------- | ------ |
+| $\varepsilon < 0$                  | $0 \leq e < 1$ | 橢圓   |
+| $\varepsilon = 0$                  | $e = 1$        | 拋物線 |
+| $\varepsilon > 0$                  | $e > 1$        | 雙曲線 |
 | $\varepsilon = \varepsilon_{\min}$ | $e = 0$        | 圓形   |
 
 ---
