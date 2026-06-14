@@ -1,0 +1,85 @@
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usetikzlibrary{arrows.meta,calc,decorations.pathreplacing}
+
+\setmainfont{Noto Sans CJK TC}
+\setsansfont{Noto Sans CJK TC}
+
+\newif\ifdarkmode
+\ifdefined\darkmodeflag
+  \darkmodetrue
+\fi
+
+\ifdarkmode
+  \definecolor{pagebg}{HTML}{0B1120}
+  \definecolor{textfg}{HTML}{E5E7EB}
+  \definecolor{mutedfg}{HTML}{9AA7B8}
+  \definecolor{edge}{HTML}{CBD5E1}
+  \definecolor{thin}{HTML}{334155}
+  \definecolor{panel}{HTML}{111827}
+  \definecolor{panelborder}{HTML}{334155}
+  \definecolor{accent}{HTML}{60A5FA}
+\else
+  \definecolor{pagebg}{HTML}{FFFFFF}
+  \definecolor{textfg}{HTML}{172033}
+  \definecolor{mutedfg}{HTML}{64748B}
+  \definecolor{edge}{HTML}{334155}
+  \definecolor{thin}{HTML}{D7DEE8}
+  \definecolor{panel}{HTML}{F8FAFC}
+  \definecolor{panelborder}{HTML}{D7DEE8}
+  \definecolor{accent}{HTML}{2563EB}
+\fi
+
+\begin{document}
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  font=\sffamily,
+  line cap=round,
+  line join=round,
+  >=Latex
+]
+  \fill[pagebg] (0,0) rectangle (16,9);
+  \draw[fill=panel, draw=panelborder, line width=0.7pt, rounded corners=4pt]
+    (0.55,0.65) rectangle (15.45,8.35);
+
+  \coordinate (F) at (5.35,3.15);
+  \coordinate (P) at (11.45,5.45);
+  \coordinate (D) at (2.55,5.45);
+  \coordinate (A) at (2.55,3.15);
+  \coordinate (X) at (11.45,3.15);
+
+  \draw[edge, line width=1.1pt, -Latex] (1.35,3.15) -- (14.7,3.15) node[below left, text=mutedfg] {$x$};
+  \draw[edge, line width=1.1pt] (5.35,1.2) -- (5.35,7.45);
+  \draw[edge, line width=1.8pt] (2.55,1.25) -- (2.55,7.25);
+  \node[text=textfg, anchor=south] at (2.55,7.27) {準線};
+
+  \draw[thin, line width=1.0pt, dashed] (D) -- (A);
+  \draw[thin, line width=1.0pt, dashed] (P) -- (X);
+
+  \draw[accent, line width=2.0pt, -Latex] (F) -- (P);
+  \node[text=accent, fill=panel, inner sep=2pt] at ($(F)!0.55!(P)+(0,0.3)$) {$r$};
+
+  \draw[accent, line width=2.0pt, -Latex] (D) -- (P);
+  \node[text=accent, fill=panel, inner sep=2pt] at ($(D)!0.5!(P)+(0,0.28)$) {$d_P$};
+
+  \draw[decorate, decoration={brace, amplitude=5pt, mirror}, edge, line width=1.0pt]
+    (A) -- (F)
+    node[midway, below=7pt, text=textfg] {$d$};
+  \draw[decorate, decoration={brace, amplitude=5pt, mirror}, edge, line width=1.0pt]
+    (F) -- (X)
+    node[midway, below=7pt, text=textfg] {$r\cos\theta$};
+
+  \draw[accent, line width=1.2pt] (6.1,3.15) arc[start angle=0, end angle=20.66, radius=0.75];
+  \node[text=accent] at (6.36,3.45) {$\theta$};
+
+  \fill[edge] (F) circle (4pt);
+  \node[text=textfg, anchor=north east, font=\sffamily\bfseries] at ($(F)+(-0.08,-0.07)$) {$F$};
+  \fill[edge] (P) circle (4pt);
+  \node[text=textfg, anchor=south west, font=\sffamily\bfseries] at ($(P)+(0.1,0.1)$) {$P(r,\theta)$};
+  \fill[mutedfg] (D) circle (2.8pt);
+
+  \draw[edge, line width=1.0pt] ($(D)+(0,-0.2)$) -- ++(0.2,0) -- ++(0,0.2);
+\end{tikzpicture}
+\end{document}
