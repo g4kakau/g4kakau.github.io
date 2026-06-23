@@ -5,10 +5,14 @@ date: 2026-06-14 11:52:00 +0800
 categories: [高中數學, 三角函數]
 tags: [三角函數, 對稱性, 單位圓, 學測, 高中數學]
 math: true
+lang: zh-TW
+translation_id: trig-symmetric-pairing
 description: "從 cos2°+cos4°+⋯+cos360°=0 出發，用單位圓的對稱性解釋三角函數和式為什麼會抵消。涵蓋 sin、cos、tan 的不同對稱規則，以及 sin²1°+⋯+sin²90°=91/2 這類餘角配對題的萬用模板，並附分層練習。"
 ---
 
 $$\require{physics}$$
+
+English version: [Trigonometric Symmetry Pairing](/en/posts/trig-symmetric-pairing/)
 
 來看一個式子：
 

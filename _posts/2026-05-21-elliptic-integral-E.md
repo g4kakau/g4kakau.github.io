@@ -188,7 +188,7 @@ $$C \approx \pi(a+b)\!\left[1 + \frac{3h}{10 + \sqrt{4-3h}}\right], \quad h = \f
 - Legendre 關係式：$E(k)K(k') + E(k')K(k) - K(k)K(k') = \pi/2$
 - $K(k)$ 隨 $k$ 遞增趨向無限大；$E(k)$ 隨 $k$ 遞減趨向有限值 $1$
 
-下一篇（第八篇）回到物理：橢圓積分如何出現在天體力學中，克卜勒橢圓軌道的積分與行星週期。
+[下一篇]({% post_url 2026-06-15-elliptic-integrals-celestial-mechanics %})回到物理：橢圓積分如何出現在天體力學中，並對照克卜勒橢圓軌道的積分為什麼不需要橢圓積分。
 
 <div class="cta-box">
   <strong>還有問題嗎？</strong><br>
