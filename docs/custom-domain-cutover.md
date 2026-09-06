@@ -2,7 +2,7 @@
 
 ## 目前狀態
 
-2026-09-06 已完成 GitHub Pages custom domain 綁定，以及 GoDaddy 的 `notes` CNAME。公開 DNS 已正確解析至 `g4kakau.github.io`；production canonical 已切換為 `https://notes.kakau.tw`。GitHub Pages 的新 HTTPS 憑證仍可能需要一段時間簽發。
+2026-09-06 已完成 GitHub Pages custom domain 綁定，以及 GoDaddy 的 `notes` CNAME。公開 DNS 已正確解析至 `g4kakau.github.io`；production canonical 已切換為 `https://notes.kakau.tw`，TLS 憑證已簽發並啟用 Enforce HTTPS。
 
 `_config.notes-domain.yml` 保留為 migration 驗證紀錄；production workflow 直接使用已切換的 `_config.yml`。
 
@@ -11,7 +11,7 @@
 1. 先在 GitHub repository 的 Pages 設定加入 custom domain `notes.kakau.tw`，避免子網域遭接管。
 2. 在 GoDaddy DNS 建立 `notes` CNAME 記錄，值為 `g4kakau.github.io`；不要指向 `kakau.tw`，也不要使用 wildcard。
 3. 公開 DNS resolver 已可解析 `notes.kakau.tw`。
-4. 等待 GitHub 核發憑證，確認 `https://notes.kakau.tw` 可連線並開啟 Enforce HTTPS。
+4. GitHub 已核發憑證；`https://notes.kakau.tw` 可連線，Enforce HTTPS 已開啟。
 
 ## 程式碼切換
 
