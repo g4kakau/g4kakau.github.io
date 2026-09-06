@@ -46,6 +46,13 @@ order: 11
 
 - **Email**：[g4kakau@gmail.com](mailto:g4kakau@gmail.com)
 
+## 追蹤 Kakau
+
+- **Facebook**：[Kakau 物理學苑](https://www.facebook.com/kakau.tw/)
+- **Instagram**：[@kakau_tw](https://www.instagram.com/kakau_tw/)
+- **Threads**：[@kakau_tw](https://www.threads.net/@kakau_tw)
+- **YouTube**：[@kakau_tw](https://www.youtube.com/@kakau_tw)
+
 ---
 
 ## Email 適合詢問什麼？

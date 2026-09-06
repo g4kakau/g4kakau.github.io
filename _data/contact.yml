@@ -6,9 +6,21 @@
 # - type: twitter
 #   icon: "fa-brands fa-x-twitter"
 
+- type: facebook
+  icon: "fa-brands fa-facebook"
+  url: "https://www.facebook.com/kakau.tw/"
+
+- type: instagram
+  icon: "fa-brands fa-instagram"
+  url: "https://www.instagram.com/kakau_tw/"
+
+- type: threads
+  icon: "fa-brands fa-threads"
+  url: "https://www.threads.net/@kakau_tw"
+
 - type: youtube
   icon: "fa-brands fa-youtube"
-  url: "https://www.youtube.com/@Sin-iu"
+  url: "https://www.youtube.com/@kakau_tw"
 
 - type: email
   icon: "fas fa-envelope"
