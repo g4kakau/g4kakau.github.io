@@ -260,8 +260,3 @@ $1^\circ=\dfrac{180^\circ}{180}$，$180=2^2\times3^2\times5$——含 $3^2$（�
 | Gauss–Wantzel 定理                           | 正 $n$ 邊形可作 $\iff n=2^k\times(\text{互不相同的費馬質數之積})$                     |
 
 我們現在知道「能不能尺規作圖」的答案藏在 $[\mathbb{Q}(\alpha):\mathbb{Q}]$ 是不是 $2$ 的冪裡。但還有一個更深的問題：$\cos20^\circ$ 的次數是 $3$，雖然不可作，但它是不是還能用某種更廣義的「根式」表示（例如允許複數的卡丹公式）？這個問題的答案，要看一個方程「根與根之間能怎麼互換」——這就是[下一篇]({% post_url 2026-06-14-galois-correspondence-abel-ruffini %})伽羅瓦理論要回答的問題。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

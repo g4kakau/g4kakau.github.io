@@ -149,8 +149,3 @@ $$W(\theta; E) = \int^\theta \sqrt{2mL^2\big[E - mgL(1-\cos\theta')\big]}\,\dd{\
 - 哈密頓–雅可比方程的解 $W(\theta)$ 就是橢圓積分，把「求解運動」與「計算特殊函數」統一在一起
 
 [下一篇]({% post_url 2026-05-21-elliptic-integral-E %})暫時離開力學，回到積分本身的幾何根源：橢圓積分為什麼叫「橢圓」？從橢圓弧長推導第二類橢圓積分 $E(k)$。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

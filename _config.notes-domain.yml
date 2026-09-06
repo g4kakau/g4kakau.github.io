@@ -1,0 +1,3 @@
+# Owner-controlled cutover overlay. This file is intentionally not used by the
+# production workflow until notes.kakau.tw resolves and GitHub Pages confirms HTTPS.
+url: "https://notes.kakau.tw"

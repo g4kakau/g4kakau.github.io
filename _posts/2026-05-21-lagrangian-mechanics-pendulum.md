@@ -183,8 +183,3 @@ $$V \approx \frac{1}{2}mgL\theta^2$$
 - 對單擺：$\mathcal{L} = \frac{1}{2}mL^2\dot{\theta}^2 - mgL(1-\cos\theta)$，張力在推導中自動消失
 
 [下一篇]({% post_url 2026-05-21-hamiltonian-mechanics-pendulum %})從拉格朗日量出發，透過勒壤得變換（Legendre transform）建立哈密頓力學，並看哈密頓量如何自然地給出相空間的幾何結構。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

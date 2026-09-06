@@ -208,8 +208,3 @@ plt.show()
 - $K(k) \to \infty$ 在相空間中的意思：軌道趨近 separatrix，繞一圈需要的時間趨向無限大
 
 [下一篇]({% post_url 2026-05-21-lagrangian-mechanics-pendulum %})用拉格朗日力學重新推導單擺運動方程，並看廣義坐標如何讓約束力自動消失。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

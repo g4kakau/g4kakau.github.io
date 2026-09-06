@@ -143,8 +143,3 @@ $$v_1 = \sqrt{GM_\odot\!\left(\frac{2}{r_1} - \frac{1}{a_H}\right)}$$
 - 離心率公式 $e^2 = 1+2\varepsilon h^2/(GM)^2$ 把能量、角動量、軌道形狀全部連結
 
 [下一篇]({% post_url 2026-06-14-kepler-period-integral %})將進入橢圓軌道的週期積分——用哈密頓–雅可比方法推導精確解，並說明為什麼這個積分不需要橢圓積分。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

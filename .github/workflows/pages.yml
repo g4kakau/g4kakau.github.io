@@ -35,6 +35,11 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Check Kakau integration and internal links
+        run: |
+          bash tools/check_integration.sh
+          bundle exec htmlproofer _site --disable-external --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -50,4 +55,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

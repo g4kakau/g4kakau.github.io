@@ -223,5 +223,3 @@ $$\text{體積} = \pi\int_1^{\infty} \frac{1}{x^2}\,\dd{x} = \pi \quad (\text{�
 $$\text{表面積} = 2\pi\int_1^{\infty} \frac{1}{x}\sqrt{1+\frac{1}{x^4}}\,\dd{x} > 2\pi\int_1^{\infty} \frac{1}{x}\,\dd{x} = \infty \quad (\text{發散})$$
 
 體積有限，但表面積無窮大——「可以裝滿油漆，卻無法塗滿它的表面」。這個悖論其實說明的是：「體積有限」和「表面積有限」是兩個獨立的條件，互不蘊含。
-
-{% include cta.html %}

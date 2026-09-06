@@ -132,5 +132,3 @@ $$2 \times 15 + 3 \times v = 0 \implies v = -10\ \text{m/s}\ \text{（向左）}
 - 碰撞問題：彈性與非彈性碰撞（即將上線）
 
 ---
-
-{% include cta.html %}

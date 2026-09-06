@@ -2,7 +2,7 @@
 #
 # Chirpy generates <title> by looking up the page slug in _data/locales/zh-TW.yml
 # under the `tabs:` key. Built-in tabs (about, archives, categories, tags) have
-# entries; custom tabs (intro, tutoring-plans, contact) do not, producing:
+# entries; custom tabs (intro, academy, contact) do not, producing:
 #   <title> | Site Title</title>
 #
 # This hook detects that pattern and substitutes page.title instead.

@@ -201,8 +201,3 @@ $$T = 4\sqrt{\frac{L}{g}} \cdot \frac{\pi}{2} = 2\pi\sqrt{\frac{L}{g}} = T_0 \ch
 | 數學本質   | 線性 ODE，解析可解      | 非線性 ODE，週期需橢圓積分             |
 
 $K(k)$ 是什麼？為什麼它「積不出來」？[下一篇]({% post_url 2026-05-21-elliptic-integral-K %})會仔細定義它，並看它的行為與展開式。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

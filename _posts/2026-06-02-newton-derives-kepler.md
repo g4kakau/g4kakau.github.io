@@ -157,8 +157,3 @@ $$\frac{g}{a_{\text{月}}} = \left(\frac{r_{\text{月}}}{R_\oplus}\right)^2 = 60
 - 反方向很乾淨：$F = GMm/r^2$ 可推導出全部三定律
 
 [下一篇]({% post_url 2026-06-02-effective-potential-orbits %})換一個視角：用**有效位能**和**能量守恆**，在不解方程式的情況下看清所有可能的軌道類型。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

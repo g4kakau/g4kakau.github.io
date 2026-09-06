@@ -108,16 +108,13 @@ Markdown 表格中的 `|` 符號需要跳脫：`\|x\| < 1`。
 3. **正式定義/推導**：清楚分節，用 `##`、`###`
 4. **應用/例題**：至少一個具體例子
 5. **總結**：表格或條列整理重點
-6. **CTA 框**：放在文章最後
+6. **延伸閱讀**：優先提供相關文章或學習路徑
 
-### CTA 框
+### Kakau 整合元件
 
-```html
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>
-```
+- 所有文章會由 `_plugins/kakau_integration.rb` 自動加入 ecosystem footer，不要在文章內手動貼招生框。
+- 只有與現行課程高度相關的文章才顯示 contextual CTA；slug mapping 集中在 `_data/kakau.yml`。
+- 新文章若需要 contextual CTA，更新集中 mapping，不要自行建立不同文案、UTM 或產品敘事。
 
 ### 語言
 

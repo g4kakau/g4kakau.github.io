@@ -189,5 +189,3 @@ $$
 | 落地前 | 很負 | 趨近 0 | 趨近 0 |
 
 曲率最大的地方，恰好也是速率最小、重力完全用來改變方向的地方。這不是巧合，而是 \eqref{eq:projectile-curvature-time} 背後的法向加速度關係 $a_n = \kappa v^2$ 的直接結果。
-
-{% include cta.html %}

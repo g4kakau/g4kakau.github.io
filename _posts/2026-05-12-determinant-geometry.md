@@ -164,5 +164,3 @@ $$
 **延伸：wedge product**
 
 行列式的面積／體積詮釋，可以被 **exterior algebra（外代數）** 中的 **wedge product（楔積）** $\mathbf{u} \wedge \mathbf{v}$ 說得更精確。這個語言把「有向面積」變成一個代數物件，不只能處理平行四邊形，還能直接定義任意維度的「有向體積元」。這是下一篇的主題。
-
-{% include cta.html %}

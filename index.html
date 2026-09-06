@@ -5,28 +5,29 @@ title: 首頁
 
 <style>
 .kk-intro {
-  text-align: center;
-  padding: 1.5rem 1rem 1.25rem;
+  padding: 1.75rem 1.25rem 1.5rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  border: 1px solid var(--main-border-color, #e0e0e0);
+  border-radius: 0.9rem;
+  background: var(--card-bg, #fff);
 }
 .kk-intro-title {
-  font-size: 1.15rem;
+  font-size: clamp(1.45rem, 3vw, 2rem);
   font-weight: 700;
   color: var(--heading-color, #222);
   margin-bottom: 0.45rem;
 }
 .kk-intro-sub {
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   color: var(--text-muted-color, #777);
-  max-width: 520px;
-  margin: 0 auto 1rem;
+  max-width: 680px;
+  margin: 0 0 1.1rem;
   line-height: 1.7;
 }
 .kk-cats {
   display: flex;
   gap: 0.45rem;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 0.7rem;
 }
@@ -45,28 +46,45 @@ title: 首頁
   border-color: var(--link-color, #1e6cc8);
   color: var(--link-color, #1e6cc8) !important;
 }
-.kk-main-link {
-  font-size: 0.78rem;
-  color: var(--text-muted-color, #aaa);
-  margin-top: 0.1rem;
+.kk-explore {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.1rem 0;
 }
-.kk-main-link a {
-  color: var(--text-muted-color, #aaa);
-  text-decoration: underline;
+.kk-explore a {
+  border: 1px solid var(--main-border-color, #ddd);
+  border-radius: 0.65rem;
+  color: var(--heading-color, #222);
+  padding: 0.85rem;
+  text-decoration: none !important;
 }
-.kk-main-link a:hover {
+.kk-explore a:hover,
+.kk-explore a:focus-visible {
+  border-color: var(--link-color, #1e6cc8);
   color: var(--link-color, #1e6cc8);
 }
+.kk-explore strong, .kk-explore span { display: block; }
+.kk-explore span { color: var(--text-muted-color, #777); font-size: 0.82rem; margin-top: 0.25rem; }
+.kk-academy { color: var(--text-muted-color, #777); font-size: 0.86rem; margin: 1rem 0 0; }
+@media (max-width: 575px) { .kk-explore { grid-template-columns: 1fr; } }
 </style>
 
 <div class="kk-intro">
-  <p class="kk-intro-title">數理教學筆記庫</p>
-  <p class="kk-intro-sub">整理高中數學、物理與大學基礎數學的核心觀念，<br>重視定義、推導、圖像與例題之間的連結。</p>
+  <p class="kk-intro-title">從一個值得追問的問題出發，走進數學與物理真正的結構。</p>
+  <p class="kk-intro-sub">這裡是 Kakau 的公開數理知識庫，適合不滿足於背公式、想連起定義、推導、模型、圖像與直覺的讀者。</p>
+  <h2>從這裡開始</h2>
+  <div class="kk-explore">
+    <a href="/paths/high-school-physics-math/"><strong>高中物理背後的數學</strong><span>從 Taylor 展開、微分方程到單擺，依序讀 8 篇文章。</span></a>
+    <a href="/categories/高中物理/"><strong>經典力學</strong><span>從動量、質心、碰撞、圓周運動一路延伸。</span></a>
+    <a href="/intro/"><strong>如何使用這座筆記庫</strong><span>先理解文章寫法、分類方式與閱讀入口。</span></a>
+    <a href="/paths/"><strong>更多學習路徑</strong><span>用問題與概念順序閱讀，而不只是逐篇瀏覽。</span></a>
+  </div>
   <div class="kk-cats">
     <a href="/categories/高中數學/" class="kk-cat">高中數學</a>
     <a href="/categories/高中物理/" class="kk-cat">高中物理</a>
     <a href="/categories/大學數學/" class="kk-cat">大學數學</a>
     <a href="/categories/" class="kk-cat">全部分類 →</a>
   </div>
-  <p class="kk-main-link">需要家教或預約諮詢？→ <a href="/contact/">填寫諮詢表單</a></p>
+  <p class="kk-academy">Kakau 物理學苑提供課程、試讀與學生服務。<a href="{{ site.data.kakau.academy.home }}&utm_content=home_bridge" data-kakau-event="notes_to_academy">前往物理學苑 ↗</a></p>
 </div>

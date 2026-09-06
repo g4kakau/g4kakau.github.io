@@ -220,8 +220,3 @@ $$
 - 第三定律：$T^2 = 4\pi^2 a^3/(GM)$
 
 [下一篇]({% post_url 2026-06-02-newton-derives-kepler %})反過來看：克卜勒第一定律（橢圓軌道）如何**反推**出平方反比力 $F \propto 1/r^2$，這是牛頓的另一個偉大推導。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

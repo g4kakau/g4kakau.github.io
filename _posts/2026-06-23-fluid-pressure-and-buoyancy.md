@@ -180,8 +180,3 @@ $$F_\text{net} = W - F_b \approx 323 - 41.1 = 282\,\text{N}$$
 | 無重力環境浮力消失 | $\vb{g}=0 \Rightarrow \nabla p=0 \Rightarrow \vb{F}_b = 0$ |
 
 下一篇：[連續體力學入門：從質點力學到 Euler 方程](/posts/continuum-mechanics-euler-equation/)，從連續體假設出發，推導物質導數、連續方程式與 Euler 方程，並把白努利方程式作為其特例推導出來。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

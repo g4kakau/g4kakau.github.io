@@ -131,8 +131,3 @@ $$\frac{1}{2}mv_{\text{esc}}^2 - \frac{GMm}{r} = 0 \implies v_{\text{esc}} = \sq
 - 逃逸速度 $v_{\text{esc}} = \sqrt{2GM/r}$ 對應 $\varepsilon=0$
 
 [下一篇]({% post_url 2026-06-02-kepler-energy-angular-momentum %})深入能量守恆和角動量守恆的計算細節：vis-viva 方程式、半長軸與能量的關係，以及橢圓軌道幾何量之間的代數關係。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

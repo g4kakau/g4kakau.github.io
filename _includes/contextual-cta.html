@@ -1,0 +1,21 @@
+{% assign cta = site.data.kakau.contextual_ctas[page.slug] %}
+{% if cta %}
+  {% assign destination = cta.destination | default: 'syllabus' %}
+  {% assign destination_url = site.data.kakau.academy[destination] %}
+  {% if destination == 'sample' %}
+    {% assign destination_label = '看看試讀教材' %}
+    {% assign event_name = 'notes_to_sample' %}
+  {% else %}
+    {% assign destination_label = '查看學習主線' %}
+    {% assign event_name = 'notes_to_syllabus' %}
+  {% endif %}
+  <aside class="kakau-contextual" aria-labelledby="kakau-contextual-title">
+    <p class="kakau-eyebrow">接著學</p>
+    <h2 id="kakau-contextual-title">想用這種方式繼續學物理？</h2>
+    <p>Kakau 物理學苑把定義、推導、數學工具、實驗與問題探索，整合成 2–4 人的小班學習路線。這篇文章也收錄在「{{ cta.path }}」的延伸閱讀脈絡中。</p>
+    <p class="kakau-actions">
+      <a class="kakau-button" href="{{ destination_url }}&utm_content=article_cta" data-kakau-event="{{ event_name }}">{{ destination_label }} ↗</a>
+      <a href="/paths/high-school-physics-math/">閱讀完整公開路徑</a>
+    </p>
+  </aside>
+{% endif %}

@@ -190,5 +190,3 @@ $$\boxed{y \geq \frac{3}{4}}$$
 1. 整理為 $e\sin x + f\cos x = (\text{含 } y \text{ 的常數})$ 的形式
 2. 利用「$A\sin x + B\cos x = C$ 有解 $\iff \lvert C\rvert \leq \sqrt{A^2 + B^2}$」
 3. 解出 $y$ 的範圍
-
-{% include cta.html %}

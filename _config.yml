@@ -16,12 +16,12 @@ timezone: Asia/Taipei
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Kakau 數理筆記 # the main title
+title: Kakau 公開數理筆記 # the main title
 
-tagline: 數學｜物理｜概念理解｜學習方法 # it will display as the subtitle
+tagline: 從問題出發，走進數學與物理的結構 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  整理高中數學、物理與大學基礎數學的教學筆記，重視觀念理解、公式推導與圖像直覺。
+  Kakau 的公開數理知識庫。從值得追問的問題出發，整理高中數學、物理與延伸主題，連結定義、推導、模型、圖像與直覺。
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -34,12 +34,11 @@ github:
 #   username: twitter_username
 
 social:
-  name: g4kakau
+  name: Kakau
   email: g4kakau@gmail.com
   links:
     - https://github.com/g4kakau
     - https://www.youtube.com/@Sin-iu
-    - https://www.threads.net/@placeholder  # TODO: 註冊後更新
 
 # Site Verification Settings
 webmaster_verifications:

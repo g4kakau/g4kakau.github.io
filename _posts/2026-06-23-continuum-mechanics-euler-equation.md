@@ -296,8 +296,3 @@ $$p_1 - p_2 = \frac{1}{2}\rho(v_2^2 - v_1^2) = \frac{1}{2}(1000)(16 - 1) = 7500\
 $$\boxed{\text{連續體假設} \;\longrightarrow\; \text{守恆律（質量＋動量）} \;\longrightarrow\; \text{Euler/NS 方程式} \;\longrightarrow\; \text{靜液壓、浮力、白努利}}$$
 
 上篇：[流體壓力與浮力的本質：從靜力平衡到阿基米德](/posts/fluid-pressure-and-buoyancy/)
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

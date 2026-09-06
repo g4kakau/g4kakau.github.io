@@ -164,8 +164,3 @@ $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$
 - $K(k) \to \infty$（對數發散）當 $k \to 1$，對應週期趨向無限大
 - 冪級數 $K(k) = \frac{\pi}{2}[1 + k^2/4 + 9k^4/64 + \cdots]$ 在 $k$ 不太靠近 $1$ 時收斂良好
 - 要在 $k \approx 1$ 附近高效計算，需要 AGM 算法
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

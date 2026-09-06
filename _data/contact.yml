@@ -10,10 +10,6 @@
   icon: "fa-brands fa-youtube"
   url: "https://www.youtube.com/@Sin-iu"
 
-# - type: threads
-#   icon: "fa-brands fa-threads"
-#   url: "https://www.threads.net/@placeholder" # TODO: 註冊後更新
-
 - type: email
   icon: "fas fa-envelope"
   noblank: true

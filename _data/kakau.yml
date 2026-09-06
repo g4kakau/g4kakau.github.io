@@ -1,0 +1,53 @@
+academy:
+  home: "https://kakau.tw/?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
+  course: "https://kakau.tw/course?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
+  sample: "https://kakau.tw/sample?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
+  syllabus: "https://kakau.tw/syllabus?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
+  apply: "https://kakau.tw/apply?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
+
+# notes.kakau.tw 尚未完成 DNS；切換步驟見 docs/custom-domain-cutover.md。
+notes:
+  current_origin: "https://g4kakau.github.io"
+  target_origin: "https://notes.kakau.tw"
+  custom_domain_live: false
+
+contextual_ctas:
+  taylor-series:
+    path: "高中物理背後的數學"
+    destination: sample
+  centripetal-to-curvature:
+    path: "高中物理背後的數學"
+    destination: sample
+  torricelli-law-draining-time:
+    path: "高中物理背後的數學"
+    destination: syllabus
+  separable-odes:
+    path: "高中物理背後的數學"
+    destination: syllabus
+  quadratic-energy-everywhere:
+    path: "高中物理背後的數學"
+    destination: sample
+  pendulum-not-shm:
+    path: "高中物理背後的數學"
+    destination: syllabus
+  lagrangian-mechanics-pendulum:
+    path: "高中物理背後的數學"
+    destination: syllabus
+  phase-space-pendulum:
+    path: "高中物理背後的數學"
+    destination: syllabus
+  momentum-and-impulse:
+    path: "經典力學"
+    destination: sample
+  center-of-mass:
+    path: "經典力學"
+    destination: syllabus
+  conservation-of-momentum:
+    path: "經典力學"
+    destination: sample
+  collision-problems:
+    path: "經典力學"
+    destination: syllabus
+  vertical-circular-motion:
+    path: "經典力學"
+    destination: sample

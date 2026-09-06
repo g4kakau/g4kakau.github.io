@@ -35,11 +35,11 @@ order: 11
 }
 </style>
 
-若想詢問家教、試教或學習規劃，建議先填寫表單，讓我可以更快了解你的需求。
+若要了解課程、試讀或申請入班，請前往 Kakau 物理學苑。所有正式課程資訊集中在同一處，避免舊表單與現行申請流程互相競爭。
 
 <div class="kk-contact-actions">
-  <a class="kk-contact-button" href="https://forms.gle/R38gD1b9SecEbufq8" target="_blank" rel="noopener">填寫 Google 諮詢表單</a>
-  <span class="kk-contact-note">約 2-3 分鐘，填完後我會再回覆你。</span>
+  <a class="kk-contact-button" href="{{ site.data.kakau.academy.apply }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_apply">前往申請入班 ↗</a>
+  <a href="{{ site.data.kakau.academy.course }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_course">先看課程介紹 ↗</a>
 </div>
 
 也可以用以下方式聯絡我：
@@ -48,13 +48,6 @@ order: 11
 
 ---
 
-## 聯絡前請先提供以下資訊
+## Email 適合詢問什麼？
 
-為了更快了解你目前的狀況，請簡單說明：
-
-- 年級與科目（例：高一數學、高二物理……）
-- 目標（段考、學測、複習進度、補觀念）
-- 目前覺得卡住的地方（觀念／計算／題型／心態）
-- 希望上課的時間與頻率
-
-我會根據這些資訊，建議適合的學習方式或家教安排。
+文章勘誤、內容授權與網站問題可以直接寄信。課程申請則請使用物理學苑的正式流程，讓必要資訊保持完整。

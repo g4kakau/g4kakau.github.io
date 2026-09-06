@@ -186,8 +186,3 @@ $K(k)$ 雖然沒有初等函數公式，但可以高效計算：
 - `scipy.special.ellipk(k**2)` 可直接使用（注意參數是 $m = k^2$）
 
 [下一篇]({% post_url 2026-05-21-phase-space-pendulum %})從單擺往上走一層：用相空間（phase space）來看懂單擺所有可能的運動——來回擺動、臨界軌道、整圈旋轉。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

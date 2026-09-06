@@ -1,0 +1,100 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+.kakau-contextual,
+.kakau-ecosystem {
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin: 2rem 0 1.25rem;
+  background: var(--card-bg);
+}
+
+.kakau-contextual {
+  border-inline-start: 0.3rem solid var(--link-color);
+}
+
+.kakau-ecosystem {
+  background: color-mix(in srgb, var(--card-bg) 92%, var(--link-color));
+}
+
+.kakau-contextual h2,
+.kakau-ecosystem h2 {
+  font-size: 1.2rem;
+  margin: 0.15rem 0 0.6rem;
+}
+
+.kakau-eyebrow {
+  color: var(--link-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.kakau-actions,
+.kakau-link-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0;
+}
+
+.kakau-button {
+  background: var(--link-color);
+  border-radius: 0.4rem;
+  color: #fff !important;
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.5rem 0.85rem;
+  text-decoration: none !important;
+}
+
+.kakau-button:hover,
+.kakau-button:focus-visible {
+  filter: brightness(0.92);
+}
+
+.kakau-academy-nav .nav-link {
+  color: var(--sidebar-muted-color);
+}
+
+.kakau-academy-nav .nav-link:focus-visible,
+.kakau-link-list a:focus-visible,
+.kakau-actions a:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
+}
+
+/* MathJax's visually hidden MathML can otherwise enlarge the mobile document. */
+mjx-assistive-mml {
+  block-size: 1px !important;
+  height: 1px !important;
+  inline-size: 1px !important;
+  max-height: 1px !important;
+  max-inline-size: 1px !important;
+  max-width: 1px !important;
+  width: 1px !important;
+}
+
+@media (max-width: 575px) {
+  .kakau-contextual,
+  .kakau-ecosystem {
+    padding: 1rem;
+  }
+
+  .kakau-actions,
+  .kakau-link-list {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

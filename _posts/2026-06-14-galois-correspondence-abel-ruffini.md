@@ -126,8 +126,3 @@ $$
 | 五次方程無公式                        | $S_5$ 對稱太複雜，拆不開   | $A_5$ 是非交換單群，$S_5$ 不可解（Abel–Ruffini）                       |
 
 從[特殊角三角函數的根式表達](/posts/special-angle-radicals/)的一個具體計算問題出發，經過[尺規作圖可作性](/posts/constructibility-gauss-wantzel/)的幾何分析，最後抵達伽羅瓦理論——這條路線本身就是數學史的縮影：19 世紀數學從「能不能算出來」轉向「結構上有沒有可能」，而答案往往藏在一個看起來毫不相關的群裡。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

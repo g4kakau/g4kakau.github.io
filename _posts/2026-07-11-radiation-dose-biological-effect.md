@@ -134,5 +134,3 @@ $$
 有了原子核結構、三種衰變、半衰期與輻射劑量這四篇打底，接下來可以進入核物理最具現實影響力的兩個主題：[⑤核分裂]({% post_url 2026-07-12-nuclear-fission-chain-reaction %})與[⑥核融合]({% post_url 2026-07-13-nuclear-fusion-sun-energy %})。
 
 ---
-
-{% include cta.html %}

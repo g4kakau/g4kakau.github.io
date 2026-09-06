@@ -189,8 +189,3 @@ $$C \approx \pi(a+b)\!\left[1 + \frac{3h}{10 + \sqrt{4-3h}}\right], \quad h = \f
 - $K(k)$ 隨 $k$ 遞增趨向無限大；$E(k)$ 隨 $k$ 遞減趨向有限值 $1$
 
 [下一篇]({% post_url 2026-06-15-elliptic-integrals-celestial-mechanics %})回到物理：橢圓積分如何出現在天體力學中，並對照克卜勒橢圓軌道的積分為什麼不需要橢圓積分。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

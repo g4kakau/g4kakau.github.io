@@ -163,5 +163,3 @@ $$\vec{v}_\text{cm} = \frac{m_1\vec{v}_1 + m_2\vec{v}_2 + \cdots}{m_1 + m_2 + \c
 
    $$\sum_i m_i \vec{v}_{i,\text{前}} = \sum_i m_i \vec{v}_{i,\text{後}}$$
 4. 若為彈性碰撞，再加動能守恆方程式
-
-{% include cta.html %}

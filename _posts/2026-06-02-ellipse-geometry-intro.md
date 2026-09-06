@@ -235,8 +235,3 @@ $$2\cdot\sqrt{\left(\tfrac{5\sqrt{5}}{3}\right)^2+\left(\tfrac{2\sqrt{5}}{3}\rig
 - 面積 $\pi ab$；反射性質：從一焦點出發的光必經另一焦點
 
 [下一篇]({% post_url 2026-06-02-conic-sections-polar %})進入大學物理層級：把橢圓放進極坐標，推導克卜勒三定律的數學結構。
-
-<div class="cta-box">
-  <strong>還有問題嗎？</strong><br>
-  <a href="/contact">→ 歡迎預約家教課，直接針對你的問題討論</a>
-</div>

@@ -1,0 +1,11 @@
+<script data-kakau-analytics>
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('[data-kakau-event]');
+    if (!link || !window.goatcounter || typeof window.goatcounter.count !== 'function') return;
+    window.goatcounter.count({
+      path: 'event/' + link.dataset.kakauEvent,
+      title: link.textContent.trim(),
+      event: true
+    });
+  });
+</script>
