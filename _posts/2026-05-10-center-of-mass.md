@@ -121,7 +121,7 @@ $$2 \times 15 + 3 \times v = 0 \implies v = -10\ \text{m/s}\ \text{（向左）}
 大學普物延伸：
 - 連續分布物體的質心（積分）：$\vec{r}_{\text{cm}} = \frac{1}{M}\int \vec{r}\ dm$
 - 轉動力學中的質心
-- 質心系（center-of-mass frame）——碰撞問題的利器
+- 質心座標系（center-of-mass frame）——碰撞問題的利器
 
 ---
 

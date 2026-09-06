@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "圓錐曲線極坐標與克卜勒三定律：r = ℓ/(1+e cosθ) 的幾何根源"
+title: "圓錐曲線極座標與克卜勒三定律：r = ℓ/(1+e cosθ) 的幾何根源"
 date: 2026-06-02 01:00:00 +0800
 categories: [大學物理, 天文物理]
-tags: [克卜勒問題, 克卜勒定律, 圓錐曲線, 極坐標, 焦點-準線, Binet方程式, 軌道方程式, 大學物理]
+tags: [克卜勒問題, 克卜勒定律, 圓錐曲線, 極座標, 焦點-準線, Binet方程式, 軌道方程式, 大學物理]
 math: true
-description: "從焦點-準線定義推導圓錐曲線的極坐標方程式 r=ℓ/(1+ecosθ)，說明橢圓、拋物線、雙曲線如何統一在同一個公式中，並連結克卜勒三定律。"
+description: "從焦點-準線定義推導圓錐曲線的極座標方程式 r=ℓ/(1+ecosθ)，說明橢圓、拋物線、雙曲線如何統一在同一個公式中，並連結克卜勒三定律。"
 media_subpath: /assets/img/posts/conic-sections-polar
 ---
 
 $$\require{physics}$$
 <link rel="stylesheet" href="/assets/css/posts-custom.css">
 
-[上一篇]({% post_url 2026-06-02-ellipse-geometry-intro %})用直角坐標處理橢圓。行星軌道問題卻天然地適合**極坐標**——以焦點（太陽）為原點，$r$ 是行星到太陽的距離，$\theta$ 是真近點角。這一篇推導極坐標下圓錐曲線的統一方程式。
+[上一篇]({% post_url 2026-06-02-ellipse-geometry-intro %})用直角座標處理橢圓。行星軌道問題卻天然地適合**極座標**——以焦點（太陽）為原點，$r$ 是行星到太陽的距離，$\theta$ 是真近點角。這一篇推導極座標下圓錐曲線的統一方程式。
 
 ---
 
@@ -33,16 +33,16 @@ $$\frac{PF}{d_P} = e$$
 ![焦點準線定義下的極座標幾何關係](focus-directrix-zh-light.png){: .light w="760" }
 ![焦點準線定義下的極座標幾何關係](focus-directrix-zh-dark.png){: .dark w="760" }
 
-**圖 1：** 以焦點 $F$ 為極點時，點 $P(r,\theta)$ 到準線的垂直距離可拆成 $d_P=d+r\cos\theta$；焦點-準線比值 $PF/d_P=e$ 便會導出極座標方程式。
+**圖 1：** 以焦點 $F$ 為極點時，點 $P(r,\theta)$ 到準線的垂直距離可拆成 $d_P=d+r\cos\theta$；焦點-準線比值 $PF/d_P=e$ 便會推導出極座標方程式。
 {: .fig-caption }
 
 ---
 
-## 2. 推導極坐標方程式
+## 2. 推導極座標方程式
 
 以焦點為極點，準線在焦點左方距離 $d$ 處（即 $x = -d$ 直線）。
 
-設 $P$ 的極坐標為 $(r, \theta)$，$P$ 到準線的距離：
+設 $P$ 的極座標為 $(r, \theta)$，$P$ 到準線的距離：
 
 $$d_P = d + r\cos\theta$$
 
@@ -62,9 +62,9 @@ $$r = \frac{\ell}{1 + e\cos\theta}$$
 
 ---
 
-## 3. 連結直角坐標參數
+## 3. 連結直角座標參數
 
-對橢圓（$e<1$），比較直角坐標與極坐標方程式，可以推出：
+對橢圓（$e<1$），比較直角座標與極座標方程式，可以推出：
 
 $$\ell = \frac{b^2}{a} = a(1-e^2)$$
 
@@ -123,7 +123,7 @@ $$h=r^2\dot{\theta}=\text{const}$$
 
 $$\dv{}{t}=\dot{\theta}\dv{}{\theta}=hu^2\dv{}{\theta}$$
 
-把極坐標中的徑向加速度
+把極座標中的徑向加速度
 
 $$a_r=\ddot r-r\dot{\theta}^2$$
 
@@ -153,7 +153,7 @@ $$\boxed{r = \frac{h^2/GM}{1+e\cos\theta} = \frac{\ell}{1+e\cos\theta}}$$
 
 其中 $\ell = h^2/(GM)$，$e = Ah^2/(GM)$ 由初始條件決定。
 
-**結論**：萬有引力是平方反比力（inverse-square force，$F \propto 1/r^2$），對應的軌道方程式恰好是圓錐曲線的極坐標方程式。這是牛頓最重要的推導之一。
+**結論**：萬有引力是平方反比力（inverse-square force，$F \propto 1/r^2$），對應的軌道方程式恰好是圓錐曲線的極座標方程式。這是牛頓最重要的推導之一。
 
 ---
 

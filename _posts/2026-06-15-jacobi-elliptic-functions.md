@@ -167,7 +167,7 @@ $$
 2E=I_1\Omega_1^2+I_2\Omega_2^2+I_3\Omega_3^2 \qquad(\text{能量}),\qquad L^2=I_1^2\Omega_1^2+I_2^2\Omega_2^2+I_3^2\Omega_3^2 \qquad(\text{角動量大小})
 $$
 
-這兩個式子是 $\Omega_1^2,\Omega_2^2,\Omega_3^2$ 的線性方程組，可以解出 $\Omega_2^2,\Omega_3^2$ 都是 $\Omega_1^2$ 的線性函數。代回歐拉方程式第一式：
+這兩個式子是 $\Omega_1^2,\Omega_2^2,\Omega_3^2$ 的線性聯立方程式，可以解出 $\Omega_2^2,\Omega_3^2$ 都是 $\Omega_1^2$ 的線性函數。代回歐拉方程式第一式：
 
 $$
 \dot\Omega_1^2=\left(\frac{I_2-I_3}{I_1}\right)^2\Omega_2^2\Omega_3^2

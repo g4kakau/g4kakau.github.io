@@ -11,7 +11,7 @@
 
 ## 首批 contextual CTA
 
-共 13 篇，涵蓋「高中物理背後的數學」與「經典力學」兩組內容。目的地只使用 Sample 或 Syllabus；純代數、量子等較遠內容只保留 ecosystem footer。
+共 13 篇，涵蓋「高中物理背後的數學」與「古典力學」兩組內容。目的地只使用 Sample 或 Syllabus；純代數、量子等較遠內容只保留 ecosystem footer。
 
 ## 舊 URL 與部署
 

@@ -144,7 +144,7 @@ $$\vec{v}_2' = \left(3\hat{i} - \sqrt{3}\hat{j}\right)\,\text{m/s}$$
 
 $$\vec{v}_\text{cm} = \frac{m_1\vec{v}_1 + m_2\vec{v}_2 + \cdots}{m_1 + m_2 + \cdots} = \frac{\vec{p}_\text{總}}{M_\text{總}}$$
 
-動量守恆 $\Leftrightarrow$ **質心速度不變**。從質心系的角度看，這是最自然的表述：合外力為零時，質心做等速直線運動（或靜止）。
+動量守恆 $\Leftrightarrow$ **質心速度不變**。從質心座標系的角度看，這是最自然的表述：合外力為零時，質心做等速直線運動（或靜止）。
 
 ---
 

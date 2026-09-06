@@ -37,17 +37,17 @@ contextual_ctas:
     path: "高中物理背後的數學"
     destination: syllabus
   momentum-and-impulse:
-    path: "經典力學"
+    path: "古典力學"
     destination: sample
   center-of-mass:
-    path: "經典力學"
+    path: "古典力學"
     destination: syllabus
   conservation-of-momentum:
-    path: "經典力學"
+    path: "古典力學"
     destination: sample
   collision-problems:
-    path: "經典力學"
+    path: "古典力學"
     destination: syllabus
   vertical-circular-motion:
-    path: "經典力學"
+    path: "古典力學"
     destination: sample

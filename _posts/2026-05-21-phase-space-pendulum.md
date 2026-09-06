@@ -5,7 +5,7 @@ date: 2026-05-21 03:00:00 +0800
 categories: [大學物理, 力學]
 tags: [相空間, 相圖, 單擺, separatrix, 哈密頓力學, 非線性振動, 大學物理]
 math: true
-description: "相空間把單擺所有可能的運動一次畫出來。本文介紹相平面的坐標、等能量曲線的三種類型（libration、separatrix、rotation），說明 separatrix 的方程式與物理意義，並連結到 K(k) 在 k→1 時的發散行為。"
+description: "相空間把單擺所有可能的運動一次畫出來。本文介紹相平面的座標、等能量曲線的三種類型（libration、separatrix、rotation），說明 separatrix 的方程式與物理意義，並連結到 K(k) 在 k→1 時的發散行為。"
 ---
 
 $$\require{physics}$$
@@ -35,7 +35,7 @@ $$\dot{\omega} = -\frac{g}{L}\sin\theta$$
 
 在**相平面**（phase plane）中，每個點 $(\theta, \omega)$ 代表單擺在某一瞬間的完整狀態。時間演化對應狀態點在相平面上沿著某條曲線移動——這條曲線就是**相軌跡**（phase trajectory）。
 
-> **備註：** 嚴格的哈密頓力學用 $(\theta, p_\theta)$ 作為相空間坐標，其中 $p_\theta = mL^2\omega$ 是廣義動量（角動量）。$(\theta, \omega)$ 和 $(\theta, p_\theta)$ 只差常數倍 $mL^2$，圖形形狀相同，只是縱軸單位不同。本篇用 $(\theta, \omega)$ 是為了物理直覺方便。
+> **備註：** 嚴格的哈密頓力學用 $(\theta, p_\theta)$ 作為相空間座標，其中 $p_\theta = mL^2\omega$ 是廣義動量（角動量）。$(\theta, \omega)$ 和 $(\theta, p_\theta)$ 只差常數倍 $mL^2$，圖形形狀相同，只是縱軸單位不同。本篇用 $(\theta, \omega)$ 是為了物理直覺方便。
 
 ---
 
@@ -127,8 +127,8 @@ $$\boxed{\omega = \pm 2\sqrt{\frac{g}{L}}\cos\frac{\theta}{2}}$$
      - 紅色粗線：separatrix（E = 2mgL），標注「separatrix」
      - 橘色波浪線：多條 rotation 軌道（E > 2mgL）
      - 在 (0,0) 標注「stable equilibrium」，在 (±π, 0) 標注「saddle point」
-     - 加上坐標軸標籤 θ（rad）和 ω（rad/s）
-     互動版建議：Observable / p5.js，讓學生點擊相平面任意位置，
+     - 加上座標軸標籤 θ（rad）和 ω（rad/s）
+     互動版建議：Observable / p5.js，讓學生點選相平面任意位置，
      看到對應初始條件的軌跡動畫（擺錘實際在擺動或旋轉）。
      格式：至少提供 matplotlib PNG；互動版為加分項。
      附圖說「圖 1：單擺相圖。藍色：擺動軌道；紅色：separatrix；橘色：旋轉軌道」。
@@ -207,4 +207,4 @@ plt.show()
 - 不穩定平衡點 $(\pm\pi, 0)$：倒立點，鞍點，separatrix 的交叉處
 - $K(k) \to \infty$ 在相空間中的意思：軌道趨近 separatrix，繞一圈需要的時間趨向無限大
 
-[下一篇]({% post_url 2026-05-21-lagrangian-mechanics-pendulum %})用拉格朗日力學重新推導單擺運動方程，並看廣義坐標如何讓約束力自動消失。
+[下一篇]({% post_url 2026-05-21-lagrangian-mechanics-pendulum %})用拉格朗日力學重新推導單擺運動方程，並看廣義座標如何讓約束力自動消失。

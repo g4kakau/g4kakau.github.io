@@ -42,7 +42,7 @@ $$
 
 2. **伽羅瓦群 $\mathrm{Gal}(K/\mathbb{Q})$**：所有「保持 $\mathbb{Q}$ 中每個數不動、但允許把 $f$ 的根互相對換」的體自同構，所組成的群。群中每個元素都是一種「對稱操作」，群的運算就是操作的複合。
 
-對於 $\theta=\dfrac{180^\circ}{n}$（分圓問題），$\mathrm{Gal}(\mathbb{Q}(\cos\theta)/\mathbb{Q})$ 的大小與歐拉函數 $\varphi(n)$ 直接相關——這正是上一篇 Gauss–Wantzel 定理裡，條件最終歸結到 $\varphi(n)$ 是否為 $2$ 的冪、進而導出費馬質數條件的真正來源。
+對於 $\theta=\dfrac{180^\circ}{n}$（分圓問題），$\mathrm{Gal}(\mathbb{Q}(\cos\theta)/\mathbb{Q})$ 的大小與歐拉函數 $\varphi(n)$ 直接相關——這正是上一篇 Gauss–Wantzel 定理裡，條件最終歸結到 $\varphi(n)$ 是否為 $2$ 的冪、進而推導出費馬質數條件的真正來源。
 
 ---
 

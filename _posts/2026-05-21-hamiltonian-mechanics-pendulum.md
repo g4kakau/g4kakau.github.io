@@ -11,7 +11,7 @@ description: "拉格朗日力學用位形空間描述運動；哈密頓力學升
 $$\require{physics}$$
 <link rel="stylesheet" href="/assets/css/posts-custom.css">
 
-[上一篇]({% post_url 2026-05-21-lagrangian-mechanics-pendulum %})用拉格朗日力學推導了單擺方程式，廣義坐標是 $\theta$，方程式是一條二階 ODE。
+[上一篇]({% post_url 2026-05-21-lagrangian-mechanics-pendulum %})用拉格朗日力學推導了單擺方程式，廣義座標是 $\theta$，方程式是一條二階 ODE。
 
 哈密頓力學換了一個視角：把二階 ODE **拆成兩條一階方程式**，然後在**相空間**裡描述運動。相空間的好處，我們在[第四篇]({% post_url 2026-05-21-phase-space-pendulum %})已經嘗過了——一張圖就能看清所有可能的運動類型。這一篇說明這個框架如何從拉格朗日力學自然長出來。
 
@@ -19,7 +19,7 @@ $$\require{physics}$$
 
 ## Legendre 變換：從速度到動量
 
-拉格朗日力學的狀態空間是「位形空間」（configuration space）：$(\theta, \dot{\theta})$，變數是廣義坐標和廣義速度。
+拉格朗日力學的狀態空間是「位形空間」（configuration space）：$(\theta, \dot{\theta})$，變數是廣義座標和廣義速度。
 
 哈密頓力學把廣義速度 $\dot{\theta}$ 換成廣義動量 $p_\theta$。這個變數替換稱為 **Legendre 變換**（Legendre transform）。
 
@@ -142,7 +142,7 @@ $$W(\theta; E) = \int^\theta \sqrt{2mL^2\big[E - mgL(1-\cos\theta')\big]}\,\dd{\
 
 ## 小結
 
-- 哈密頓量 $H = p_\theta\dot{\theta} - \mathcal{L}$，透過 Legendre 變換從 $\mathcal{L}$ 導出
+- 哈密頓量 $H = p_\theta\dot{\theta} - \mathcal{L}$，透過 Legendre 變換從 $\mathcal{L}$ 推導出
 - 對單擺：$H = p_\theta^2/(2mL^2) + mgL(1-\cos\theta) = $ 總能量
 - 正則方程：$\dot{\theta} = \partial H/\partial p_\theta$，$\dot{p}_\theta = -\partial H/\partial\theta$
 - 相空間軌跡 = 等 $H$ 曲線，哈密頓力學自然給出相圖的幾何結構

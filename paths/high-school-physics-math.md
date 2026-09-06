@@ -53,6 +53,6 @@ description: "從 Taylor 展開、曲率、微分方程到單擺，以 8 篇既�
 
 ## 下一步
 
-接下來可前往[高中物理分類](/categories/高中物理/)補足課內主題，或到[大學物理力學分類](/categories/力學/)繼續探索。下一條正式路徑將是「經典力學」。
+接下來可前往[高中物理分類](/categories/高中物理/)補足課內主題，或到[大學物理力學分類](/categories/力學/)繼續探索。下一條正式路徑將是「古典力學」。
 
 若你希望在有順序的課程、討論與教師回饋中繼續學習，可以低壓力地先看 [Kakau 試讀教材 ↗]({{ site.data.kakau.academy.sample }}&utm_content=learning_path){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_sample"}，再決定是否適合完整學習主線。
