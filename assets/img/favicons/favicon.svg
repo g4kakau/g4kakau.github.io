@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kakau">
+  <rect width="64" height="64" rx="32" fill="#0b1730"/>
+  <path d="M21 18h8v17l15-17h9L39 33l15 13h-9L29 32v14h-8V18Z" fill="#fbfaf7"/>
+  <circle cx="45" cy="20" r="4" fill="#d8951d"/>
+</svg>
