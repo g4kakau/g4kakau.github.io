@@ -1,7 +1,6 @@
 # Bundler cache
 .bundle/
 vendor/
-Gemfile.lock
 
 # Jekyll output and cache
 _site/
