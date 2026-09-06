@@ -5,11 +5,11 @@ academy:
   syllabus: "https://kakau.tw/syllabus?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
   apply: "https://kakau.tw/apply?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
 
-# notes.kakau.tw 尚未完成 DNS；切換步驟見 docs/custom-domain-cutover.md。
+# notes.kakau.tw 已完成 DNS 與 GitHub Pages 綁定；憑證狀態見 docs/custom-domain-cutover.md。
 notes:
-  current_origin: "https://g4kakau.github.io"
+  current_origin: "https://notes.kakau.tw"
   target_origin: "https://notes.kakau.tw"
-  custom_domain_live: false
+  custom_domain_live: true
 
 contextual_ctas:
   taylor-series:

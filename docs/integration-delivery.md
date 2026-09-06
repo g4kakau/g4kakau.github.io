@@ -19,7 +19,7 @@
 - `/academy/` 是 Notes 對 Kakau 物理學苑的 canonical bridge page；它不複製價格、日期、成班條件或契約等正式產品資訊。
 - `/tutoring-plans/` 僅保留 noindex compatibility redirect，舊連結不會 404，也不會形成重複內容。
 - active workflow 仍只監聽 `theme`；已移除監聽 `main/master` 的舊 workflow。
-- 本次不部署、不改 DNS、不改 GitHub Pages settings。
+- 2026-09-06 已完成 GitHub Pages custom domain 與 DNS 設定；正式網址為 `https://notes.kakau.tw`。
 
 ## 發布前人工檢查
 
