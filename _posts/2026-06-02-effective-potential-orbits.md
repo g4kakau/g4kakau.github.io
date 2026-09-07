@@ -17,7 +17,7 @@ $$\require{physics}$$
 
 ## 1. 化二維為一維
 
-在[上一篇]({% post_url 2026-06-02-conic-sections-polar %})已知，連心力下角動量守恆：
+在[圓錐曲線極座標篇]({% post_url 2026-06-02-conic-sections-polar %})已知，連心力下角動量守恆：
 
 $$h = r^2\dot{\theta} = \text{const}$$
 
@@ -79,7 +79,7 @@ $$V_{\text{eff}}(r_0) = -\frac{(GM)^2}{2h^2}$$
 
 從能量和角動量，可以直接算出離心率 $e$，不需要解運動方程式。
 
-從[上一篇]({% post_url 2026-06-02-conic-sections-polar %})的 Binet 方程式解：$r=\ell/(1+e\cos\theta)$，轉折點發生在 $\theta=0$ 和 $\theta=\pi$：
+從[圓錐曲線極座標篇]({% post_url 2026-06-02-conic-sections-polar %})的 Binet 方程式解：$r=\ell/(1+e\cos\theta)$，轉折點發生在 $\theta=0$ 和 $\theta=\pi$：
 
 $$r_{\min} = \frac{\ell}{1+e}, \quad r_{\max} = \frac{\ell}{1-e}$$
 
@@ -106,7 +106,7 @@ $$\boxed{e^2 = 1 + \frac{2\varepsilon h^2}{(GM)^2}}$$
 
 圓形軌道 $r=r_0$ 是 $V_{\text{eff}}$ 的極小值，小擾動會讓 $r$ 在 $r_0$ 附近振盪——圓形軌道是**穩定**的。
 
-這與 $V_{\text{eff}} \propto -1/r^n$ 的冪次有關。可以證明：對 $F \propto 1/r^n$，穩定圓形軌道要求 $n < 3$。萬有引力 $n=2$ 滿足此條件（$n=3$ 時 $V_{\text{eff}}$ 無極小值，無穩定圓形軌道）。
+這與力的冪次有關。可以證明：對 $F \propto 1/r^n$，穩定圓形軌道要求 $n < 3$。萬有引力 $n=2$ 滿足此條件（$n=3$ 時 $V_{\text{eff}}$ 無極小值，無穩定圓形軌道）。
 
 ---
 

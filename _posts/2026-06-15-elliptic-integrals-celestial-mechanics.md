@@ -110,7 +110,7 @@ $$
 
 一個不受外力矩的剛體（例如一塊不規則形狀、自由翻滾的小行星），它的自轉軸方向會隨時間演化，由**歐拉方程式**（Euler's equations）描述。這個系統同樣有兩個保守量（能量與角動量），結構上跟克卜勒問題的「兩個保守量決定一條軌道」非常相似——但它的解**不是**初等函數，而是上一篇 $K(k)$、這一篇 $E(k)$ 的「親戚」：**雅可比橢圓函數** $\mathrm{sn},\mathrm{cn},\mathrm{dn}$。
 
-真實世界中，像是翻滾的小行星（例如 4179 Toutatis）、彗星核（67P/Churyumov–Gerasimenko）的非主軸自轉，都可以用這套語言描述。[下一篇]({% post_url 2026-06-15-jacobi-elliptic-functions %})將正式介紹 $\mathrm{sn},\mathrm{cn},\mathrm{dn}$——它們是 $K(k)$ 積分的反函數，也是整個「單擺與橢圓積分」系列從第一篇 $K(k)$ 出發，最終要抵達的目的地。
+真實世界中，像是翻滾的小行星（例如 4179 Toutatis）、彗星核（67P/Churyumov–Gerasimenko）的非主軸自轉，都可以用這套語言描述。[下一篇]({% post_url 2026-06-15-jacobi-elliptic-functions %})將正式介紹 $\mathrm{sn},\mathrm{cn},\mathrm{dn}$——它們是第一類（不完全）橢圓積分 $F(\phi,k)$ 的反函數，也是整個「單擺與橢圓積分」系列從第一篇 $K(k)$ 出發，最終要抵達的目的地。
 
 ---
 
