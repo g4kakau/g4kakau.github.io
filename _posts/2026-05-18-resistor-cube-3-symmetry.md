@@ -56,7 +56,7 @@ $$\sum_{j \sim i} \frac{V_j - V_i}{R_{ij}} = 0 \quad \text{（對所有內部節
 
 對任意內部節點 $\sigma(i)$：
 
-$$\sum_{j \sim \sigma(i)} \frac{W_j - W_{\sigma(i)}}{R_j} = \sum_{k \sim i} \frac{V_{\sigma(k)} - V_{\sigma(i)}}{R_{\sigma(k)\sigma(i)}} = \sum_{k \sim i} \frac{V_k - V_i}{R_{ki}} = 0 \tag{2}\label{eq3:proof}$$
+$$\sum_{j \sim \sigma(i)} \frac{W_j - W_{\sigma(i)}}{R_{j\sigma(i)}} = \sum_{k \sim i} \frac{V_{\sigma(k)} - V_{\sigma(i)}}{R_{\sigma(k)\sigma(i)}} = \sum_{k \sim i} \frac{V_k - V_i}{R_{ki}} = 0 \tag{2}\label{eq3:proof}$$
 
 （第一個等號用了 $\sigma$ 保持連接結構；第二個等號用了 $\sigma$ 保持電阻值；最後等於零是因為 $\{V_i\}$ 滿足式 $\eqref{eq3:kcl}$。）邊界條件也被 $\sigma$ 保持，所以 $\{W_i\} = \{V_{\sigma(i)}\}$ 也是一組合法解。
 
@@ -148,7 +148,7 @@ $$3c - 2b = 0 \tag{C型代表}\label{eq3:c-repr}$$
 
 由式 $\eqref{eq3:b-repr}$ 和 $\eqref{eq3:c-repr}$ 解得 $b = 3/5$，$c = 2/5$，代入[第一篇的等效電阻算式](/posts/resistor-cube-1-node-voltage/#計算等效電阻) $R_{\text{eq}} = \Delta V / I$ 得 $R_{\text{eq}} = 5R/6$。
 
-**對稱性把聯立方程式的規模從 $6\times 6$ 縮小到 $2\times 2$。** 這個縮小的比例在更大的問題裡更戲劇性——對 $2\times 2\times 2$ 的晶格（27 個節點），對稱性能把未知數從 25 個降到 3 個，我們後面會看到。
+**對稱性把聯立方程式的規模從 $6\times 6$ 縮小到 $2\times 2$。** 這個縮小的比例在更大的問題裡更戲劇性——對 $2\times 2\times 2$ 的晶格（27 個節點），$S_3$ 的軌道分類能把 25 個未知數降到 8 個，若再用上「對中心反演會交換兩端點、使電位變成 $1-V$」這個額外對稱，可以再降到 3 個。
 
 ---
 

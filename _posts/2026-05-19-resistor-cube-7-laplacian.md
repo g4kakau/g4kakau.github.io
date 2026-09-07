@@ -69,7 +69,7 @@ $$-v_0 + 3v_1 - v_3 - v_5 = 0$$
 
 $$L = Q\Lambda Q^\top, \qquad Q = [\mathbf{q}_0,\ldots,\mathbf{q}_{n-1}], \quad \Lambda = \operatorname{diag}(\lambda_0,\ldots,\lambda_{n-1})$$
 
-其中 $Q$ 是正交矩陣（$Q^\top Q = I$），$\lambda_k$ 依大小排列，$\lambda_0 = 0$ 對應零向量 $\mathbf{q}_0 = \mathbf{1}/\sqrt{n}$，其餘 $\lambda_k > 0$。
+其中 $Q$ 是正交矩陣（$Q^\top Q = I$），$\lambda_k$ 依大小排列，$\lambda_0 = 0$ 對應零空間方向的單位特徵向量 $\mathbf{q}_0 = \mathbf{1}/\sqrt{n}$（是常數向量，不是零向量），其餘 $\lambda_k > 0$。
 
 **Moore–Penrose 擬逆** $L^+$ 定義為：把每個非零特徵值取倒數，零特徵值保留為零：
 
@@ -199,7 +199,7 @@ for a, b in combinations(range(n), 2):
 | 2（面對角線）  |     $3R/4$     | 12 對 |
 | 3（體對角線）  |     $5R/6$     | 4 對  |
 
-**$R_\text{eff}$ 只依賴圖距離，與節點的具體位置無關。** 這不是偶然：立方體圖是**頂點遞移（vertex-transitive）**的——對任意兩對圖距離相同的節點對 $(a,b)$ 和 $(a',b')$，存在圖自同構將前者送到後者，因此等效電阻必然相同。
+**$R_\text{eff}$ 只依賴圖距離，與節點的具體位置無關。** 這不是偶然：立方體圖是**距離遞移（distance-transitive）**的——對任意兩對圖距離相同的節點對 $(a,b)$ 和 $(a',b')$，存在圖自同構將前者送到後者，因此等效電阻必然相同。（只有頂點遞移是不夠的：那只保證每個頂點地位相同，不保證同距離的節點對彼此等價。）
 
 ---
 
@@ -224,7 +224,7 @@ $$\lambda_{(a_1,a_2,a_3)} = \sum_{k=1}^{3}\bigl(1 - (-1)^{a_k}\bigr)$$
 - $(1,1,0),(1,0,1),(0,1,1)$：$\lambda = 4$（三重縮並）
 - $(1,1,1)$：$\lambda = 6$（最高頻模式）
 
-由此，$\tilde{L}^+$ 的非零特徵值為 $1/2, 1/4, 1/6$（各三重、三重、一重）。有效電阻公式的谱分解寫成：
+由此，$\tilde{L}^+$ 的非零特徵值為 $1/2, 1/4, 1/6$（各三重、三重、一重）。有效電阻公式的譜分解寫成：
 
 $$R_\text{eff}(a,b) = R \sum_{\lambda_k \neq 0} \frac{1}{\lambda_k}\left[\mathbf{q}_k^\top(\mathbf{e}_a - \mathbf{e}_b)\right]^2$$
 
