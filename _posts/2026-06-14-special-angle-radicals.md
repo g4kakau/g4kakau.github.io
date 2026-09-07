@@ -100,13 +100,13 @@ $$
 \boxed{\cos36^\circ=\frac{1+\sqrt5}{4}}
 $$
 
-等一下——這裡要小心係數。代回驗證：$\dfrac{1+\sqrt5}{4}\approx\dfrac{1+2.236}{4}\approx0.809$，而 $\cos36^\circ\approx0.809$，**數值對得上**。讀者可能注意到 $\dfrac{1+\sqrt5}{2}\approx1.618$ 正是**黃金比例 $\varphi$**，所以這個結果也常寫成
+這個分母很容易記錯成 $2$，代回驗證：$\dfrac{1+\sqrt5}{4}\approx\dfrac{1+2.236}{4}\approx0.809$，而 $\cos36^\circ\approx0.809$，**數值對得上**。讀者可能注意到 $\dfrac{1+\sqrt5}{2}\approx1.618$ 正是**黃金比例 $\varphi$**，所以這個結果也常寫成
 
 $$
 \cos36^\circ=\frac{\varphi}{2},\qquad \varphi=\frac{1+\sqrt5}{2}
 $$
 
-這不是巧合：正五邊形的對角線與邊長之比就是 $\varphi$，而 $36^\circ$ 正是正十邊形的中心角一半、與正五邊形的幾何密不可分。
+這不是巧合：正五邊形的對角線與邊長之比就是 $\varphi$，而 $36^\circ$ 正是正十邊形的中心角（也是正五邊形中心角 $72^\circ$ 的一半），與正五邊形的幾何密不可分。
 
 ### 接著求 18°
 
@@ -145,7 +145,7 @@ $$
 | $30^\circ$ | $\dfrac{\sqrt3}{2}$                              | 課本特殊角                          |
 | $36^\circ$ | $\dfrac{1+\sqrt5}{4}$（即 $\dfrac{\varphi}{2}$） | 黃金比例 $\varphi$                  |
 | $45^\circ$ | $\dfrac{\sqrt2}{2}$                              | 課本特殊角                          |
-| $54^\circ$ | $\dfrac{\sqrt{10+2\sqrt5}}{4}$                   | $=\sin36^\circ$，與 $18^\circ$ 互餘 |
+| $54^\circ$ | $\dfrac{\sqrt{10-2\sqrt5}}{4}$                   | $=\sin36^\circ$，與 $36^\circ$ 互餘 |
 | $60^\circ$ | $\dfrac12$                                       | 課本特殊角                          |
 | $72^\circ$ | $\dfrac{\sqrt5-1}{4}$                            | $=\sin18^\circ$                     |
 | $75^\circ$ | $\dfrac{\sqrt6-\sqrt2}{4}$                       | $45^\circ+30^\circ$                 |
