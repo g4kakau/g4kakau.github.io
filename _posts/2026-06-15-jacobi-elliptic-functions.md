@@ -13,7 +13,7 @@ $$\require{physics}$$
 
 [上一篇]({% post_url 2026-06-15-elliptic-integrals-celestial-mechanics %})整理了天體力學中橢圓積分真正出現的地方，並預告了一個尚未解決的問題：一個不受外力矩的剛體（自由翻滾的小行星），它的自轉怎麼描述？答案不是初等函數，也不只是 $K(k)$ 或 $E(k)$ 這兩個數字——而是一整套**函數**：雅可比橢圓函數 $\mathrm{sn},\mathrm{cn},\mathrm{dn}$。
 
-這篇文章要做兩件事：第一，把這三個函數「生出來」——它們其實就是[第一篇]({% post_url 2026-05-21-elliptic-integral-K %})介紹的 $K(k)$ 積分的反函數，跟 $\sin$ 是 $\int\dd{x}/\sqrt{1-x^2}$ 的反函數是同一個套路。第二，用它們把單擺的運動方程**完全解出來**——回到整個系列最初的起點，給出一個閉合形式的 $\theta(t)$。
+這篇文章要做兩件事：第一，把這三個函數「生出來」——它們其實就是[第一篇]({% post_url 2026-05-21-elliptic-integral-K %})介紹的那個橢圓積分（的不完全形式）的反函數，跟 $\sin$ 是 $\int\dd{x}/\sqrt{1-x^2}$ 的反函數是同一個套路。第二，用它們把單擺的運動方程**完全解出來**——回到整個系列最初的起點，給出一個閉合形式的 $\theta(t)$。
 
 ---
 
@@ -191,7 +191,7 @@ $$
 
 ## 小結
 
-- $\mathrm{sn}(u,k)=\sin(\mathrm{am}(u,k))$、$\mathrm{cn}=\cos(\mathrm{am})$、$\mathrm{dn}=\sqrt{1-k^2\mathrm{sn}^2}$，其中 $\mathrm{am}(u,k)$ 由 $F(\varphi,k)=u$ 定義——這是 $K(k)$ 積分的反函數，跟 $\sin=\arcsin^{-1}$ 同一個套路。
+- $\mathrm{sn}(u,k)=\sin(\mathrm{am}(u,k))$、$\mathrm{cn}=\cos(\mathrm{am})$、$\mathrm{dn}=\sqrt{1-k^2\mathrm{sn}^2}$，其中 $\mathrm{am}(u,k)$ 由 $F(\varphi,k)=u$ 定義——這是第一類橢圓積分**不完全形式** $F(\varphi,k)$ 的反函數（完全形式 $K(k)=F(\pi/2,k)$ 只是它的一個特殊值），跟 $\sin=\arcsin^{-1}$ 同一個套路。
 - $k=0\to$ 三角函數；$k=1\to$ 雙曲函數；$0<k<1$ 是兩者之間的週期函數，週期 $4K(k)$。
 - 單擺精確解：$\theta(t)=2\arcsin[k\,\mathrm{sn}(\omega_0t,k)]$，$k=\sin(\theta_0/2)$——整個系列的週期公式、相圖、能量分析統一在這一條曲線裡。
 - 剛體自由轉動（歐拉方程式）化簡後同樣是「變數平方的四次多項式」結構，角速度三分量分別對應 $\mathrm{cn},\mathrm{sn},\mathrm{dn}$——翻滾的小行星、彗星核都是這套函數的真實舞台。
