@@ -151,19 +151,19 @@ $$
 
 This expression contains $\tan90^\circ$ and $\tan270^\circ$, where tangent is undefined. So the sum is not zero; the expression itself is undefined. This is a classic trap.
 
-If the singular angles are avoided, for example
+Avoiding the singular angles takes care with the step size too. For instance $\tan10^\circ+\tan20^\circ+\cdots+\tan170^\circ$ is **still not usable**: $90^\circ$ is a multiple of $10^\circ$, so $\tan90^\circ$ sneaks back in. A step of $20^\circ$ is safe:
 
 $$
-\tan10^\circ+\tan20^\circ+\cdots+\tan170^\circ,
+\tan20^\circ+\tan40^\circ+\cdots+\tan160^\circ.
 $$
 
-then we can use a different symmetry:
+All eight terms are defined, and now a different symmetry applies:
 
 $$
 \tan(180^\circ-\theta)=-\tan\theta.
 $$
 
-This pairs $\tan10^\circ$ with $\tan170^\circ$, $\tan20^\circ$ with $\tan160^\circ$, and so on. The total sum is zero, but the pairing rule is different from the sine and cosine case.
+This pairs $\tan20^\circ$ with $\tan160^\circ$, $\tan40^\circ$ with $\tan140^\circ$, and so on. The total sum is zero, but the pairing rule is different from the sine and cosine case.
 
 ---
 
@@ -297,7 +297,7 @@ These are all designed to cancel, but first check whether the angles complete a 
 
 **D. Sign and definition traps**
 
-9. $\tan10^\circ+\tan20^\circ+\cdots+\tan170^\circ$
+9. $\tan20^\circ+\tan40^\circ+\cdots+\tan160^\circ$ (then ask: what breaks if the step is $10^\circ$?)
 10. $\tan2^\circ+\tan4^\circ+\cdots+\tan360^\circ$  
     Check whether the expression is defined before trying to compute it.
 
@@ -305,3 +305,20 @@ These are all designed to cancel, but first check whether the angles complete a 
 
 11. $\sin^2 1^\circ+\sin^2 2^\circ+\cdots+\sin^2 179^\circ$
 12. $\cos^2 10^\circ+\cos^2 20^\circ+\cdots+\cos^2 360^\circ$
+
+---
+
+### Answers
+
+1. $0$
+2. $0$
+3. $0$
+4. $\dfrac{89}{2}$ (44 pairs of $1$, plus the middle term $\sin^2 45^\circ=\tfrac12$)
+5. $4$
+6. $\dfrac{45}{2}$
+7. $1$
+8. $1$
+9. $0$ (with a $10^\circ$ step the sum would contain $\tan90^\circ$ and be undefined)
+10. Undefined (it contains $\tan90^\circ$ and $\tan270^\circ$)
+11. $90$ ($=2\times\dfrac{89}{2}+\sin^2 90^\circ$)
+12. $18$
