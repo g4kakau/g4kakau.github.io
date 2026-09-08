@@ -154,14 +154,16 @@ $$
 = (3-\lambda)\bigl[(1-\lambda)^2 - 4\bigr]
 $$
 
-$$
-= (3-\lambda)(\lambda^2 - 2\lambda - 3) = (3-\lambda)(3-\lambda)(\lambda+1) \cdot (-1)
-$$
-
-更直接地：$(1-\lambda)^2 - 4 = \lambda^2 - 2\lambda - 3 = (\lambda-3)(\lambda+1)$，所以
+因為 $(1-\lambda)^2 - 4 = \lambda^2 - 2\lambda - 3 = (\lambda-3)(\lambda+1)$，所以
 
 $$
-\det(B - \lambda I) = -(3-\lambda)(\lambda-3)(\lambda+1) = (\lambda-3)^2(\lambda+1) = 0
+\det(B - \lambda I) = (3-\lambda)(\lambda-3)(\lambda+1) = -(\lambda-3)^2(\lambda+1)
+$$
+
+（注意 $3-\lambda=-(\lambda-3)$，所以整體帶一個負號。）令它為零：
+
+$$
+-(\lambda-3)^2(\lambda+1) = 0 \iff (\lambda-3)^2(\lambda+1) = 0
 $$
 
 特徵值：$\lambda_1 = 3$（**重數為 2**），$\lambda_2 = -1$。
