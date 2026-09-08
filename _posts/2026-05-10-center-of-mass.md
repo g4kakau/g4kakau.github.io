@@ -128,7 +128,7 @@ $$2 \times 15 + 3 \times v = 0 \implies v = -10\ \text{m/s}\ \text{（向左）}
 ## 延伸閱讀
 
 - [動量與衝量：衝量－動量定理](/posts/momentum-and-impulse/)
-- 動量守恆定律（即將上線）
-- 碰撞問題：彈性與非彈性碰撞（即將上線）
+- [動量守恆定律：為什麼子彈射出後槍會後退？](/posts/conservation-of-momentum/)
+- [碰撞問題完整攻略：彈性、非彈性、一維與二維](/posts/collision-problems/)
 
 ---
