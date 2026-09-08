@@ -96,7 +96,7 @@ $$
 H_{ij}=\pdv[2]{U}{q_i}{q_j}
 $$
 
-是 **Hessian 矩陣**——由所有二階偏導陣列成。寫成矩陣形式：
+是 **Hessian 矩陣**——由所有二階偏導數組成。寫成矩陣形式：
 
 $$
 \boxed{U=\frac12\vb{q}^{\mathsf T}K\vb{q}}

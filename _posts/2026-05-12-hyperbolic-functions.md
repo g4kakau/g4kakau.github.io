@@ -66,7 +66,7 @@ $$
 \coth x = \frac{\cosh{x}}{\sinh{x}} = \frac{e^x + e^{-x}}{e^x - e^{-x}} \quad (x \neq 0)
 $$
 
-注意：$\cosh{x}$ 是偶函數（$e^x + e^{-x}$ 的平均），$\sinh{x}$ 是奇函數（$e^x - e^{-x}$ 的平均）。
+注意：$\cosh{x}$ 是偶函數（$e^x$ 與 $e^{-x}$ 的平均），$\sinh{x}$ 是奇函數（兩者的「半差」）。換句話說，$\cosh$ 與 $\sinh$ 正是 $e^x$ 的偶部與奇部。
 
 ---
 
@@ -130,7 +130,7 @@ $$
 
 ## 五、反雙曲函數
 
-反雙曲函數可以用對數表示，這是雙曲函數和三角函數很不同的一點（反三角函數無法用對數表示）：
+反雙曲函數可以用對數表示，這是雙曲函數和三角函數很不同的一點（在**實數**範圍內，反三角函數寫不成對數形式；若允許複數，$\arcsin x=-i\ln(ix+\sqrt{1-x^2})$ 之類的寫法是存在的）：
 
 $$
 \sinh^{-1} x = \operatorname{arsinh}\, x = \ln\!\left(x + \sqrt{x^2 + 1}\right)
@@ -236,7 +236,7 @@ Lorentz boost 用的是雙曲角（rapidity）：$\cosh\phi = \gamma$，$\sinh\p
 | 基本恆等式      |             $\cos^2 + \sin^2 = 1$              |                    $\cosh^2 - \sinh^2 = 1$                     |
 | $(\cdot)'$ 的鏈 | $\sin \to \cos \to -\sin \to -\cos \to \cdots$ |           $\sinh \leftrightarrow \cosh$（正號循環）            |
 | 週期性          |                  $2\pi$ 週期                   |      無週期（有界嗎？$\cosh{x} \geq 1$，$\sinh{x}$ 無界）      |
-| 反函數          |       $\arcsin, \arctan$（無 log 表示）        | $\operatorname{arsinh}, \operatorname{arcosh}$（可用 ln 表示） |
+| 反函數          |     $\arcsin, \arctan$（實數範圍內無 log 表示）     | $\operatorname{arsinh}, \operatorname{arcosh}$（可用 ln 表示） |
 
 ---
 
