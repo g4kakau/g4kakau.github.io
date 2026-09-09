@@ -28,7 +28,12 @@ check_forbidden "legacy production domain" 'kakau-tutor\.vercel\.app' _config.ym
 check_forbidden "legacy Google inquiry form" 'forms\.gle/R38gD1b9SecEbufq8' _config.yml index.html _tabs _includes _posts _data
 check_forbidden "legacy tutoring CTA" '歡迎預約家教課|需要家教或預約諮詢' _config.yml index.html _tabs _includes _posts _data
 check_forbidden "placeholder social account" 'threads\.net/@placeholder' _config.yml index.html _tabs _includes _posts _data
-check_forbidden "non-Taiwan terminology" '經典力學|坐標|(^|[^演])算法|數組|方差|方程組|標量|固體物理|形狀信息|觀測數據|實驗數據|保存完整|查找|高亮|點擊|端點配置|最高效|高效計算|解耦([^合]|$)' index.html _tabs _includes _posts _data paths docs
+# 非台灣用詞的檢查搬到 tools/check_terminology.rb。有幾個詞需要前後文守衛才不會誤判
+# 合法的繁體寫法，而 grep -E 的 [^…] 在不同 grep 實作與 locale 下可能以位元組而非字元
+# 比對，中文一個字三個位元組，守衛會在某些平台悄悄失效。理由詳見該檔開頭。
+if ! ruby tools/check_terminology.rb; then
+  failures=1
+fi
 
 if search '/tutoring-plans/' _tabs _includes index.html _data; then
   echo "ERROR: /tutoring-plans/ remains a primary navigation destination" >&2
