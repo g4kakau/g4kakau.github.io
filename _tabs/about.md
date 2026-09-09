@@ -21,7 +21,11 @@ order: 5
 
 ## 作者與教師背景
 
-作者畢業於台大物理系，並取得德國圖賓根大學（Eberhard Karls Universität Tübingen）天文物理與粒子物理碩士（MSc Astro and Particle Physics）。自 2017 年開始教學，經驗涵蓋台灣高中數理、大一普通物理，以及荷蘭大專的統計學與 AI 通識課。
+這裡的文章由**何信佑（Sin-iu Ho）**撰寫，他也是 Kakau 物理學苑的創辦人與授課教師。
+
+他畢業於台大物理系，並取得德國圖賓根大學（Eberhard Karls Universität Tübingen）天文物理與粒子物理碩士（MSc Astro and Particle Physics）。自 2017 年開始教學，經驗涵蓋台灣高中數理、大一普通物理，以及荷蘭大專的統計學與 AI 通識課。
+
+完整的教師與創辦人介紹（含學歷文件）在 [Kakau 物理學苑的關於頁]({{ site.data.kakau.academy.about }}&utm_content=about_author){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}。
 
 ## 與 Kakau 物理學苑的關係
 

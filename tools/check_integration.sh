@@ -55,4 +55,29 @@ if [[ $(find _posts -type f -name '*.md' | wc -l | tr -d ' ') -lt 1 ]]; then
   failures=1
 fi
 
+# Cross-site identity contract. Articles here are authored by a person whose canonical profile
+# lives on kakau.tw; that @id is what lets a crawler merge the two sites into one author instead
+# of inventing a second one. See _data/authors.yml and _plugins/author_identity.rb.
+if ! search_quiet 'id: https://kakau\.tw/about#person' _data/authors.yml; then
+  echo "ERROR: _data/authors.yml no longer points at the canonical Person @id on kakau.tw" >&2
+  failures=1
+fi
+
+if ! search_quiet '^      author: sin-iu-ho$' _config.yml; then
+  echo "ERROR: posts no longer default to the named author; the byline falls back to the brand" >&2
+  failures=1
+fi
+
+# `social.name` describes the site/brand. Turning it into the person's name would collapse the
+# Organization and the Person into one entity, so it must stay as the brand.
+if ! search_quiet '^  name: Kakau$' _config.yml; then
+  echo "ERROR: social.name must stay the brand name, not the author's name" >&2
+  failures=1
+fi
+
+if ! search_quiet '何信佑' _tabs/about.md; then
+  echo "ERROR: /about/ no longer names the author in human-readable text" >&2
+  failures=1
+fi
+
 exit "$failures"
