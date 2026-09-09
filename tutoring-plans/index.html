@@ -11,6 +11,7 @@ sitemap: false
     <meta http-equiv="refresh" content="0; url={{ '/academy/' | relative_url }}">
     <link rel="canonical" href="{{ '/academy/' | absolute_url }}">
     <title>前往 Kakau 物理學苑</title>
+    {% include kakau-attribution.html %}
     <script>window.location.replace({{ '/academy/' | relative_url | jsonify }});</script>
   </head>
   <body>

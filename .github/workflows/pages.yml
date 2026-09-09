@@ -35,6 +35,11 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      # The cross-subdomain attribution record is shared with kakau.tw, so its rules are tested
+      # here rather than only asserted by grep. Node ships on the runner image.
+      - name: Test cross-subdomain attribution capture
+        run: node --test tools/test_attribution.mjs
+
       - name: Check Kakau integration and internal links
         run: |
           bash tools/check_integration.sh

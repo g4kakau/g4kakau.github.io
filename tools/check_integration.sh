@@ -85,4 +85,56 @@ if ! search_quiet '何信佑' _tabs/about.md; then
   failures=1
 fi
 
+# Cross-subdomain first-touch attribution contract. The record is one first-party cookie on the
+# registrable parent domain, written by BOTH properties and read back by the Academy when an
+# application is submitted. `qavit/kakau-front` `src/lib/attribution.ts` is the source of truth;
+# the constants below are the part that silently breaks the shared record if the two drift apart
+# — a renamed cookie or a bumped version simply produces two records that never meet.
+attr='_includes/kakau-attribution.html'
+if [[ ! -f "$attr" ]]; then
+  echo "ERROR: the Notes-side attribution capture is missing; first touches that start on an article are lost" >&2
+  failures=1
+else
+  while IFS= read -r pin; do
+    if ! search_quiet "$pin" "$attr"; then
+      echo "ERROR: attribution contract drifted from the Academy: expected ${pin}" >&2
+      failures=1
+    fi
+  done <<'PINS'
+var VERSION = 1;
+var COOKIE = 'kakau_attr';
+var MAX_AGE_SECONDS = 30 \* 24 \* 60 \* 60;
+var INTERNAL_SOURCES = \['kakau_academy', 'kakau_notes'\];
+var OWNED_DOMAIN = 'kakau.tw';
+PINS
+
+  # The eight-field whitelist. Anything else in the record is data the Academy drops on read and
+  # data we promised not to collect, so an extra field is a silent one-sided change, not a feature.
+  unexpected=$(
+    grep -oE 'record\.[a-z_]+ =' "$attr" | sed -E 's/^record\.//; s/ =$//' | sort -u |
+      grep -vxE 'utm_source|utm_medium|utm_campaign|utm_content|landing_path|referrer_host|first_seen_at|attribution_version' || true
+  )
+  if [[ -n "$unexpected" ]]; then
+    echo "ERROR: the attribution record grew fields outside the shared whitelist: ${unexpected}" >&2
+    failures=1
+  fi
+
+  # `//` comments do not survive `compress_html`, which collapses every newline inside an inline
+  # <script> into a single space and would take the rest of the file with the comment.
+  if grep -qE '^[[:space:]]*//' "$attr"; then
+    echo "ERROR: // comments in the attribution script are destroyed by compress_html" >&2
+    failures=1
+  fi
+
+  # Capture has to run on every page, and on the one redirect stub the footer never reaches.
+  if ! search_quiet 'include kakau-attribution\.html' _includes/footer.html; then
+    echo "ERROR: attribution capture is no longer included site-wide from the footer" >&2
+    failures=1
+  fi
+  if ! search_quiet 'include kakau-attribution\.html' tutoring-plans/index.html; then
+    echo "ERROR: the legacy /tutoring-plans/ ingress no longer captures attribution" >&2
+    failures=1
+  fi
+fi
+
 exit "$failures"
