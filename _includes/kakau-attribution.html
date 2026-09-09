@@ -1,0 +1,227 @@
+{% comment %}
+First-touch acquisition attribution, Notes side.
+
+The record itself lives in one first-party cookie scoped to the parent domain `kakau.tw`, so
+`notes.kakau.tw` and `kakau.tw` share a single first touch. The Academy (`qavit/kakau-front`,
+`src/lib/attribution.ts`) is the SOURCE OF TRUTH for the schema and every sanitiser below; this
+file is the small adapter that lets the Notes site *write* that same cookie, because a visitor
+whose first contact with Kakau is an article would otherwise arrive at the Academy with an
+own-domain referrer and no source at all.
+
+Both sides must agree exactly on: the cookie name, `attribution_version`, the eight-field
+whitelist, the sanitising rules, the 30-day first-touch window, and the internal-source list.
+`tools/check_integration.sh` pins the constants; the contract is written down in
+`docs/attribution.md` here and `docs/ATTRIBUTION_CROSS_SITE.md` in the Academy repo. If you
+change one side, change the other in the same breath.
+
+Deliberately inline and comment-only in `/* */` form: `compress_html` collapses every newline
+inside a `<script>` into a space (see the rendered `kakau-analytics.html`), so `//` comments
+would swallow the rest of the file and statements cannot lean on ASI.
+{% endcomment %}
+<script data-kakau-attribution>
+  (function () {
+    'use strict';
+
+    var VERSION = 1;
+    var COOKIE = 'kakau_attr';
+    var MAX_AGE_SECONDS = 30 * 24 * 60 * 60;
+    var UTM_MAX_LENGTH = 64;
+    var PATH_MAX_LENGTH = 128;
+    var HOST_MAX_LENGTH = 128;
+    var COOKIE_MAX_LENGTH = 1024;
+    /* Placement tags for our own two properties, not a channel that acquired anyone. */
+    var INTERNAL_SOURCES = ['kakau_academy', 'kakau_notes'];
+    var OWNED_DOMAIN = 'kakau.tw';
+
+    /* UTM values are lowercase slugs by convention, so anything outside that shape is dropped
+       rather than escaped. This is the injection and cookie-bloat boundary. */
+    function sanitizeUtm(raw) {
+      if (typeof raw !== 'string') return undefined;
+      var cleaned = raw.trim().toLowerCase().replace(/[^a-z0-9._~-]/g, '').slice(0, UTM_MAX_LENGTH);
+      return cleaned.length > 0 ? cleaned : undefined;
+    }
+
+    /* Pathname only — the query string is where the personal data and click ids live. */
+    function sanitizePath(raw) {
+      if (typeof raw !== 'string' || raw.charAt(0) !== '/') return '/';
+      var cleaned = raw.split(/[?#]/)[0]
+        .replace(/[^A-Za-z0-9\-._~!$&'()*+,;=:@\/%]/g, '')
+        .slice(0, PATH_MAX_LENGTH);
+      return cleaned.length > 0 ? cleaned : '/';
+    }
+
+    /* Hostname only — a full referrer URL can carry the other site's own query parameters. */
+    function sanitizeHost(raw) {
+      if (typeof raw !== 'string') return undefined;
+      var cleaned = raw.trim().toLowerCase();
+      /* Rejected rather than truncated: a cut-off hostname is a different, wrong host. */
+      if (cleaned.length > HOST_MAX_LENGTH) return undefined;
+      return /^[a-z0-9]([a-z0-9.-]*[a-z0-9])?$/.test(cleaned) ? cleaned : undefined;
+    }
+
+    function referrerHostOf(referrer) {
+      if (typeof referrer !== 'string' || referrer.length === 0) return undefined;
+      try {
+        return sanitizeHost(new URL(referrer).hostname);
+      } catch (error) {
+        return undefined;
+      }
+    }
+
+    function isInternalSource(source) {
+      return source !== undefined && INTERNAL_SOURCES.indexOf(source) >= 0;
+    }
+
+    /* `kakau.tw`, `www.kakau.tw`, `notes.kakau.tw`, plus localhost when serving locally.
+       `g4kakau.github.io` is intentionally NOT owned here: it is a public-suffix host that
+       redirects to the custom domain, and treating it as ours would only mask a real referrer. */
+    function isOwnedHost(hostname) {
+      if (!hostname) return false;
+      return hostname === OWNED_DOMAIN ||
+        hostname.slice(-(OWNED_DOMAIN.length + 1)) === '.' + OWNED_DOMAIN ||
+        hostname === 'localhost';
+    }
+
+    /* One page load turned into the touch it represents, or null when it represents nothing
+       worth attributing. A plain direct visit is null on purpose: recording a "direct" first
+       touch would block the campaign that actually brings the visitor back later. */
+    function buildTouch(href, referrer, now) {
+      var params;
+      var pathname;
+      try {
+        var url = new URL(href);
+        params = url.searchParams;
+        pathname = url.pathname;
+      } catch (error) {
+        return null;
+      }
+
+      var source = sanitizeUtm(params.get('utm_source'));
+      var externalSource = isInternalSource(source) ? undefined : source;
+      var referrerHost = referrerHostOf(referrer);
+      var externalReferrer = isOwnedHost(referrerHost) ? undefined : referrerHost;
+
+      if (!externalSource && !externalReferrer) return null;
+
+      var record = {
+        landing_path: sanitizePath(pathname),
+        first_seen_at: now.toISOString(),
+        attribution_version: VERSION
+      };
+      if (externalSource) {
+        record.utm_source = externalSource;
+        var medium = sanitizeUtm(params.get('utm_medium'));
+        var campaign = sanitizeUtm(params.get('utm_campaign'));
+        var content = sanitizeUtm(params.get('utm_content'));
+        if (medium) record.utm_medium = medium;
+        if (campaign) record.utm_campaign = campaign;
+        if (content) record.utm_content = content;
+      }
+      if (externalReferrer) record.referrer_host = externalReferrer;
+      return record;
+    }
+
+    function isFresh(record, now) {
+      var age = now.getTime() - Date.parse(record.first_seen_at);
+      return isFinite(age) && age >= 0 && age < MAX_AGE_SECONDS * 1000;
+    }
+
+    /* Re-validates every field of an already-parsed record. The cookie is visitor-writable, so
+       this is the trust boundary: what comes back has been through the same sanitisers as a
+       fresh capture, or is null. */
+    function sanitizeRecord(parsed) {
+      if (typeof parsed !== 'object' || parsed === null || Object.prototype.toString.call(parsed) === '[object Array]') {
+        return null;
+      }
+      if (parsed.attribution_version !== VERSION) return null;
+
+      var asString = function (input) { return typeof input === 'string' ? input : undefined; };
+      var firstSeen = asString(parsed.first_seen_at);
+      var timestamp = firstSeen ? Date.parse(firstSeen) : NaN;
+      if (!isFinite(timestamp)) return null;
+
+      var source = sanitizeUtm(asString(parsed.utm_source));
+      var externalSource = isInternalSource(source) ? undefined : source;
+      var referrerHost = sanitizeHost(asString(parsed.referrer_host));
+
+      var record = {
+        landing_path: sanitizePath(asString(parsed.landing_path)),
+        first_seen_at: new Date(timestamp).toISOString(),
+        attribution_version: VERSION
+      };
+      if (externalSource) {
+        record.utm_source = externalSource;
+        var medium = sanitizeUtm(asString(parsed.utm_medium));
+        var campaign = sanitizeUtm(asString(parsed.utm_campaign));
+        var content = sanitizeUtm(asString(parsed.utm_content));
+        if (medium) record.utm_medium = medium;
+        if (campaign) record.utm_campaign = campaign;
+        if (content) record.utm_content = content;
+      }
+      if (referrerHost && !isOwnedHost(referrerHost)) record.referrer_host = referrerHost;
+
+      /* Neither a source nor a referrer attributes nothing, and would block the touch that does. */
+      if (!record.utm_source && !record.referrer_host) return null;
+      return record;
+    }
+
+    function decodeRecord(value) {
+      if (typeof value !== 'string' || value.length === 0 || value.length > COOKIE_MAX_LENGTH) return null;
+      try {
+        return sanitizeRecord(JSON.parse(decodeURIComponent(value)));
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function readRecord(cookieString) {
+      if (typeof cookieString !== 'string') return null;
+      var pairs = cookieString.split(';');
+      for (var i = 0; i < pairs.length; i += 1) {
+        var separator = pairs[i].indexOf('=');
+        if (separator < 0) continue;
+        if (pairs[i].slice(0, separator).trim() !== COOKIE) continue;
+        return decodeRecord(pairs[i].slice(separator + 1).trim());
+      }
+      return null;
+    }
+
+    /* Scoped to the registrable parent domain so `kakau.tw` reads what this site wrote. That is
+       a plain first-party cookie, not a public-suffix write and not a cross-site identity.
+       Anywhere else (github.io, localhost) it stays host-only. */
+    function cookieDomain(hostname) {
+      if (hostname === OWNED_DOMAIN || (hostname && hostname.slice(-(OWNED_DOMAIN.length + 1)) === '.' + OWNED_DOMAIN)) {
+        return OWNED_DOMAIN;
+      }
+      return undefined;
+    }
+
+    function buildCookie(record, hostname, secure) {
+      var value = encodeURIComponent(JSON.stringify(record));
+      if (value.length > COOKIE_MAX_LENGTH) return null;
+      var domain = cookieDomain(hostname);
+      var parts = [COOKIE + '=' + value, 'Path=/'];
+      if (domain) parts.push('Domain=' + domain);
+      parts.push('Max-Age=' + MAX_AGE_SECONDS);
+      /* Lax keeps the cookie readable on the top-level navigation arriving from a social post,
+         which is exactly the visit being attributed. */
+      parts.push('SameSite=Lax');
+      if (secure) parts.push('Secure');
+      return parts.join('; ');
+    }
+
+    /* Never throws: attribution must not be able to break an article. */
+    try {
+      if (typeof document === 'undefined' || typeof window === 'undefined') return;
+      var now = new Date();
+      var existing = readRecord(document.cookie);
+      if (existing && isFresh(existing, now)) return;
+      var candidate = buildTouch(window.location.href, document.referrer, now);
+      if (!candidate) return;
+      var cookie = buildCookie(candidate, window.location.hostname, window.location.protocol === 'https:');
+      if (cookie) document.cookie = cookie;
+    } catch (error) {
+      /* Intentionally silent. */
+    }
+  })();
+</script>

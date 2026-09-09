@@ -21,6 +21,14 @@
 | `notes_to_apply` | 筆記庫前往申請入班 |
 | `academy_to_notes` | 物理學苑前往公開筆記；由 academy repo 實作 |
 
+## 招生來源（first-touch attribution）
+
+上面的 GoatCounter 事件回答「有多少人從筆記走向學苑」；它**不**回答「送出申請的那個家庭當初從哪裡來」。
+後者由一個與 `kakau.tw` 共用的第一方 cookie `kakau_attr` 負責，本站也會寫入。
+規則、契約與地雷見 [`attribution.md`](./attribution.md)——特別是：
+`_data/kakau.yml` 那組 `utm_source=kakau_notes` 是**內部版位標籤**，
+在 attribution 裡永遠不會被當成招生來源，兩站的實作都必須維持這一點。
+
 ## 維護規則
 
 1. 不在文章內手寫新的 UTM；新增目的地時更新 `_data/kakau.yml`。

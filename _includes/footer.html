@@ -4,6 +4,7 @@
     ©<time>{{ 'now' | date: '%Y' }}</time>
     <a href="{{ '/' | relative_url }}">Kakau 公開數理筆記</a>。
     <a href="{{ site.data.kakau.academy.home }}&utm_content=site_footer" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy">前往 Kakau 物理學苑 ↗</a>
+    · <a href="https://kakau.tw/privacy" target="_blank" rel="noopener noreferrer">隱私權與個資</a>
   </p>
   <p>
     {%- capture _platform -%}<a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>{%- endcapture -%}
@@ -11,4 +12,5 @@
     {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
   </p>
 </footer>
+{% include kakau-attribution.html %}
 {% include kakau-analytics.html %}
