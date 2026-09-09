@@ -5,7 +5,7 @@ academy:
   syllabus: "https://kakau.tw/syllabus?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
   apply: "https://kakau.tw/apply?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
   # 何信佑的 canonical 教師／創辦人介紹頁。作者身份事實見 _data/authors.yml。
-  about: "https://kakau.tw/about?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
+  about: "https://kakau.tw/about/?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
 
 # notes.kakau.tw 已完成 DNS 與 GitHub Pages 綁定；憑證狀態見 docs/custom-domain-cutover.md。
 notes:

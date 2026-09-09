@@ -4,12 +4,16 @@
 # 作者和機器讀到的作者不可能分岔。`_plugins/author_identity.rb` 另外把 `id` 補進 seo-tag
 # 產生的 author 物件。
 #
-# `id` 是跨站身份契約：kakau.tw/about 是何信佑的 canonical profile，這裡引用同一個 @id，
+# `id` 是跨站身份契約：kakau.tw/about/ 是何信佑的 canonical profile，這裡引用同一個 @id，
 # 而不是在 notes.kakau.tw 底下再造一個人物 entity。改這個值等於把同一個人拆成兩個。
+#
+# 結尾斜線要照抄，不能省。HTTP 層面 /about 和 /about/ 是兩個不同的 URI，而 kakau.tw 的
+# <link rel="canonical"> 宣告的是帶斜線的那一個。少一個斜線，這裡指到的就是一個那邊
+# 從來沒有宣告過的 URL。
 #
 # 這裡只放低變動的身份事實。課程梯次、價格、場地一律留在 kakau.tw。
 sin-iu-ho:
   name: 何信佑
   english_name: Sin-iu Ho
-  url: https://kakau.tw/about
-  id: https://kakau.tw/about#person
+  url: https://kakau.tw/about/
+  id: https://kakau.tw/about/#person

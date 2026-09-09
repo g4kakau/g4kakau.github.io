@@ -58,7 +58,7 @@ fi
 # Cross-site identity contract. Articles here are authored by a person whose canonical profile
 # lives on kakau.tw; that @id is what lets a crawler merge the two sites into one author instead
 # of inventing a second one. See _data/authors.yml and _plugins/author_identity.rb.
-if ! search_quiet 'id: https://kakau\.tw/about#person' _data/authors.yml; then
+if ! search_quiet 'id: https://kakau\.tw/about/#person' _data/authors.yml; then
   echo "ERROR: _data/authors.yml no longer points at the canonical Person @id on kakau.tw" >&2
   failures=1
 fi
