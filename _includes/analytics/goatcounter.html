@@ -1,0 +1,77 @@
+{% comment %}
+Overrides `_includes/analytics/goatcounter.html` from jekyll-theme-chirpy. The theme's version
+loads count.js with no settings, which sends the FULL query string twice: once inside `p`
+(`get_path()` returns `pathname + search`) and again as its own `q` parameter, which count.js
+sets unconditionally from `location.search`.
+
+That is how `fbclid` reached zgo.at. Every post link shared on Facebook comes back with one
+attached, and Kakau's own campaign links carry `utm_*`. None of it is needed to count a page.
+
+Kakau keeps GoatCounter: it is the only consumer of the five `notes_to_*` CTA events
+(`kakau-analytics.html`) and it backs the per-post view counter. What it does not need is the
+query string. See `docs/analytics.md` and the Academy's `docs/PRIVACY_GAP_REVIEW_stage5.md`.
+
+Three changes, and each is load-bearing:
+
+  1. `path` returns `location.pathname` instead of the default `pathname + search`.
+  2. `q` is blanked by wrapping `get_data` AFTER count.js defines it -- there is no setting for
+     this one. `urlencode()` skips empty values, so a blank `q` is omitted from the request
+     entirely rather than sent as `q=`.
+  3. `referrer` is reduced to its origin. Enough to tell Facebook from Google; not enough to
+     carry the other site's own query string. Same-origin referrers become empty, since an
+     internal click is not a referral.
+
+`no_onload` is what makes (2) possible. count.js counts the page view as soon as it executes,
+and the script is `async`, so an onload handler would fire too late to patch anything. With
+`no_onload` the count is ours to make, after the patch is in place.
+
+The five events are unaffected: `get_data` prefers an explicit `vars.path` over the `path`
+setting, so `count({path: 'event/notes_to_apply'})` still sends exactly that.
+
+Comments here are `/* */` only, and no statement leans on ASI: `compress_html` collapses every
+newline inside a `<script>` into a space, so a `//` comment would swallow the rest of the file.
+Same constraint as `kakau-attribution.html`.
+{% endcomment %}
+<script data-kakau-goatcounter-settings>
+  window.goatcounter = {
+    /* We call count() ourselves once get_data is patched. */
+    no_onload: true,
+    /* Default is `pathname + search`; the query string is not needed to count a page. */
+    path: function () {
+      return location.pathname || '/';
+    },
+    /* Origin only: which site sent them, never what they were reading there. */
+    referrer: function (value) {
+      if (!value) {
+        return '';
+      }
+      try {
+        var url = new URL(value);
+        return url.hostname === location.hostname ? '' : url.origin;
+      } catch (error) {
+        return '';
+      }
+    }
+  };
+
+  window.kakauGoatcounterReady = function () {
+    var gc = window.goatcounter;
+    if (!gc || typeof gc.get_data !== 'function' || typeof gc.count !== 'function') {
+      return;
+    }
+    var original = gc.get_data;
+    gc.get_data = function (vars) {
+      var data = original(vars || {});
+      /* No setting covers `q`; urlencode() drops empty values, so this removes it outright. */
+      data.q = '';
+      return data;
+    };
+    gc.count();
+  };
+</script>
+<script
+  async
+  src="https://gc.zgo.at/count.js"
+  data-goatcounter="https://{{ site.analytics.goatcounter.id }}.goatcounter.com/count"
+  onload="window.kakauGoatcounterReady()"
+></script>
