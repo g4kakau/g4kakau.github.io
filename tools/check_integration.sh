@@ -28,6 +28,23 @@ check_forbidden "legacy production domain" 'kakau-tutor\.vercel\.app' _config.ym
 check_forbidden "legacy Google inquiry form" 'forms\.gle/R38gD1b9SecEbufq8' _config.yml index.html _tabs _includes _posts _data
 check_forbidden "legacy tutoring CTA" '歡迎預約家教課|需要家教或預約諮詢' _config.yml index.html _tabs _includes _posts _data
 check_forbidden "placeholder social account" 'threads\.net/@placeholder' _config.yml index.html _tabs _includes _posts _data
+
+# The theme's own analytics/goatcounter.html loads count.js with no settings, which sends the
+# full query string twice (inside `p`, and again as `q`). `_includes/analytics/goatcounter.html`
+# overrides it. If that override is deleted the theme's version silently takes over again and
+# `fbclid` starts reaching zgo.at, with nothing failing -- so pin the three parts that matter.
+# Behaviour is covered by tools/test_goatcounter.mjs; this only catches the file vanishing.
+if [ ! -f _includes/analytics/goatcounter.html ]; then
+  echo "ERROR: the GoatCounter override is gone; the theme default would send the query string" >&2
+  failures=1
+else
+  for pin in 'no_onload: true' 'location.pathname' "data.q = ''"; do
+    if ! grep -qF -- "$pin" _includes/analytics/goatcounter.html; then
+      echo "ERROR: GoatCounter override lost \"$pin\"; see docs/analytics.md" >&2
+      failures=1
+    fi
+  done
+fi
 # 非台灣用詞的檢查搬到 tools/check_terminology.rb。有幾個詞需要前後文守衛才不會誤判
 # 合法的繁體寫法，而 grep -E 的 [^…] 在不同 grep 實作與 locale 下可能以位元組而非字元
 # 比對，中文一個字三個位元組，守衛會在某些平台悄悄失效。理由詳見該檔開頭。

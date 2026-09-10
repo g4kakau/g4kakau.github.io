@@ -40,6 +40,12 @@ jobs:
       - name: Test cross-subdomain attribution capture
         run: node --test tools/test_attribution.mjs
 
+      # GoatCounter is kept on purpose (it is the only consumer of the five notes_to_* events and
+      # backs the per-post view counter), so what needs testing is that it never receives the
+      # query string -- `fbclid` arrives on every link shared from Facebook.
+      - name: Test GoatCounter request minimisation and event names
+        run: node --test tools/test_goatcounter.mjs
+
       - name: Check Kakau integration and internal links
         run: |
           bash tools/check_integration.sh
