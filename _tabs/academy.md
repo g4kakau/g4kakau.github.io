@@ -4,7 +4,7 @@ title: Kakau 物理學苑
 icon: fas fa-chalkboard-teacher
 permalink: /academy/
 order: 10
-description: "從 Kakau 公開數理筆記前往物理學苑的課程、學習主線、試讀與申請入口。"
+description: "從 Kakau 公開數理筆記前往物理學苑的課程、學習主線、試讀入口。"
 ---
 
 ## Kakau 物理學苑
@@ -18,7 +18,8 @@ description: "從 Kakau 公開數理筆記前往物理學苑的課程、學習�
 - [查看課程介紹 ↗]({{ site.data.kakau.academy.course }}&utm_content=academy_bridge){: .kakau-button target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_course"}
 - [查看學習主線 ↗]({{ site.data.kakau.academy.syllabus }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_syllabus"}
 - [試讀教材 ↗]({{ site.data.kakau.academy.sample }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_sample"}
-- [申請入班 ↗]({{ site.data.kakau.academy.apply }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_apply"}
+
+2026 秋季創始班目前暫停招生，法規確認中，暫不受理申請。
 
 ---
 

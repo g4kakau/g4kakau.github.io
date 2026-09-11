@@ -139,5 +139,8 @@ test('every rendered data-kakau-event is one of the five pinned names', () => {
   walk(root);
 
   for (const name of found) assert.ok(pinned.has(name), `unpinned event "${name}"; add it to docs/analytics.md and here, or fix the typo`);
-  for (const name of pinned) assert.ok(found.has(name), `event "${name}" is no longer rendered anywhere; it silently stopped being measured`);
+  // Paused, not retired: enrollment is on hold pending the 教育局 legal review (2026-09-11), so no page
+  // links to /apply. The name stays pinned so it can return without a new decision.
+  const paused = new Set(['notes_to_apply']);
+  for (const name of pinned) if (!paused.has(name)) assert.ok(found.has(name), `event "${name}" is no longer rendered anywhere; it silently stopped being measured`);
 });

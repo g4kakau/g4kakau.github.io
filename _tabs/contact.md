@@ -35,10 +35,10 @@ order: 11
 }
 </style>
 
-若要了解課程、試讀或申請入班，請前往 Kakau 物理學苑。所有正式課程資訊集中在同一處，避免舊表單與現行申請流程互相競爭。
+若要了解課程或試讀教材，請前往 Kakau 物理學苑。2026 秋季創始班目前暫停招生，法規確認中，暫不受理申請。
 
 <div class="kk-contact-actions">
-  <a class="kk-contact-button" href="{{ site.data.kakau.academy.apply }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_apply">前往申請入班 ↗</a>
+  <a class="kk-contact-button" href="{{ site.data.kakau.academy.sample }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_sample">看看試讀教材 ↗</a>
   <a href="{{ site.data.kakau.academy.course }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_course">先看課程介紹 ↗</a>
 </div>
 

@@ -50,7 +50,7 @@ Kakau 自己的檔期連結則會把 `utm_*` 一起送過去。**計算一次瀏
 | `notes_to_sample` | 筆記庫前往試讀教材 |
 | `notes_to_syllabus` | 筆記庫前往學習主線 |
 | `notes_to_course` | 筆記庫前往課程介紹 |
-| `notes_to_apply` | 筆記庫前往申請入班 |
+| `notes_to_apply` | 筆記庫前往申請入班；2026-09-11 起招生暫停，目前無頁面使用，名稱保留待恢復 |
 | `academy_to_notes` | 物理學苑前往公開筆記；由 academy repo 實作 |
 
 ## 招生來源（first-touch attribution）
