@@ -128,18 +128,13 @@ package 巨集、四種 Kramdown 行內地雷、圖片與 caption、跨文章引
 
 ## 內容來源
 
-教學筆記位於：`~/Documents/Obsidian/TEACHING/`（家教課記錄、AI 對話匯出、課程規劃）與 `~/Documents/Obsidian/Archive/`（雜項對話匯出，內含大量數理內容，**每次挖掘素材都要一併掃描**，並非只是備存舊資料）。
+原始素材（教學觀察、AI 對話匯出、課程規劃）位於：`~/Documents/Obsidian/TEACHING/` 與
+`~/Documents/Obsidian/Archive/`（雜項對話匯出，內含大量數理內容，**每次挖掘素材都要一併掃描**，並非只是備存舊資料）。這是
+research／provenance 層，供寫文章時參考，不是選題真本。
 
-重要索引：
-- `~/Projects/life-os-pm/content-backlog.md` — 文章待辦清單
-- `~/Projects/life-os-pm/docs/jingan-knowledge-index.md` — jingan 系列（微積分/線代/物理）內容地圖
-
-高潛力文章候選（依優先序）：
-1. 泰勒展開（已完成）
-2. 積分換元法（tutor-jing'an-10–12）
-3. 特徵值與特徵向量（tutor-jing'an-41–44）
-4. 行列式的幾何意義（tutor-jing'an-34–35）
-5. Gram–Schmidt 正交化（tutor-jing'an-47–48）
+**選題、狀態、投資判斷（Create／Refresh／Consolidate／Skip）的真本是 Kakau 的 Notion「內容排程」，不在這個
+repo。** 本 repo 只處理已經決定要發布的內容；不要在這裡新建或維護第二份文章待辦清單、候選題排序，或任何形式的
+content backlog——那會製造出一份永遠不會跟 Notion 同步的平行真本。
 
 ---
 
@@ -153,4 +148,4 @@ package 巨集、四種 Kramdown 行內地雷、圖片與 caption、跨文章引
 
 ---
 
-_最後更新：2026-05-10_
+_最後更新：2026-09-28_
