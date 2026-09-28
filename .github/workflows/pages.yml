@@ -2,7 +2,7 @@ name: Deploy Jekyll (Chirpy) to GitHub Pages
 
 on:
   push:
-    branches: ["theme"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
