@@ -112,4 +112,5 @@ bash tools/test.sh          # production build + htmlproofer（會重建 _site�
 ```
 
 build 通過只代表技術層沒壞，**不代表內容已稽核**；是否已稽核看
-[`docs/audits/coverage.md`](../audits/coverage.md)。
+[`docs/audits/coverage.md`](../audits/coverage.md)。稽核的分層定義與 pass 語意見
+[`docs/content/audit-policy.md`](audit-policy.md)。
