@@ -75,21 +75,14 @@ Taxonomy 的完整規則（四個 top-level 分類、現有 sub-area 對照表�
 
 ## 數學式寫法
 
-這個網站使用 **MathJax v3**（由 Chirpy 內建，front matter 加 `math: true` 啟用）。
+這個網站使用 **MathJax v3**（由 Chirpy 內建，front matter 加 `math: true` 啟用）。完整規則（MathJax／physics
+package 巨集、四種 Kramdown 行內地雷、圖片與 caption、跨文章引用）唯一真本在
+[`docs/content/authoring.md`](docs/content/authoring.md)——寫文章或修文前先讀那份文件。
 
-| 用途 | 語法 |
-|---|---|
-| 行內公式 | `$E = mc^2$` |
-| 獨立行公式 | `$$F = ma$$` |
-| 對齊多行公式 | `$$\begin{aligned} ... \end{aligned}$$` |
+這裡只留兩條沒有例外空間的 agent-facing 硬規則：
 
-Markdown 表格中的 `|` 符號需要跳脫：`\|x\| < 1`。
-
-**重要地雷：行內公式（單個 `$...$`）中的裸 `\|`（例如 `$|x-1|$`）即使不在表格裡，也可能被 Kramdown 誤判成表格分隔符，導致整個段落被吞成一列破碎的表格（`$` 和文字被拆進不同 `<td>`，數學式完全無法渲染）。這不是「有時候」的邊緣案例，是實測會發生的常見錯誤。**
-
-- 行內絕對值一律用 `\lvert x-1\rvert` 而不是 `|x-1|`。
-- 這個問題只發生在單行內、段落層級的內容；獨立行公式（`$$...$$`）與真正的 Markdown 表格儲存格（那裡本來就用 `\|` 跳脫）不受影響。
-- 寫完後可以用 `grep -noP '(?<!\$)\$[^$\n]*\$(?!\$)' _posts/檔名.md | grep '|'` 快速抓出所有還沒修正的行內裸 `|`。
+- 有 `$...$` 或 `$$...$$` 的文章，front matter **一定要加** `math: true`，否則不會渲染。
+- 行內絕對值一律用 `\lvert x-1\rvert`，**不要**寫裸 `$|x-1|$`——即使不在表格裡，Kramdown 也可能把它誤判成表格分隔符，導致整段被吞成破碎表格。
 
 ---
 
