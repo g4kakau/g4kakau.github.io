@@ -13,8 +13,6 @@
 
 ## 本地開發
 
-詳見 [DEV_NOTES.md](DEV_NOTES.md)（繁體中文）
-
 快速開始：
 ```bash
 rbenv install 3.3.6
@@ -24,6 +22,15 @@ bundle exec jekyll serve
 ```
 
 預設在 `http://localhost:4000`。
+
+常見問題：
+
+- **`ffi requires ruby >= 3.0` 或 `bundler: command not found: jekyll`**：正在用系統 Ruby（macOS 內建
+  2.6），不是 rbenv 版本。確認 `which ruby` 指向 `~/.rbenv/shims/ruby`；若不是，執行
+  `eval "$(rbenv init - zsh)"` 並重開 shell。repo 根目錄的 `.ruby-version`（`3.3.6`）會讓 rbenv
+  自動切換版本，缺這個檔案是最常見原因。
+- **改 `_config.yml` 沒生效**：這個檔案的變更不會 live reload，要重啟 `jekyll serve`。
+- **數學式沒有渲染**：front matter 缺 `math: true`；完整規則見 [`docs/content/authoring.md`](docs/content/authoring.md)。
 
 ## 網站
 
