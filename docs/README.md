@@ -48,7 +48,9 @@ duplicated.
 
 Editorial topic selection, briefs, and investment decisions (Create /
 Refresh / Consolidate / Skip) live in Kakau's Notion "內容排程" — this repo
-only holds content that's already been decided and published. Don't add a
-backlog, a roadmap, or a planning draft under `docs/`; if a planning
-document was used to arrive at a decision recorded here, the decision is
-what's kept, not the draft.
+only holds content that's already been selected for authoring or
+publication (including work still in `_drafts/`, mid-authoring or
+mid-audit, not only what's already live). Don't add a backlog, a roadmap,
+or a planning draft under `docs/`; if a planning document was used to
+arrive at a decision recorded here, the decision is what's kept, not the
+draft.

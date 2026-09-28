@@ -105,13 +105,13 @@ fi
 # Canonical domain. See docs/operations/domain-dns.md. Pinned as a positive assertion (not a
 # banned-string search) because the old GitHub Pages hostname is legitimately mentioned in
 # historical prose (README.md, AGENTS.md, docs/history/) -- what must never drift is the actual
-# canonical URL and the file GitHub Pages serves the custom domain from.
+# canonical URL in _config.yml, which is what actually gets built into the site. (The repo-root
+# CNAME file is NOT checked here: this repo deploys via a custom GitHub Actions workflow, and in
+# that mode GitHub Pages ignores a root CNAME file entirely -- the real custom-domain setting
+# lives in GitHub repository Settings -> Pages, which this repo can't assert against in CI. See
+# docs/operations/domain-dns.md for the full model.)
 if ! search_quiet '^url: "https://notes\.kakau\.tw"$' _config.yml; then
   echo "ERROR: _config.yml's canonical url is no longer https://notes.kakau.tw; see docs/operations/domain-dns.md" >&2
-  failures=1
-fi
-if [[ "$(cat CNAME 2>/dev/null)" != "notes.kakau.tw" ]]; then
-  echo "ERROR: CNAME no longer contains exactly notes.kakau.tw; see docs/operations/domain-dns.md" >&2
   failures=1
 fi
 
