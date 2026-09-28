@@ -9,7 +9,7 @@
 | 項目 | 內容 |
 |---|---|
 | 網站 | https://notes.kakau.tw |
-| Repo | `qavit/kakau-note`（2026-09-28 由 `g4kakau/g4kakau.github.io` 轉移並更名而來，repository ID／git history 不變；見 `docs/custom-domain-cutover.md`） |
+| Repo | `qavit/kakau-note`（2026-09-28 由 `g4kakau/g4kakau.github.io` 轉移並更名而來，repository ID／git history 不變；見 `docs/history/domain-and-repository-migrations.md`） |
 | 用途 | 數理家教品牌網站、教學文章、SEO 內容資產 |
 | 主題 | [Chirpy](https://github.com/cotes2357/jekyll-theme-chirpy) v7.x |
 | Jekyll | 4.4.x |

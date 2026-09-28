@@ -40,7 +40,7 @@ if [ ! -f _includes/analytics/goatcounter.html ]; then
 else
   for pin in 'no_onload: true' 'location.pathname' "data.q = ''"; do
     if ! grep -qF -- "$pin" _includes/analytics/goatcounter.html; then
-      echo "ERROR: GoatCounter override lost \"$pin\"; see docs/analytics.md" >&2
+      echo "ERROR: GoatCounter override lost \"$pin\"; see docs/operations/analytics.md" >&2
       failures=1
     fi
   done

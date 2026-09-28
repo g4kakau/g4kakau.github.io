@@ -25,4 +25,4 @@
 
 - 375、768、1440 px 檢查首頁、sidebar、CTA、學習路徑與長公式。
 - 抽查首頁、導讀、關於、聯絡、`/academy/`、legacy redirect、categories、tags、archives，以及至少五篇不同分類文章。
-- 依 `docs/custom-domain-cutover.md` 另行安排 custom-domain 切換。
+- 依 `docs/history/domain-and-repository-migrations.md` 另行安排 custom-domain 切換。

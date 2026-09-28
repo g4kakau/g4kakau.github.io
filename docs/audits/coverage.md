@@ -2,7 +2,7 @@
 
 每篇文章各稽核層最後一次被檢查的日期與報告連結。空格＝未稽核，不代表通過。
 
-本檔案由 [content-engine-plan.claude.md](../content-engine-plan.claude.md) Phase 1 第 3 項建立。目前只回填了本次稽核涵蓋的 8 篇；既有 87 篇（含 2026-09-08 B1–B12 的 79 篇科學層稽核，見 `../fact-audit.md`）尚未回填到這張表，是已知缺口，見下方「待辦」。
+本檔案於 2026-09-28 docs 重整時建立。目前只回填了本次稽核涵蓋的 8 篇；既有 87 篇（含 2026-09-08 B1–B12 的 79 篇科學層稽核，見 [`2026-09-08-full-site-fact-audit.md`](2026-09-08-full-site-fact-audit.md)）尚未回填到這張表，是已知缺口，見下方「待辦」。
 
 ## 本次涵蓋（2026-09-28 Release Audit）
 
@@ -19,5 +19,5 @@
 
 ## 待辦
 
-- 既有 87 篇尚未回填：L1 可從 `../fact-audit.md`（2026-09-08，B1–B12，79 篇）回填有證據的欄位；其餘 8 篇（`docs/content-engine-plan.claude.md` §1.1 記載的「未稽核」8 篇，含 7 篇已知地雷 4 違規：`modular-arithmetic-to-abstract-algebra`、`gram-schmidt`、`resistor-cube-3-symmetry`、`resistor-cube-6-graph-theory`、`constructibility-gauss-wantzel`、`galois-correspondence-abel-ruffini`、`group-ring-field-map`）L1/L5 都留空。
+- 既有 87 篇尚未回填：L1 可從 [`2026-09-08-full-site-fact-audit.md`](2026-09-08-full-site-fact-audit.md)（2026-09-08，B1–B12，79 篇）回填有證據的欄位；其餘 8 篇中有 7 篇（`modular-arithmetic-to-abstract-algebra`、`gram-schmidt`、`resistor-cube-3-symmetry`、`resistor-cube-6-graph-theory`、`constructibility-gauss-wantzel`、`galois-correspondence-abel-ruffini`、`group-ring-field-map`）經 2026-09-28 渲染排查確認有地雷 4 違規（行內 `\{`／`\}` 未雙跳脫，規則見 `docs/content/authoring.md` §2），L1/L5 都留空。
 - L3／L4／L5 目前全站幾乎沒有回填紀錄；9/08 那次稽核只做了 L1。
