@@ -102,6 +102,27 @@ if ! search_quiet '何信佑' _tabs/about.md; then
   failures=1
 fi
 
+# Canonical domain. See docs/operations/domain-dns.md. Pinned as a positive assertion (not a
+# banned-string search) because the old GitHub Pages hostname is legitimately mentioned in
+# historical prose (README.md, AGENTS.md, docs/history/) -- what must never drift is the actual
+# canonical URL and the file GitHub Pages serves the custom domain from.
+if ! search_quiet '^url: "https://notes\.kakau\.tw"$' _config.yml; then
+  echo "ERROR: _config.yml's canonical url is no longer https://notes.kakau.tw; see docs/operations/domain-dns.md" >&2
+  failures=1
+fi
+if [[ "$(cat CNAME 2>/dev/null)" != "notes.kakau.tw" ]]; then
+  echo "ERROR: CNAME no longer contains exactly notes.kakau.tw; see docs/operations/domain-dns.md" >&2
+  failures=1
+fi
+
+# GoatCounter site id is an analytics identifier, independent of the GitHub owner/repo name --
+# renaming the repo (as happened 2026-09-28) must never be "helpfully" followed by renaming this,
+# or historical analytics data stops lining up with new data. See docs/history/domain-and-repository-migrations.md.
+if ! search_quiet '^    id: g4kakau ' _config.yml; then
+  echo "ERROR: GoatCounter site id drifted from g4kakau; it must stay independent of the GitHub owner" >&2
+  failures=1
+fi
+
 # Cross-subdomain first-touch attribution contract. The record is one first-party cookie on the
 # registrable parent domain, written by BOTH properties and read back by the Academy when an
 # application is submitted. `qavit/kakau-front` `src/lib/attribution.ts` is the source of truth;
