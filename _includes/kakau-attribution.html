@@ -73,7 +73,8 @@ would swallow the rest of the file and statements cannot lean on ASI.
     }
 
     /* `kakau.tw`, `www.kakau.tw`, `notes.kakau.tw`, plus localhost when serving locally.
-       `g4kakau.github.io` is intentionally NOT owned here: it is a public-suffix host that
+       `qavit.github.io` (the repo's default Pages host, formerly `g4kakau.github.io` before the
+       2026-09-28 owner transfer) is intentionally NOT owned here: it is a public-suffix host that
        redirects to the custom domain, and treating it as ours would only mask a real referrer. */
     function isOwnedHost(hostname) {
       if (!hostname) return false;

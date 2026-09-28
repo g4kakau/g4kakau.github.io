@@ -1,4 +1,4 @@
-# AGENTS.md — g4kakau.github.io AI Agent 操作指引
+# AGENTS.md — kakau-note AI Agent 操作指引
 
 這個檔案提供給 AI agent（Claude Cowork、Codex 等）使用，說明這個 repo 的架構、規則和慣例。
 
@@ -8,12 +8,13 @@
 
 | 項目 | 內容 |
 |---|---|
-| 網站 | https://g4kakau.github.io |
+| 網站 | https://notes.kakau.tw |
+| Repo | `qavit/kakau-note`（2026-09-28 由 `g4kakau/g4kakau.github.io` 轉移並更名而來，repository ID／git history 不變；見 `docs/custom-domain-cutover.md`） |
 | 用途 | 數理家教品牌網站、教學文章、SEO 內容資產 |
 | 主題 | [Chirpy](https://github.com/cotes2357/jekyll-theme-chirpy) v7.x |
 | Jekyll | 4.4.x |
 | Ruby | 3.3.6（rbenv 管理） |
-| 部署 | GitHub Pages，push 到 `theme` branch 自動觸發 |
+| 部署 | GitHub Pages（Actions workflow），push 到 `theme` branch 自動觸發 |
 
 ---
 

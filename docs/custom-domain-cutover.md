@@ -26,3 +26,28 @@
 ## 回復方式
 
 若憑證或導向異常，回復上述獨立 commit，讓 canonical 回到可用的 GitHub Pages hostname；不要同時讓兩個 hostname 各自成為 canonical。
+
+---
+
+## 2026-09-28：repo owner 轉移（`g4kakau/g4kakau.github.io` → `qavit/kakau-note`）
+
+這是 repository identity 的正規化，不是網站搬家：`notes.kakau.tw`、文章 permalink、canonical URL、作者 identity 全部不變，只把底層 repo 從個人帳號 `g4kakau` 轉移＋更名到 `qavit` 底下的 `kakau-note`。
+
+**已確認完成（用 `gh api` 直接查證，不只憑對話紀錄）：**
+
+- Repository transfer：`qavit/kakau-note`，`id: 1144837062`，`node_id: R_kgDORDzTxg`（與轉移前相同，git history／issues／PR 都保留），`default_branch: theme`。
+- `kakau.tw` 已在 `qavit` 帳號下完成 domain verification（`protected_domain_state: verified`），可防止其他帳號搶注這個網域下的 GitHub Pages custom domain。
+- `qavit/kakau-note` 的 Pages 設定：`cname: notes.kakau.tw`、`https_certificate.state: approved`、`https_enforced: true`、`build_type: workflow`（沿用既有 `pages.yml`，未修改）。
+
+**尚未完成（DNS 端，不在這個 repo 裡，owner 自行處理）：**
+
+- Cloudflare 的 `notes` CNAME 目前（2026-09-28 查證）仍指向 `g4kakau.github.io`，還沒切到 `qavit.github.io`。網站目前仍正常（`https://notes.kakau.tw` 回 200），因為 GitHub Pages 邊界節點是依 `Host: notes.kakau.tw` 這個標頭路由到目前擁有這個 custom domain 的 repo，不是依 CNAME 目標值本身；加上 domain 已 verified，其他帳號也不能搶這個 custom domain。所以這筆 CNAME 沒有急迫性，但建議之後找時間切到 `qavit.github.io`，讓設定跟實際 owner 一致。
+
+**repo 內同時處理的變更：**
+
+- `git remote`（本機）：`https://github.com/qavit/kakau-note.git`。
+- `_config.yml` 的 `comments.giscus.repo`：`g4kakau/g4kakau.github.io` → `qavit/kakau-note`（`repo_id`／`category_id` 不變，因為 repository node id 沒變）。
+- `README.md`、`AGENTS.md`：repo 名稱與網站說明改為現況。
+- `_includes/kakau-attribution.html` 註解：範例 host 改為 `qavit.github.io`。
+- **刻意不動**：`CNAME`（本來就是 `notes.kakau.tw`）、`_config.yml` 的 `url`（本來就是 `https://notes.kakau.tw`）、`_data/authors.yml`、`_data/kakau.yml` 的 origin、`.gitmodules`、GoatCounter `id: g4kakau`（純 analytics site id，跟 GitHub owner 無關）、`docs/analytics.md` 裡的 GoatCounter id 說明。
+- **待 owner 決定**：`_config.yml` 的 `github.username`（目前是 `g4kakau`）與 `social.links` 裡的 `https://github.com/g4kakau`——這代表 Kakau 品牌側欄的公開 GitHub 連結身份，跟這次 repo 轉移的 infra 決策是不同層次的問題，尚未變更。

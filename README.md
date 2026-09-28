@@ -1,4 +1,4 @@
-# g4kakau.github.io
+# kakau-note
 
 個人的物理與數學教育部落格，建立在 [**Chirpy**][chirpy] Jekyll 主題上。
 
@@ -18,7 +18,7 @@
 快速開始：
 ```bash
 rbenv install 3.3.6
-cd ~/Projects/g4kakau.github.io
+cd ~/Projects/kakau-note   # repo 本地資料夾若還沒改名，改成你實際的路徑
 bundle install
 bundle exec jekyll serve
 ```
@@ -27,7 +27,9 @@ bundle exec jekyll serve
 
 ## 網站
 
-https://g4kakau.github.io
+https://notes.kakau.tw
+
+（repo 為 `qavit/kakau-note`，2026-09-28 由 `g4kakau/g4kakau.github.io` 轉移並更名而來；網站網域未變。）
 
 ## 部署
 

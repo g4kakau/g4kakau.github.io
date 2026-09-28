@@ -28,7 +28,7 @@ description: >- # used by seo meta and the atom feed
 url: "https://notes.kakau.tw"
 
 github:
-  username: g4kakau
+  username: # Kakau 沒有獨立品牌 GitHub 帳號；留空會讓 Chirpy 側欄不顯示 GitHub 圖示（見 sidebar.html 的 unless 判斷）
 
 # twitter:
 #   username: twitter_username
@@ -37,7 +37,6 @@ social:
   name: Kakau
   email: g4kakau@gmail.com
   links:
-    - https://github.com/g4kakau
     - https://www.facebook.com/kakau.tw/
     - https://www.instagram.com/kakau_tw/
     - https://www.threads.net/@kakau_tw
@@ -118,7 +117,7 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: g4kakau/g4kakau.github.io
+    repo: qavit/kakau-note
     repo_id: R_kgDORDzTxg
     category: Announcements
     category_id: DIC_kwDORDzTxs4C9WMF
