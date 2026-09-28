@@ -17,16 +17,18 @@
 | 主題 | [Chirpy](https://github.com/cotes2357/jekyll-theme-chirpy) v7.x |
 | Jekyll | 4.4.x |
 | Ruby | 3.3.6（rbenv 管理） |
-| 部署 | GitHub Pages（Actions workflow），push 到 `theme` branch 自動觸發 |
+| 部署 | GitHub Pages（Actions workflow），push 到 `main` branch 自動觸發 |
 
 ---
 
 ## Branch 規則
 
-- **`theme` branch** = 正式線上版本，所有修改都在這裡
-- **`main` branch** = 廢棄的舊版自製 layout，不要動
+- **`main` branch** = 唯一 canonical branch、正式線上版本、repo default branch，所有修改都在這裡
+- 2026-09-29 起 `theme` branch 已 fast-forward 進 `main` 並刪除（不再存在，本身沒有留存價值——所有內容都完整保留在
+  `main` 的 git history 裡）。任何 Kakau repo 的 default branch 原則上都是 `main`；branch 名稱描述「暫時正在做什麼」，
+  不是永久產品層級。
 
-**所有新文章、修改、commit 都要在 `theme` branch 上進行。**
+**所有新文章、修改、commit 都要在 `main` branch 上進行。**
 
 ---
 
