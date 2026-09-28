@@ -145,7 +145,7 @@ content backlog——那會製造出一份永遠不會跟 Notion 同步的平行
 
 ## 禁止事項
 
-- 不要修改 `main` branch
+- 不要直接 rewrite `main` history（`push --force`、`reset --hard` 後強推等）；一般內容修改可直接在 `main` 上進行，較大型或高風險變更改用短期 feature branch
 - 不要 push `DEV_NOTES.md`（在 `.gitignore`）
 - 不要移除 `math: true`（除非文章真的沒有數學）
 - 不要使用 Chirpy 以外的 layout（`home`、`base` 是舊版殘留）
