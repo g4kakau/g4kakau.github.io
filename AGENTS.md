@@ -27,6 +27,16 @@
 
 ---
 
+## Git / Commit 身份規範
+
+- 所有 Claude Code、Codex、ChatGPT 或其他 coding agent 在這個 repo 建立的 commit，都必須使用 repo-local 的 `qavit` Git identity（`git config --local`，不是 global）。
+- 不得以 `g4kakau`、agent 自己的名字、Claude、ChatGPT、Codex 等身份作為 commit 的 author 或 committer。
+- 不得為了這個 repo 去修改 global Git config——只設 `--local`。
+- 每次 commit 前，若不確定目前 identity 是什麼，先跑 `git var GIT_AUTHOR_IDENT` 與 `git var GIT_COMMITTER_IDENT` 確認。
+- 這條規則從 2026-09-28（`3ee7a18` 之後）生效；`3ee7a18` 以前用 `g4kakau` identity 建立的既有 commit 不回溯修改（不 amend、不 rewrite history）。
+
+---
+
 ## 新增文章的規則
 
 ### 檔案位置與命名
@@ -54,6 +64,7 @@ description: "一句話摘要，約 50–120 字，給 SEO meta description 用"
 - `categories` 採兩層：大分類在前，小分類在後。
 - `tags` 用來補充關鍵字，盡量包含使用者會搜尋的詞彙（繁體中文）。
 - `layout: post` 不可省略。
+- **`date`（與檔名日期）預設對應原始素材筆記的日期**，而不是動工／發布當天。若筆記有 `source_created`（對話實際發生的時間），優先用它；沒有的話退而用筆記的 `created`。同一批動工的多篇文章，日期通常會因此打散在不同天，這是預期行為，不要為了方便而全部改成同一天。純自撰、沒有對應筆記的文章才用動工當天的日期。因為 `_posts/` 檔名必須是 `YYYY-MM-DD-slug.md`，改日期等於要重新命名檔案——同時要記得更新所有指向該檔案的 `{% post_url %}` 引用（否則會直接 build failed）。
 
 ### Categories 慣例
 
@@ -77,6 +88,7 @@ description: "一句話摘要，約 50–120 字，給 SEO meta description 用"
 | 高中數學—幾何 | `[高中數學, 幾何]` |
 | 高中數學—代數 | `[高中數學, 代數]` |
 | 高中物理—核物理 | `[高中物理, 核物理]` |
+| 大學物理—熱學 | `[大學物理, 熱學]` |
 
 ---
 
@@ -91,6 +103,12 @@ description: "一句話摘要，約 50–120 字，給 SEO meta description 用"
 | 對齊多行公式 | `$$\begin{aligned} ... \end{aligned}$$` |
 
 Markdown 表格中的 `|` 符號需要跳脫：`\|x\| < 1`。
+
+**重要地雷：行內公式（單個 `$...$`）中的裸 `\|`（例如 `$|x-1|$`）即使不在表格裡，也可能被 Kramdown 誤判成表格分隔符，導致整個段落被吞成一列破碎的表格（`$` 和文字被拆進不同 `<td>`，數學式完全無法渲染）。這不是「有時候」的邊緣案例，是實測會發生的常見錯誤。**
+
+- 行內絕對值一律用 `\lvert x-1\rvert` 而不是 `|x-1|`。
+- 這個問題只發生在單行內、段落層級的內容；獨立行公式（`$$...$$`）與真正的 Markdown 表格儲存格（那裡本來就用 `\|` 跳脫）不受影響。
+- 寫完後可以用 `grep -noP '(?<!\$)\$[^$\n]*\$(?!\$)' _posts/檔名.md | grep '|'` 快速抓出所有還沒修正的行內裸 `|`。
 
 ---
 
