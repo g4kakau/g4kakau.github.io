@@ -26,7 +26,8 @@ RULES = [
   [/固體物理/,      "凝態物理"],
   [/形狀信息/,      "形狀資訊"],
   [/觀測數據/,      "觀測資料"],
-  [/實驗數據/,      "實驗資料"],
+  # 「實驗數據」不在此列：這是台灣科學／工程語境常見的慣用詞，不是簡轉繁遺留，
+  # 逐字禁止「data→數據」才是誤判（見 2026-09-28 owner 意見）。
   [/保存完整/,      "保持完整"],
   [/查找/,          "尋找／查詢"],
   [/高亮/,          "標示"],
@@ -39,8 +40,8 @@ RULES = [
 
 ROOTS = %w[index.html _tabs _includes _posts _data paths docs].freeze
 
-# 這個檔案就是在記錄用詞 bug 本身，必須引用被禁止的寫法，否則說不清楚改了什麼。
-SKIP = %r{(\A|/)fact-audit\.md\z}
+# 這些檔案就是在記錄用詞 bug 本身，必須引用被禁止的寫法，否則說不清楚改了什麼。
+SKIP = %r{(\A|/)fact-audit\.md\z|(\A|/)docs/audits/}
 
 TEXT = /\.(md|markdown|html|yml|yaml)\z/
 
