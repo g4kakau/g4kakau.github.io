@@ -34,7 +34,7 @@ read_baseurl() {
 
     # reverse loop the config files
     for ((i = ${#config_array[@]} - 1; i >= 0; i--)); do
-      _tmp_baseurl="$(grep '^baseurl:' "${config_array[i]}" | sed "s/.*: *//;s/['\"]//g;s/#.*//")"
+      _tmp_baseurl="$(grep '^baseurl:' "${config_array[i]}" | sed "s/.*: *//;s/['\"]//g;s/#.*//;s/[[:space:]]*$//")"
 
       if [[ -n $_tmp_baseurl ]]; then
         _baseurl="$_tmp_baseurl"
@@ -44,24 +44,24 @@ read_baseurl() {
 
   else
     # single config
-    _baseurl="$(grep '^baseurl:' "$_config" | sed "s/.*: *//;s/['\"]//g;s/#.*//")"
+    _baseurl="$(grep '^baseurl:' "$_config" | sed "s/.*: *//;s/['\"]//g;s/#.*//;s/[[:space:]]*$//")"
   fi
 }
 
 main() {
-  # clean up
-  if [[ -d $SITE_DIR ]]; then
-    rm -rf "$SITE_DIR"
-  fi
-
   read_baseurl
+
+  # clean up
+  if [[ -d "$SITE_DIR$_baseurl" ]]; then
+    rm -rf "$SITE_DIR$_baseurl"
+  fi
 
   # build
   JEKYLL_ENV=production bundle exec jekyll b \
     -d "$SITE_DIR$_baseurl" -c "$_config"
 
   # test
-  bundle exec htmlproofer "$SITE_DIR" \
+  bundle exec htmlproofer "$SITE_DIR$_baseurl" \
     --disable-external \
     --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 }
