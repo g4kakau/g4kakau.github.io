@@ -42,6 +42,11 @@ https://notes.kakau.tw
 
 推至 `theme` branch 會自動透過 GitHub Actions 部署。
 
+## 文件
+
+Repo 架構、發布規則、稽核紀錄與 migration 歷史見 [`docs/`](docs/README.md)；AI agent 操作規則見
+[AGENTS.md](AGENTS.md)。
+
 ## License
 
 [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]

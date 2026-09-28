@@ -2,6 +2,9 @@
 
 這個檔案提供給 AI agent（Claude Cowork、Codex 等）使用，說明這個 repo 的架構、規則和慣例。
 
+完整文件索引（architecture／content／operations／audits／history 四層）在 [`docs/README.md`](docs/README.md)；
+這裡只放 agent 必須遵守的 hard rules，細節規則一律指向 `docs/` 底下的正式文件。
+
 ---
 
 ## 基本資訊
