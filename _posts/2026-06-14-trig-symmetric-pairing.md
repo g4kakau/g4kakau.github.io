@@ -12,8 +12,6 @@ description: "從 cos2°+cos4°+⋯+cos360°=0 出發，用單位圓的對稱性
 
 $$\require{physics}$$
 
-English version: [Trigonometric Symmetry Pairing](/en/posts/trig-symmetric-pairing/)
-
 來看一個式子：
 
 $$

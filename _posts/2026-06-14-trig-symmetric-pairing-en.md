@@ -13,8 +13,6 @@ description: "Starting from cos 2° + cos 4° + ... + cos 360° = 0, this articl
 
 $$\require{physics}$$
 
-Chinese version: [三角函數的對稱配對](/posts/trig-symmetric-pairing/)
-
 Consider the sum
 
 $$

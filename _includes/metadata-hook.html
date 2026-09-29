@@ -1,0 +1,10 @@
+{% if page.translations and page.translations.size > 1 %}
+  {% for translation in page.translations %}
+    <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.url | absolute_url }}">
+  {% endfor %}
+  {% for translation in page.translations %}
+    {% if translation.lang == 'zh-TW' %}
+      <link rel="alternate" hreflang="x-default" href="{{ translation.url | absolute_url }}">
+    {% endif %}
+  {% endfor %}
+{% endif %}

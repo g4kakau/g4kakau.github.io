@@ -70,9 +70,35 @@
 
 .kakau-academy-nav .nav-link:focus-visible,
 .kakau-link-list a:focus-visible,
-.kakau-actions a:focus-visible {
+.kakau-actions a:focus-visible,
+.kk-language-switcher a:focus-visible {
   outline: 2px solid var(--link-color);
   outline-offset: 3px;
+}
+
+.kk-language-switcher {
+  align-items: center;
+  border-inline-start: 0.25rem solid var(--link-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.8rem;
+  margin: 0 0 1.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.kk-language-switcher__label {
+  color: var(--text-muted-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.kk-language-switcher a[aria-current='page'] {
+  color: var(--text-color);
+  font-weight: 700;
+  pointer-events: none;
+  text-decoration: none;
 }
 
 /* MathJax's visually hidden MathML can otherwise enlarge the mobile document. */

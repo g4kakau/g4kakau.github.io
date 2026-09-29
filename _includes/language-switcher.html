@@ -1,0 +1,16 @@
+{% if page.translations and page.translations.size > 1 %}
+  <nav class="kk-language-switcher" aria-label="Language versions">
+    <span class="kk-language-switcher__label">{% if page.lang == 'en' %}Language{% else %}語言{% endif %}</span>
+    {% for translation in page.translations %}
+      {% assign label = translation.lang %}
+      {% if translation.lang == 'zh-TW' %}{% assign label = '繁體中文' %}{% endif %}
+      {% if translation.lang == 'en' %}{% assign label = 'English' %}{% endif %}
+      <a
+        href="{{ translation.url | relative_url }}"
+        hreflang="{{ translation.lang }}"
+        lang="{{ translation.lang }}"
+        {% if translation.lang == page.lang %}aria-current="page"{% endif %}
+      >{{ label }}</a>
+    {% endfor %}
+  </nav>
+{% endif %}
