@@ -16,9 +16,9 @@ timezone: Asia/Taipei
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Kakau 公開數理筆記 # the main title
+title: "Kakau Notes | 公開數理筆記" # the main title
 
-tagline: 從問題出發，走進數學與物理的結構 # it will display as the subtitle
+tagline: 公開數理知識庫 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Kakau 的公開數理知識庫。從值得追問的問題出發，整理高中數學、物理與延伸主題，連結定義、推導、模型、圖像與直覺。
