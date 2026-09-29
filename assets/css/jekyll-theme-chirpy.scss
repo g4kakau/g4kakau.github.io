@@ -86,7 +86,7 @@ mjx-assistive-mml {
   width: 1px !important;
 }
 
-/* Logo System MVP v0.1: keep the reading surface quiet while making Kakau the primary name.
+/* Logo System MVP v0.2 (below for the sidebar, inline for the footer): keep the reading surface quiet while making Kakau the primary name.
  * Both colour variants are source assets; the dark variant follows Chirpy's explicit mode
  * toggle as well as an OS-level dark preference before JavaScript applies that attribute. */
 .kk-notes-brand,
@@ -106,7 +106,7 @@ mjx-assistive-mml {
   }
 
   #sidebar .profile-wrapper .kk-notes-brand {
-    width: 220px;
+    width: 200px;
   }
 }
 
@@ -153,7 +153,6 @@ html[data-bs-theme='dark'] .kk-notes-mobile-mark__dark {
 }
 
 .kk-notes-mobile-mark img {
-  display: block;
   height: 1.625rem;
   width: 1.625rem;
 }
