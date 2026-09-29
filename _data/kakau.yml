@@ -9,6 +9,11 @@ academy:
 
 # notes.kakau.tw 已完成 DNS 與 GitHub Pages 綁定；current 狀態見 docs/operations/domain-dns.md，
 # migration 沿革見 docs/history/domain-and-repository-migrations.md。
+# Kakau Lab canonical URL（含 utm query，格式同 academy.*）。留空時所有 Lab 元件都不渲染，
+# 不得自行猜測網址。
+lab:
+  home: ""
+
 notes:
   current_origin: "https://notes.kakau.tw"
   target_origin: "https://notes.kakau.tw"

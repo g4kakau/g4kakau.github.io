@@ -6,7 +6,7 @@ order: 1
 
 ## 這個網站是什麼？
 
-這裡是 **Kakau 公開數理筆記**，也是 Kakau 的公開數理知識庫。文章收錄高中數學、物理與延伸主題，讓任何讀者都能免費接觸 Kakau 的知識風格。
+Kakau Notes 是 **Kakau Learning Loop** 的閱讀與推理入口。我們從一個值得追問的問題開始，用定義、推導、圖像與模型把問題拆開；有些主題還可以接著前往 Kakau Lab 操作模型、改變條件，再帶著新的問題回來。文章收錄高中數學、物理與延伸主題，任何讀者都能免費閱讀。
 
 文章的寫作原則：
 1. 從定義出發，說清楚每個概念「是什麼」
@@ -38,9 +38,15 @@ order: 1
 
 ---
 
-## 與主網站的關係
+## Notes 在 Kakau Learning Loop 裡的位置
 
-本站專注於公開閱讀；課程、招生、試讀與學生服務統一由 **Kakau 物理學苑**提供。
+一個問題可以用不只一種方式理解：
+
+- **Kakau Notes**：閱讀、推導，把問題拆開並建立概念連結。
+- **Kakau Lab**：把模型動起來，改變參數、觀察結果、驗證直覺。
+- **Kakau 物理學苑**：在教師引導下，把問題、數學、物理、計算、實驗與專題串成長期學習。
+
+讀完可以去 Lab 試，試完的新問題也可以回到 Notes 深挖。若想在有人引導的情況下持續學下去，再了解物理學苑；課程、試讀與申請資訊，一律以物理學苑為準。
 
 - [前往 Kakau 物理學苑 ↗]({{ site.data.kakau.academy.home }}&utm_content=intro){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}
 - [查看課程介紹 ↗]({{ site.data.kakau.academy.course }}&utm_content=intro){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_course"}

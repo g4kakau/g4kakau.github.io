@@ -4,12 +4,12 @@ title: Kakau 物理學苑
 icon: fas fa-chalkboard-teacher
 permalink: /academy/
 order: 10
-description: "從 Kakau 公開數理筆記前往物理學苑的課程、學習主線、試讀入口。"
+description: "從 Kakau Notes 前往 Kakau 物理學苑的課程、學習主線與試讀入口。"
 ---
 
 ## Kakau 物理學苑
 
-公開數理筆記是 Kakau 的公共知識層；Kakau 物理學苑則提供有結構的小班物理學習路徑。
+Kakau Notes 讓你閱讀與推導，Kakau Lab 讓你操作與觀察；Kakau 物理學苑則在教師引導下，把這個學習循環串成有結構的小班物理學習路徑。
 
 如果你喜歡這裡從問題、模型、推導一路往下探索的方式，希望有人帶著你持續學下去，可以到物理學苑了解目前課程。
 
@@ -19,10 +19,8 @@ description: "從 Kakau 公開數理筆記前往物理學苑的課程、學習�
 - [查看學習主線 ↗]({{ site.data.kakau.academy.syllabus }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_syllabus"}
 - [試讀教材 ↗]({{ site.data.kakau.academy.sample }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_sample"}
 
-2026 秋季創始班目前暫停招生，法規確認中，暫不受理申請。
-
 ---
 
-## 兩個網站，只有一份正式課程資訊
+## 只有一份正式課程資訊
 
-這一頁只負責說明公開知識與課程服務的關係。價格、日期、成班條件、退款與契約等會變動資訊，均以 [Kakau 物理學苑]({{ site.data.kakau.academy.home }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}為唯一正式來源。
+這一頁只負責說明 Notes 與課程之間的關係。價格、日期、成班條件、退款與契約等會變動資訊，均以 [Kakau 物理學苑]({{ site.data.kakau.academy.home }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}為唯一正式來源。

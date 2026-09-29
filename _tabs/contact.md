@@ -35,7 +35,7 @@ order: 11
 }
 </style>
 
-若要了解課程或試讀教材，請前往 Kakau 物理學苑。2026 秋季創始班目前暫停招生，法規確認中，暫不受理申請。
+若想了解目前課程、試讀教材或申請方式，請前往 Kakau 物理學苑查看最新資訊。
 
 <div class="kk-contact-actions">
   <a class="kk-contact-button" href="{{ site.data.kakau.academy.sample }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_sample">看看試讀教材 ↗</a>

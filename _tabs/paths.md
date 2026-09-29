@@ -4,10 +4,10 @@ title: 學習路徑
 icon: fas fa-route
 permalink: /paths/
 order: 2
-description: "依問題與概念順序策展的 Kakau 公開數理學習路徑。"
+description: "依問題與概念順序策展的 Kakau Notes 學習路徑。"
 ---
 
-分類告訴你文章屬於哪個學科；學習路徑則回答「我該從哪裡開始，接下來讀什麼？」
+分類告訴你文章屬於哪個學科；學習路徑則回答「我可以從哪個問題開始，接著讀什麼、試什麼，再往哪裡探索？」
 
 ## 已發布
 

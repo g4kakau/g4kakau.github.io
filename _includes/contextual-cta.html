@@ -1,3 +1,8 @@
+{% comment %}
+  Priority: matching Lab (only when the mapping has `lab` and site.data.kakau.lab.home is set)
+  falls in front of the course CTA; otherwise the existing path → Academy CTA renders unchanged.
+  A mapping's `lab` must be a full URL (with utm); it is never derived from lab.home.
+{% endcomment %}
 {% assign cta = site.data.kakau.contextual_ctas[page.slug] %}
 {% if cta %}
   {% assign destination = cta.destination | default: 'syllabus' %}
@@ -9,6 +14,17 @@
     {% assign destination_label = '查看學習主線' %}
     {% assign event_name = 'notes_to_syllabus' %}
   {% endif %}
+  {% if cta.lab and site.data.kakau.lab.home.size > 0 %}
+  <aside class="kakau-contextual" aria-labelledby="kakau-contextual-title">
+    <p class="kakau-eyebrow">動手試一試</p>
+    <h2 id="kakau-contextual-title">把這個模型動起來</h2>
+    <p>剛才的關係如果改變初始條件會怎樣？到 Kakau Lab 自己試，再帶著新的問題回來。</p>
+    <p class="kakau-actions">
+      <a class="kakau-button" href="{{ cta.lab }}" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_lab">前往 Kakau Lab ↗</a>
+      <a href="/paths/high-school-physics-math/">閱讀完整公開路徑</a>
+    </p>
+  </aside>
+  {% else %}
   <aside class="kakau-contextual" aria-labelledby="kakau-contextual-title">
     <p class="kakau-eyebrow">接著學</p>
     <h2 id="kakau-contextual-title">想用這種方式繼續學物理？</h2>
@@ -18,4 +34,5 @@
       <a href="/paths/high-school-physics-math/">閱讀完整公開路徑</a>
     </p>
   </aside>
+  {% endif %}
 {% endif %}

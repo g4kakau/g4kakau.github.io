@@ -21,7 +21,7 @@ title: "Kakau Notes | 公開數理筆記" # the main title
 tagline: 公開數理知識庫 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Kakau 的公開數理知識庫。從值得追問的問題出發，整理高中數學、物理與延伸主題，連結定義、推導、模型、圖像與直覺。
+  Kakau Notes 從值得追問的問題出發，整理高中數學、物理與延伸主題，連結定義、推導、模型、圖像、直覺與互動探索。
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.

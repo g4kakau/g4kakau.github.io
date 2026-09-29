@@ -77,9 +77,9 @@ test('the page view carries no query string, by either route', () => {
   assert.ok(!/[?&]q=/.test(request), `the q parameter survived: ${request}`);
 });
 
-test('an explicit event path still wins, so the five events keep working', () => {
+test('an explicit event path still wins, so the pinned events keep working', () => {
   const { settings, window } = loadSettings();
-  for (const event of ['notes_to_academy', 'notes_to_sample', 'notes_to_syllabus', 'notes_to_course', 'notes_to_apply']) {
+  for (const event of ['notes_to_academy', 'notes_to_sample', 'notes_to_syllabus', 'notes_to_course', 'notes_to_apply', 'notes_to_lab']) {
     const request = countJsRequest(settings, {
       location: window.location, referrer: '', vars: { path: `event/${event}`, title: 'x', event: true },
     });
@@ -109,9 +109,9 @@ test('no_onload is set, because the q patch has to land before the first count',
 });
 
 test('every rendered data-kakau-event is one of the five pinned names', () => {
-  // Guards both directions: a typo that silently stops being counted, and a sixth event
+  // Guards both directions: a typo that silently stops being counted, and a new event
   // appearing without a decision. docs/analytics.md is the contract.
-  const pinned = new Set(['notes_to_academy', 'notes_to_sample', 'notes_to_syllabus', 'notes_to_course', 'notes_to_apply']);
+  const pinned = new Set(['notes_to_academy', 'notes_to_sample', 'notes_to_syllabus', 'notes_to_course', 'notes_to_apply', 'notes_to_lab']);
   const root = new URL('../', import.meta.url).pathname;
   const skip = new Set(['.git', '_site', 'node_modules', '.jekyll-cache', 'vendor', '.claude']);
   const found = new Set();

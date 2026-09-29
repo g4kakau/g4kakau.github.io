@@ -72,12 +72,13 @@ title: 首頁
 
 <div class="kk-intro">
   <p class="kk-intro-title">從值得追問的問題出發，走進數學與物理的結構。</p>
-  <p class="kk-intro-sub">Kakau Notes 是公開數理知識庫，從定義、推導、模型、圖像到直覺，逐步連起一個概念背後的完整理解。</p>
+  <p class="kk-intro-sub">Kakau Notes 從定義、推導、模型、圖像到直覺，逐步連起一個概念背後的完整理解；有些主題也能到 Kakau Lab 動手操作，再帶著新的問題回來。</p>
   <h2>從這裡開始</h2>
   <div class="kk-explore">
     <a href="/paths/high-school-physics-math/"><strong>高中物理背後的數學</strong><span>從 Taylor 展開、微分方程到單擺，依序讀 8 篇文章。</span></a>
     <a href="/categories/高中物理/"><strong>古典力學</strong><span>從動量、質心、碰撞、圓周運動一路延伸。</span></a>
-    <a href="/intro/"><strong>如何使用這座筆記庫</strong><span>先理解文章寫法、分類方式與閱讀入口。</span></a>
+    {% if site.data.kakau.lab.home.size > 0 %}<a href="{{ site.data.kakau.lab.home }}&utm_content=home_explore" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_lab"><strong>動手試一試</strong><span>到 Kakau Lab 改變條件，看模型會發生什麼。</span></a>{% endif %}
+    <a href="/intro/"><strong>Kakau Learning Loop</strong><span>閱讀、操作、再追問：了解這座筆記庫怎麼使用。</span></a>
     <a href="/paths/"><strong>更多學習路徑</strong><span>用問題與概念順序閱讀，而不只是逐篇瀏覽。</span></a>
   </div>
   <div class="kk-cats">
@@ -86,5 +87,5 @@ title: 首頁
     <a href="/categories/大學數學/" class="kk-cat">大學數學</a>
     <a href="/categories/" class="kk-cat">全部分類 →</a>
   </div>
-  <p class="kk-academy">Kakau 物理學苑提供課程、試讀與學生服務。<a href="{{ site.data.kakau.academy.home }}&utm_content=home_bridge" data-kakau-event="notes_to_academy">前往物理學苑 ↗</a></p>
+  <p class="kk-academy">想在教師引導下持續學習？<a href="{{ site.data.kakau.academy.home }}&utm_content=home_bridge" data-kakau-event="notes_to_academy">前往物理學苑 ↗</a></p>
 </div>
