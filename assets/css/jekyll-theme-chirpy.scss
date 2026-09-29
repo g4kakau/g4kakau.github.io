@@ -86,6 +86,68 @@ mjx-assistive-mml {
   width: 1px !important;
 }
 
+/* Logo System MVP v0.1: keep the reading surface quiet while making Kakau the primary name.
+ * Both colour variants are source assets; the dark variant follows Chirpy's explicit mode
+ * toggle as well as an OS-level dark preference before JavaScript applies that attribute. */
+.kk-notes-brand,
+.kk-notes-footer-brand,
+.kk-notes-mobile-mark {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.kk-notes-brand {
+  margin-bottom: 0.85rem;
+}
+
+.kk-notes-brand img,
+.kk-notes-footer-brand img {
+  height: auto;
+  max-width: 100%;
+}
+
+.kk-notes-brand__dark,
+.kk-notes-footer-brand__dark,
+.kk-notes-mobile-mark__dark {
+  display: none;
+}
+
+html[data-mode='dark'] .kk-notes-brand__light,
+html[data-mode='dark'] .kk-notes-footer-brand__light,
+html[data-mode='dark'] .kk-notes-mobile-mark__light,
+html[data-bs-theme='dark'] .kk-notes-brand__light,
+html[data-bs-theme='dark'] .kk-notes-footer-brand__light,
+html[data-bs-theme='dark'] .kk-notes-mobile-mark__light {
+  display: none;
+}
+
+html[data-mode='dark'] .kk-notes-brand__dark,
+html[data-mode='dark'] .kk-notes-footer-brand__dark,
+html[data-mode='dark'] .kk-notes-mobile-mark__dark,
+html[data-bs-theme='dark'] .kk-notes-brand__dark,
+html[data-bs-theme='dark'] .kk-notes-footer-brand__dark,
+html[data-bs-theme='dark'] .kk-notes-mobile-mark__dark {
+  display: block;
+}
+
+.kk-notes-brand:focus-visible,
+.kk-notes-footer-brand:focus-visible,
+.kk-notes-mobile-mark:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 4px;
+}
+
+.kk-notes-footer-brand {
+  margin-inline-end: 0.45rem;
+  vertical-align: middle;
+}
+
+.kk-notes-mobile-mark img {
+  display: block;
+  height: 1.625rem;
+  width: 1.625rem;
+}
+
 @media (max-width: 575px) {
   .kakau-contextual,
   .kakau-ecosystem {
