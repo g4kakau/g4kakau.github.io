@@ -28,3 +28,4 @@ DEV_NOTES.md
 _sass/vendors/
 assets/js/dist/
 .DS_Store
+.claude/
