@@ -35,11 +35,10 @@ order: 11
 }
 </style>
 
-若想了解目前課程、試讀教材或申請方式，請前往 Kakau 物理學苑查看最新資訊。
+若想了解 Kakau 目前提供的教學與申請方式，請前往 Kakau 主站查看最新資訊。
 
 <div class="kk-contact-actions">
-  <a class="kk-contact-button" href="{{ site.data.kakau.academy.sample }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_sample">看看試讀教材 ↗</a>
-  <a href="{{ site.data.kakau.academy.course }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_course">先看課程介紹 ↗</a>
+  <a class="kk-contact-button" href="{{ site.data.kakau.academy.home }}&utm_content=contact" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy">了解 Kakau ↗</a>
 </div>
 
 也可以用以下方式聯絡我：
