@@ -46,9 +46,7 @@ Kakau Notes 是 **Kakau Learning Loop** 的閱讀與推理入口。我們從一�
 - **Kakau Lab**：把模型動起來，改變參數、觀察結果、驗證直覺。
 - **Kakau 物理學苑**：在教師引導下，把問題、數學、物理、計算、實驗與專題串成長期學習。
 
-讀完可以去 Lab 試，試完的新問題也可以回到 Notes 深挖。若想在有人引導的情況下持續學下去，再了解物理學苑；課程、試讀與申請資訊，一律以物理學苑為準。
+讀完可以去 Lab 試，試完的新問題也可以回到 Notes 深挖。若想在有人引導的情況下持續學下去，再了解物理學苑；課程與申請資訊，一律以物理學苑為準。
 
-- [前往 Kakau 物理學苑 ↗]({{ site.data.kakau.academy.home }}&utm_content=intro){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}
-- [查看課程介紹 ↗]({{ site.data.kakau.academy.course }}&utm_content=intro){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_course"}
-- [試讀教材 ↗]({{ site.data.kakau.academy.sample }}&utm_content=intro){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_sample"}
+- [了解 Kakau ↗]({{ site.data.kakau.academy.home }}&utm_content=intro){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}
 - [查看學習主線 ↗]({{ site.data.kakau.academy.syllabus }}&utm_content=intro){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_syllabus"}

@@ -4,7 +4,7 @@ title: Kakau 物理學苑
 icon: fas fa-chalkboard-teacher
 permalink: /academy/
 order: 10
-description: "從 Kakau Notes 前往 Kakau 物理學苑的課程、學習主線與試讀入口。"
+description: "從 Kakau Notes 前往 Kakau 物理學苑的學習主線與教學服務入口。"
 ---
 
 ## Kakau 物理學苑
@@ -15,9 +15,9 @@ Kakau Notes 讓你閱讀與推導，Kakau Lab 讓你操作與觀察；Kakau 物�
 
 課程從學生的好奇心與真實問題出發，重視模型、假設、推導與圖像；在物理真正需要時引入數學，並用實驗、計算與專題把知識連起來。
 
-- [查看課程介紹 ↗]({{ site.data.kakau.academy.course }}&utm_content=academy_bridge){: .kakau-button target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_course"}
+- [前往 Kakau ↗]({{ site.data.kakau.academy.home }}&utm_content=academy_bridge){: .kakau-button target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}
 - [查看學習主線 ↗]({{ site.data.kakau.academy.syllabus }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_syllabus"}
-- [試讀教材 ↗]({{ site.data.kakau.academy.sample }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_sample"}
+- [了解一對一教學 ↗]({{ site.data.kakau.academy.tutoring }}&utm_content=academy_bridge){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_tutoring"}
 
 ---
 

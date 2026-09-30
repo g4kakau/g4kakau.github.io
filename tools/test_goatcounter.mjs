@@ -79,7 +79,7 @@ test('the page view carries no query string, by either route', () => {
 
 test('an explicit event path still wins, so the pinned events keep working', () => {
   const { settings, window } = loadSettings();
-  for (const event of ['notes_to_academy', 'notes_to_sample', 'notes_to_syllabus', 'notes_to_course', 'notes_to_apply', 'notes_to_lab']) {
+  for (const event of ['notes_to_academy', 'notes_to_sample', 'notes_to_syllabus', 'notes_to_course', 'notes_to_apply', 'notes_to_lab', 'notes_to_tutoring']) {
     const request = countJsRequest(settings, {
       location: window.location, referrer: '', vars: { path: `event/${event}`, title: 'x', event: true },
     });
@@ -108,10 +108,10 @@ test('no_onload is set, because the q patch has to land before the first count',
   assert.equal(typeof ready, 'function', 'the onload hook is missing; nothing would ever call count()');
 });
 
-test('every rendered data-kakau-event is one of the five pinned names', () => {
+test('every rendered data-kakau-event is one of the pinned names', () => {
   // Guards both directions: a typo that silently stops being counted, and a new event
   // appearing without a decision. docs/analytics.md is the contract.
-  const pinned = new Set(['notes_to_academy', 'notes_to_sample', 'notes_to_syllabus', 'notes_to_course', 'notes_to_apply', 'notes_to_lab']);
+  const pinned = new Set(['notes_to_academy', 'notes_to_sample', 'notes_to_syllabus', 'notes_to_course', 'notes_to_apply', 'notes_to_lab', 'notes_to_tutoring']);
   const root = new URL('../', import.meta.url).pathname;
   const skip = new Set(['.git', '_site', 'node_modules', '.jekyll-cache', 'vendor', '.claude']);
   const found = new Set();
@@ -142,5 +142,8 @@ test('every rendered data-kakau-event is one of the five pinned names', () => {
   // Paused, not retired: enrollment is on hold pending the 教育局 legal review (2026-09-11), so no page
   // links to /apply. The name stays pinned so it can return without a new decision.
   const paused = new Set(['notes_to_apply']);
+  // Retired from Notes (route policy: /sample is Legacy, /course is a Paused reference). Names stay
+  // pinned so historical GoatCounter data remains readable; no Notes page may link to them again.
+  for (const name of ['notes_to_sample', 'notes_to_course']) paused.add(name);
   for (const name of pinned) if (!paused.has(name)) assert.ok(found.has(name), `event "${name}" is no longer rendered anywhere; it silently stopped being measured`);
 });

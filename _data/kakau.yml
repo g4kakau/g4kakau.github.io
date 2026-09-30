@@ -1,10 +1,12 @@
 academy:
   home: "https://kakau.tw/?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
+  # course（Paused 歷史參考）與 sample（Legacy）不得作為新的 Notes 連結目的地；保留鍵僅供舊資料相容。
   course: "https://kakau.tw/course?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
   sample: "https://kakau.tw/sample?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
   syllabus: "https://kakau.tw/syllabus?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
   apply: "https://kakau.tw/apply?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
   # 何信佑的 canonical 教師／創辦人介紹頁。作者身份事實見 _data/authors.yml。
+  tutoring: "https://kakau.tw/tutoring?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
   about: "https://kakau.tw/about/?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
 
 # notes.kakau.tw 已完成 DNS 與 GitHub Pages 綁定；current 狀態見 docs/operations/domain-dns.md，
@@ -22,10 +24,10 @@ notes:
 contextual_ctas:
   taylor-series:
     path: "高中物理背後的數學"
-    destination: sample
+    destination: syllabus
   centripetal-to-curvature:
     path: "高中物理背後的數學"
-    destination: sample
+    destination: syllabus
   torricelli-law-draining-time:
     path: "高中物理背後的數學"
     destination: syllabus
@@ -34,7 +36,7 @@ contextual_ctas:
     destination: syllabus
   quadratic-energy-everywhere:
     path: "高中物理背後的數學"
-    destination: sample
+    destination: syllabus
   pendulum-not-shm:
     path: "高中物理背後的數學"
     destination: syllabus
@@ -46,16 +48,16 @@ contextual_ctas:
     destination: syllabus
   momentum-and-impulse:
     path: "古典力學"
-    destination: sample
+    destination: syllabus
   center-of-mass:
     path: "古典力學"
     destination: syllabus
   conservation-of-momentum:
     path: "古典力學"
-    destination: sample
+    destination: syllabus
   collision-problems:
     path: "古典力學"
     destination: syllabus
   vertical-circular-motion:
     path: "古典力學"
-    destination: sample
+    destination: syllabus

@@ -40,14 +40,14 @@ instead of 90+.
 
 - **`contextual-cta.html`** looks up `site.data.kakau.contextual_ctas[page.slug]`
   (defined in `_data/kakau.yml`). If the current post isn't in that mapping,
-  it renders nothing. If it is, it shows a CTA pointing at either `sample`
-  or `syllabus` (from `_data/kakau.yml`'s `academy` URLs, each already
+  it renders nothing. If it is, it shows a CTA pointing at `syllabus`
+  ("學習主線"; from `_data/kakau.yml`'s `academy` URLs, already
   carrying `utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel`),
   appends `&utm_content=article_cta`, and fires a GoatCounter event
-  (`notes_to_sample` or `notes_to_syllabus`).
-- **`ecosystem-footer.html`** always renders, linking to the academy home,
-  sample, and syllabus with `&utm_content=article_footer` and their own
-  GoatCounter events.
+  (`notes_to_syllabus`). If the mapping has `lab` and `lab.home` is set,
+  a Lab CTA (`notes_to_lab`) replaces it.
+- **`ecosystem-footer.html`** always renders, the Kakau Learning Loop block, linking to Lab (only when `lab.home` is set),
+  `/paths/`, and the academy home with `&utm_content=article_footer`.
 
 Site-wide (not per-post) integration points:
 
