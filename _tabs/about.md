@@ -25,33 +25,12 @@ Kakau Notes 把課堂裡值得繼續追問的數學與物理問題，整理成�
 
 這裡的文章由**何信佑（Sin-iu Ho）**撰寫，他也是 Kakau 物理學苑的創辦人與授課教師。
 
-他畢業於台大物理系，並取得德國圖賓根大學（Eberhard Karls Universität Tübingen）天文物理與粒子物理碩士（MSc Astro and Particle Physics）。自 2017 年開始教學，經驗涵蓋台灣高中數理、大一普通物理，以及荷蘭大專的統計學與 AI 通識課。
+他畢業於台大物理系，並取得德國圖賓根大學（Eberhard Karls Universität Tübingen）天文物理與粒子物理碩士（MSc Astro and Particle Physics）。自 2017 年開始教學，經驗涵蓋國高中數學、物理與化學、大一普通物理，以及大專統計與 AI 課程。
 
-完整的教師與創辦人介紹（含學歷文件）在 [Kakau 物理學苑的關於頁]({{ site.data.kakau.academy.about }}&utm_content=about_author){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}。
+完整的教師與創辦人介紹（含學歷文件）在 [Kakau 物理學苑的關於頁]({{ site.data.kakau.academy.about }}&utm_content=about_author){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}；教學方式與實際作品，可以看[教學作品 ↗]({{ site.data.kakau.academy.portfolio }}&utm_content=about_author){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_portfolio"}。
 
 ## Notes、Lab 與 Kakau 物理學苑
 
-Notes 負責閱讀與推導，Lab 負責操作與觀察，兩者都可以自由探索。[Kakau 物理學苑]({{ site.data.kakau.academy.home }}&utm_content=about){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}則在教師引導下，把這個循環變得更有結構、更持續，並提供課程、試讀與學習主線。三者共享同一套重視理解、推導與探索的教學方法。
+Notes 負責閱讀與推導，Lab 負責操作與觀察，兩者都可以自由探索。[Kakau 物理學苑]({{ site.data.kakau.academy.home }}&utm_content=about){:target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}則在教師引導下，把這個循環變得更有結構、更持續，並提供課程與學習主線。三者共享同一套重視理解、推導與探索的教學方法。
 
 [前往 Kakau 物理學苑 ↗]({{ site.data.kakau.academy.home }}&utm_content=about){: .kakau-button target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_academy"}
-
----
-
-## 教學經歷
-
-| 學校／機構   | 對象       | 科目                                         | 期間            | 形式       |
-| ------------ | ---------- | -------------------------------------------- | --------------- | ---------- |
-| 再興中學     | 高一       | 化學                                         | 2017–2018       | 實體       |
-| 和平高中     | 高中生     | 物理、化學                                   | 2019–2020       | 實體       |
-| 建國中學     | 高中生     | 物理、化學                                   | 2019–2021       | 實體／線上 |
-| 北科大       | 大一       | 普通物理                                     | 2019–2020       | 實體／線上 |
-| 中和國中     | 國三       | 理化                                         | 2021            | 實體       |
-| 台北歐洲學校 | 小五       | 伴讀（德文授課）                             | 2021            | 實體       |
-| 某荷蘭大專   | 大學生     | 統計學、數學、物理化學、商用 AI（含 Python） | 2021–2022、2024 | 全線上     |
-| 台中一中     | 高一、高二 | 微積分、線性代數、高中物理                   | 2024–           | 實體／線上 |
-| 再興中學     | 高二、高三 | 學測數學                                     | 2025–2026       | 實體       |
-| 秀峰高中     | 高一       | 數學                                         | 2025–           | 實體       |
-| 敦化國中     | 國三       | 理化                                         | 2025–2026       | 實體       |
-| 內湖高中     | 高一       | 物理、英文                                   | 2025–2026       | 實體       |
-| 南港高中     | 高一       | 數學                                         | 2026–           | 實體       |
-| 內湖高中     | 高一       | 化學                                         | 2026–           | 實體       |

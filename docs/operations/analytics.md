@@ -51,6 +51,7 @@ Kakau 自己的檔期連結則會把 `utm_*` 一起送過去。**計算一次瀏
 | `notes_to_syllabus` | 筆記庫前往學習主線 |
 | `notes_to_course` | 已退役（`/course` 為 Paused 歷史參考）；名稱保留以讀歷史資料，Notes 不得再連結 |
 | `notes_to_tutoring` | 筆記庫前往一對一教學（`academy.tutoring`） |
+| `notes_to_portfolio` | 筆記庫前往教學作品（`academy.portfolio`） |
 | `notes_to_lab` | 筆記庫前往 Kakau Lab（Lab URL 設定於 `_data/kakau.yml` 的 `lab.home`；未設定時無頁面使用） |
 | `notes_to_apply` | 筆記庫前往申請入班；2026-09-11 起招生暫停，目前無頁面使用，名稱保留待恢復 |
 | `academy_to_notes` | 物理學苑前往公開筆記；由 academy repo 實作 |
