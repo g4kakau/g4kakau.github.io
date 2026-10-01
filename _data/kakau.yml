@@ -15,7 +15,7 @@ academy:
 # Kakau Lab canonical URL（含 utm query，格式同 academy.*）。留空時所有 Lab 元件都不渲染，
 # 不得自行猜測網址。
 lab:
-  home: ""
+  home: "https://lab.kakau.tw/?utm_source=kakau_notes&utm_medium=referral&utm_campaign=content_flywheel"
 
 notes:
   current_origin: "https://notes.kakau.tw"
@@ -23,42 +23,47 @@ notes:
   custom_domain_live: true
 
 contextual_ctas:
+  # path / path_url 必須成對，且指向「已發布」的學習路徑；未發布的路徑（例如預告中的「古典力學」）
+  # 不得寫進來，否則 CTA 會宣稱文章收錄在一條讀者打不開的路徑。沒有 path_url 的條目只顯示學習主線 CTA。
   taylor-series:
     path: "高中物理背後的數學"
+    path_url: "/paths/high-school-physics-math/"
     destination: syllabus
   centripetal-to-curvature:
     path: "高中物理背後的數學"
+    path_url: "/paths/high-school-physics-math/"
     destination: syllabus
   torricelli-law-draining-time:
     path: "高中物理背後的數學"
+    path_url: "/paths/high-school-physics-math/"
     destination: syllabus
   separable-odes:
     path: "高中物理背後的數學"
+    path_url: "/paths/high-school-physics-math/"
     destination: syllabus
   quadratic-energy-everywhere:
     path: "高中物理背後的數學"
+    path_url: "/paths/high-school-physics-math/"
     destination: syllabus
   pendulum-not-shm:
     path: "高中物理背後的數學"
+    path_url: "/paths/high-school-physics-math/"
     destination: syllabus
   lagrangian-mechanics-pendulum:
     path: "高中物理背後的數學"
+    path_url: "/paths/high-school-physics-math/"
     destination: syllabus
   phase-space-pendulum:
     path: "高中物理背後的數學"
+    path_url: "/paths/high-school-physics-math/"
     destination: syllabus
   momentum-and-impulse:
-    path: "古典力學"
     destination: syllabus
   center-of-mass:
-    path: "古典力學"
     destination: syllabus
   conservation-of-momentum:
-    path: "古典力學"
     destination: syllabus
   collision-problems:
-    path: "古典力學"
     destination: syllabus
   vertical-circular-motion:
-    path: "古典力學"
     destination: syllabus

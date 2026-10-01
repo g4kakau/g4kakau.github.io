@@ -13,17 +13,21 @@
     <p>剛才的關係如果改變初始條件會怎樣？到 Kakau Lab 自己試，再帶著新的問題回來。</p>
     <p class="kakau-actions">
       <a class="kakau-button" href="{{ cta.lab }}" target="_blank" rel="noopener noreferrer" data-kakau-event="notes_to_lab">前往 Kakau Lab ↗</a>
-      <a href="/paths/high-school-physics-math/">閱讀完整公開路徑</a>
+      {%- if cta.path_url %}
+      <a href="{{ cta.path_url }}">閱讀完整公開路徑</a>
+      {%- endif %}
     </p>
   </aside>
   {% else %}
   <aside class="kakau-contextual" aria-labelledby="kakau-contextual-title">
     <p class="kakau-eyebrow">接著學</p>
     <h2 id="kakau-contextual-title">想用這種方式繼續學物理？</h2>
-    <p>Kakau 物理學苑把定義、推導、數學工具、實驗與問題探索，整理成一條完整的學習路線。這篇文章也收錄在「{{ cta.path }}」的延伸閱讀脈絡中。</p>
+    <p>Kakau 物理學苑把定義、推導、數學工具、實驗與問題探索，整理成一條完整的學習路線。{% if cta.path and cta.path_url %}這篇文章也收錄在「{{ cta.path }}」的延伸閱讀脈絡中。{% endif %}</p>
     <p class="kakau-actions">
       <a class="kakau-button" href="{{ destination_url }}&utm_content=article_cta" data-kakau-event="notes_to_syllabus">查看學習主線 ↗</a>
-      <a href="/paths/high-school-physics-math/">閱讀完整公開路徑</a>
+      {%- if cta.path and cta.path_url %}
+      <a href="{{ cta.path_url }}">閱讀完整公開路徑</a>
+      {%- endif %}
     </p>
   </aside>
   {% endif %}
